@@ -1,0 +1,30 @@
+# mcp_bridge.py
+from fastapi import FastAPI
+import asyncio
+from mcp import ClientSession
+from mcp.client.streamable_http import streamablehttp_client
+
+app = FastAPI()
+MCP_SERVER_URL = "http://localhost:8080/mcp"
+
+
+async def _call_tool(tool, args):
+    async with streamablehttp_client(MCP_SERVER_URL) as (r, w, _):
+        async with ClientSession(r, w) as s:
+            await s.initialize()
+            res = await s.call_tool(tool, args)
+            return res.structuredContent or res.content
+
+
+@app.get("/get_farm_kpis")
+async def get_farm_kpis(farm_code: str, language: str):
+    return await _call_tool(
+        "get_farm_kpis", {"farm_code": farm_code, "language": language}
+    )
+
+
+@app.get("/analyze_kpis")
+async def analyze_kpis(farm_code: str, metric: str, days: int):
+    return await _call_tool(
+        "analyze_kpis", {"farm_code": farm_code, "metric": metric, "days": days}
+    )
