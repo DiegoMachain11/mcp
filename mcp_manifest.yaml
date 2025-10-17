@@ -1,0 +1,36 @@
+schema_version: "1.0"
+name: "dairy_farm_mcp"
+description: "Provides KPI data and analysis for dairy farms via MCP."
+
+resources:
+  - name: "farm.kpis"
+    description: "Retrieve time-series KPI data for dairy farms."
+    url: "http://localhost:8080/mcp/resources/farm_kpis"
+    schema_url: "http://localhost:8080/mcp/resources/farm_kpis/schema"
+    parameters:
+      - name: farm_code
+        type: string
+        description: "Farm code to query"
+        required: true
+        default : "GM"
+      - name: language
+        type: string
+        description: "Language for labels ('es' or 'en')"
+        required: false
+        default: "es"
+
+tools:
+  - name: "analyze_kpis"
+    description: "Analyze trends and averages for specific KPIs."
+    url: "http://localhost:8080/mcp/tools/analyze_kpis"
+    parameters:
+      - name: farm_code
+        type: string
+        required: true
+      - name: metric
+        type: string
+        required: true
+      - name: days
+        type: integer
+        required: false
+        default: 90
