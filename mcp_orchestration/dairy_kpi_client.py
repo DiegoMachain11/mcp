@@ -160,13 +160,16 @@ class DairyKPIClient:
         except requests.exceptions.RequestException as e:
             raise Exception(f"API call failed: {e}")
 
-    def fetch_farm_kpis(self, farm_code: str, language: str = "es") -> pd.DataFrame:
+    def fetch_farm_kpis(
+        self, farm_code: str, language: str = "es", months: int = 13
+    ) -> pd.DataFrame:
         today = datetime.now(timezone.utc)
-        date_13_months_ago = today - relativedelta(months=13)
+        date_13_months_ago = today - relativedelta(months=months)
         today_unix = int(today.timestamp())
         date_13_months_ago_unix = int(date_13_months_ago.timestamp())
         language_code = "0" if language.lower() == "es" else "1"
 
+        print("Fetching months = ", months)
         kpis = self._get_kpi_list()
         all_data = []
         alias_map = {}

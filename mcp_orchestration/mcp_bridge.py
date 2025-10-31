@@ -1,6 +1,7 @@
 # mcp_bridge.py
 from fastapi import FastAPI
 import asyncio
+from typing import Dict
 from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
 
@@ -28,3 +29,11 @@ async def analyze_kpis(farm_code: str, metric: str, days: int):
     return await _call_tool(
         "analyze_kpis", {"farm_code": farm_code, "metric": metric, "days": days}
     )
+
+
+@app.post("/plot_selected_kpis")
+async def plot_selected_kpis(payload: Dict):
+    """
+    Plot the specific KPIs provided by the AI selection.
+    """
+    return await _call_tool("plot_selected_kpis", payload)
