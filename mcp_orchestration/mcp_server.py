@@ -1,8 +1,8 @@
 # mcp_server.py
-from typing import List, Dict, Optional
+from typing import List, Dict
 import numpy as np
 import pandas as pd
-
+import logging
 from mcp.server.fastmcp import FastMCP
 
 from dairy_kpi_client import DairyKPIClient
@@ -31,6 +31,9 @@ def get_farm_kpis(farm_code: str, language: str = "es", months: int = 13) -> Lis
     Return time-series KPI rows for a farm.
     Each row contains Date and KPI columns.
     """
+    logging.info(
+        f"Fetching KPIs for farm {farm_code}, language={language}, months={months}"
+    )
     df = kpi_client.fetch_farm_kpis(
         farm_code=farm_code, language=language, months=months
     )
@@ -58,6 +61,53 @@ def analyze_kpis(
         "days": days,
         "average": avg,
         "trend_per_row": trend,
+    }
+
+
+@mcp.tool()
+def summarize_kpis(farm_code: str, language: str = "es", months: int = 13) -> Dict:
+    """
+    Summarize all KPIs for a farm over the last N days.
+    Computes mean, std, min, max, and trend for each numeric KPI.
+    Returns a dictionary of KPI summaries.
+    """
+    logging.info(
+        f"Summarizing KPIs for farm {farm_code}, language={language}, months={months}"
+    )
+    df = kpi_client.fetch_farm_kpis(
+        farm_code=farm_code, language=language, months=months
+    )
+    days = int(30 * months)
+    now = pd.Timestamp.now(tz="UTC").tz_localize(None)
+    recent = df[df["Date"] > (now - pd.Timedelta(days=days))].copy()
+
+    logging.info(df)
+
+    # Identify numeric KPI columns
+    numeric_cols = [
+        c
+        for c in recent.columns
+        if c != "Date" and pd.api.types.is_numeric_dtype(recent[c])
+    ]
+    summaries = {}
+    for col in numeric_cols:
+        s = recent[col].dropna()
+        if len(s) < 2:
+            continue
+        summaries[col] = {
+            "mean": round(float(s.mean()), 3),
+            "std": round(float(s.std()), 3),
+            "min": round(float(s.min()), 3),
+            "max": round(float(s.max()), 3),
+            "trend": round(float(s.diff().mean()), 5),
+            "count": int(s.count()),
+        }
+
+    return {
+        "farm_code": farm_code,
+        "days": days,
+        "summary_count": len(summaries),
+        "summaries": summaries,
     }
 
 
@@ -107,5 +157,4 @@ def plot_selected_kpis(
 
 
 # --- Expose as HTTP (Streamable HTTP transport) ---
-# Option A: standalone ASGI app just for MCP on "/"
 app = mcp.streamable_http_app()

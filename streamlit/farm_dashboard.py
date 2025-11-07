@@ -46,11 +46,17 @@ def get_farm_kpis(farm_code, language, months=13):
     return df
 
 
-def analyze_kpis(farm_code, metric, days):
+def analyze_kpis(farm_code, metric, days, months):
     """Call the FastAPI MCP bridge to analyze the selected metric."""
     url = f"{BRIDGE_URL}/analyze_kpis"
     resp = requests.get(
-        url, params={"farm_code": farm_code, "metric": metric, "days": days}
+        url,
+        params={
+            "farm_code": farm_code,
+            "metric": metric,
+            "days": days,
+            "months": months,
+        },
     )
     resp.raise_for_status()
     return resp.json()

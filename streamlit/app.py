@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query
 from fastapi.responses import ORJSONResponse
-from dairy_kpi_client import DairyKPIClient
+from mcp_orchestration.dairy_kpi_client import DairyKPIClient
 import pandas as pd
 import numpy as np
 

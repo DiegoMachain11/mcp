@@ -18,9 +18,10 @@ async def _call_tool(tool, args):
 
 
 @app.get("/get_farm_kpis")
-async def get_farm_kpis(farm_code: str, language: str):
+async def get_farm_kpis(farm_code: str, language: str, months: int = 13):
     return await _call_tool(
-        "get_farm_kpis", {"farm_code": farm_code, "language": language}
+        "get_farm_kpis",
+        {"farm_code": farm_code, "language": language, "months": months},
     )
 
 
@@ -28,6 +29,14 @@ async def get_farm_kpis(farm_code: str, language: str):
 async def analyze_kpis(farm_code: str, metric: str, days: int):
     return await _call_tool(
         "analyze_kpis", {"farm_code": farm_code, "metric": metric, "days": days}
+    )
+
+
+@app.get("/summarize_kpis")
+async def summarize_kpis(farm_code: str, language: str, months: int):
+    return await _call_tool(
+        "summarize_kpis",
+        {"farm_code": farm_code, "language": language, "months": months},
     )
 
 

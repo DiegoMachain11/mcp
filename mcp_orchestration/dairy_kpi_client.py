@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+import logging
 from datetime import datetime, timezone
 from dateutil.relativedelta import relativedelta
 
@@ -167,9 +168,13 @@ class DairyKPIClient:
         date_13_months_ago = today - relativedelta(months=months)
         today_unix = int(today.timestamp())
         date_13_months_ago_unix = int(date_13_months_ago.timestamp())
-        language_code = "0" if language.lower() == "es" else "1"
 
-        print("Fetching months = ", months)
+        logging.info(
+            f"Fetching KPIs for farm {farm_code} from "
+            f"{date_13_months_ago.strftime('%Y-%m-%d')} to "
+            f"{today.strftime('%Y-%m-%d')} in language {language}"
+        )
+        language_code = "0" if language.lower() == "es" else "1"
         kpis = self._get_kpi_list()
         all_data = []
         alias_map = {}

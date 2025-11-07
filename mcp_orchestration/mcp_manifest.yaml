@@ -18,6 +18,11 @@ resources:
         description: "Language for labels ('es' or 'en')"
         required: false
         default: "es"
+      - name: months
+        type: integer
+        required: true
+        default: 3
+  
 
 tools:
   - name: "analyze_kpis"
@@ -34,3 +39,24 @@ tools:
         type: integer
         required: false
         default: 90
+    
+  - name: "summarize_kpis"
+    description: "Copmputes mean, trends, minimum and maximums of a kpi in a certain period"
+    url: "http://localhost:8080/mcp/tools/summarize_kpis"
+    schema_url: "http://localhost:8080/mcp/tools/summarize_kpis/schema"
+    parameters:
+      - name: farm_code
+        type: string
+        description: "Farm to query"
+        required: true
+        default: "GM"
+      - name: language
+        type: string
+        description: "Language for labels ('es' or 'en')"
+        required: false
+        default: "es"
+      - name: months
+        type: integer
+        required: true
+        default: 3
+  
