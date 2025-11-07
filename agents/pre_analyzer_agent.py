@@ -63,7 +63,8 @@ def run_pre_analysis(farm_code="GM", language="es", months=4):
     return json.loads(response.choices[0].message.content)
 
 
-response = run_pre_analysis()
+if __name__ == "__main__":
+    response = run_pre_analysis()
 
-print("Pre-analysis result:")
-print(json.dumps(response, indent=2, ensure_ascii=False))
+    print("Pre-analysis result:")
+    print(json.dumps(response, indent=2, ensure_ascii=False))
