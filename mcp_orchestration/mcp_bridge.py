@@ -1,7 +1,7 @@
 # mcp_bridge.py
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 import asyncio
-from typing import Dict
+from typing import Dict, List, Optional
 from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
 
@@ -18,11 +18,16 @@ async def _call_tool(tool, args):
 
 
 @app.get("/get_farm_kpis")
-async def get_farm_kpis(farm_code: str, language: str, months: int = 13):
-    return await _call_tool(
-        "get_farm_kpis",
-        {"farm_code": farm_code, "language": language, "months": months},
-    )
+async def get_farm_kpis(
+    farm_code: str,
+    language: str,
+    months: int = 13,
+    selected_kpis: Optional[List[str]] = Query(None),
+):
+    payload = {"farm_code": farm_code, "language": language, "months": months}
+    if selected_kpis:
+        payload["selected_kpis"] = selected_kpis
+    return await _call_tool("get_farm_kpis", payload)
 
 
 @app.get("/analyze_kpis")
@@ -33,11 +38,17 @@ async def analyze_kpis(farm_code: str, metric: str, days: int):
 
 
 @app.get("/summarize_kpis")
-async def summarize_kpis(farm_code: str, language: str, months: int):
-    return await _call_tool(
-        "summarize_kpis",
-        {"farm_code": farm_code, "language": language, "months": months},
-    )
+async def summarize_kpis(
+    farm_code: str,
+    language: str,
+    months: int,
+    selected_kpis: Optional[List[str]] = Query(None),
+):
+    payload = {"farm_code": farm_code, "language": language, "months": months}
+    print("Bridge summarize selected_kpis:", selected_kpis)
+    if selected_kpis:
+        payload["selected_kpis"] = selected_kpis
+    return await _call_tool("summarize_kpis", payload)
 
 
 @app.post("/plot_selected_kpis")

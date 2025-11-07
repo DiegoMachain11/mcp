@@ -1,0 +1,204 @@
+{
+  "domains": {
+    "Calf Raising": {
+      "domain": "Calf Raising",
+      "issues": [
+        "Low average daily gain (ADG) in calves, indicating inefficiencies in feeding or health management.",
+        "High mortality rates in hutches, suggesting potential issues with hygiene, nutrition, or calf care.",
+        "Delayed age at first service, which may lead to increased rearing costs and prolonged replacement periods.",
+        "Inadequate monitoring of weight gain versus feed intake, leading to poor growth rates."
+      ],
+      "kpis_to_plot": [
+        "Average Daily Gain (ADG)",
+        "Mortality Rates (hutch and pre/post-weaning)",
+        "Age at First Service",
+        "Feed Efficiency Ratio (weight gain per feed intake)",
+        "Calf Surviving to Weaning Rate"
+      ],
+      "recommendations": {
+        "Immediate": [
+          "Conduct a health check on calves in hutches to identify underlying health issues.",
+          "Evaluate and enhance feeding protocols to ensure nutritional needs are being met."
+        ],
+        "Short": [
+          "Implement a weekly monitoring system for growth rates and adjust feed as necessary.",
+          "Increase employee training on calf management and hygiene practices."
+        ],
+        "Medium": [
+          "Introduce a weight tracking program to identify underperforming calves and address their specific needs.",
+          "Monitor and adjust breeding practices to ensure timely service of heifers."
+        ],
+        "Long": [
+          "Invest in infrastructure improvements for calf housing to enhance environmental conditions.",
+          "Develop a comprehensive heifer raising program focused on optimal growth and fertility milestones."
+        ]
+      },
+      "summary": "The analysis of farm 'GM' suggests significant concerns in calf growth rates and survival during both hutch and weaning phases. Despite some positive trends in fertility metrics, improvements are needed in weight gain efficiency and heifer management practices."
+    },
+    "Culling": {
+      "domain": "Culling",
+      "issues": [
+        "High early-lactation culling rates, particularly related to health complications.",
+        "Increased mortality among heifers, indicating management or environmental stressors.",
+        "Age distribution shows higher culling rates in younger cohorts, suggesting inadequate heifer management.",
+        "Replacement rates not keeping pace with culling, risking herd viability."
+      ],
+      "kpis_to_plot": [
+        "Early Lactation Culling Rate",
+        "Mortality Rate of Heifers",
+        "Culling Causes by Age Group",
+        "Retention Rates of Replacements",
+        "Culling vs. Replacement Trends Over Time"
+      ],
+      "recommendations": {
+        "Immediate": [
+          "Implement health assessments targeting early-lactation cows to identify at-risk animals.",
+          "Enhance nutrition and veterinary support during pre-calving and early-lactation periods."
+        ],
+        "Short": [
+          "Analyze culling data to determine common health issues leading to early culling.",
+          "Tailor vaccination and health management protocols based on identified culling causes."
+        ],
+        "Medium": [
+          "Develop a monitoring program to track the health and performance of heifers post-calving.",
+          "Establish a mentorship program for staff on better heifer management practices."
+        ],
+        "Long": [
+          "Invest in facilities and technologies to reduce stressors in calving and post-calving environments.",
+          "Create a long-term breeding plan focusing on traits that enhance longevity and reduce involuntary culling."
+        ]
+      },
+      "summary": "Farm 'GM' experiences notable challenges in early-lactation culling and mortality, with a significant proportion attributable to health issues and reproductive failure. Analyzing the age distribution reveals that younger animals are primarily affected, indicating potential management and care issues during early lactation. The long-term retention rates suggest a potential imbalance between culling and replacements, necessitating immediate action to improve overall herd longevity."
+    },
+    "Fertility": {
+      "domain": "Fertility",
+      "issues": [
+        "High abortion rates detected",
+        "Low estrus detection efficiency",
+        "Extended days open beyond optimal levels",
+        "Inconsistent conception and pregnancy rates"
+      ],
+      "kpis_to_plot": [
+        "Conception Rate",
+        "Pregnancy Rate",
+        "Estrus Detection Rate",
+        "Days Open",
+        "Abortion Rate",
+        "Service Age"
+      ],
+      "recommendations": {
+        "Immediate": [
+          "Investigate the causes of high abortion rates and implement management changes to minimize stressors in the herd.",
+          "Enhance training for staff on heat detection techniques to improve estrus detection efficiency."
+        ],
+        "Short": [
+          "Implement regular reproductive health monitoring and veterinary checks on animals with extended days open.",
+          "Analyze the breeding program for potential genetic factors contributing to poor fertility outcomes."
+        ],
+        "Medium": [
+          "Develop a comprehensive breeding strategy, including synchronized breeding protocols, to optimize conception rates.",
+          "Evaluate and improve nutrition programs that support reproductive health."
+        ],
+        "Long": [
+          "Establish a consistent monitoring system for reproductive KPIs and analyze historical data to identify long-term trends.",
+          "Invest in advanced reproductive technologies like sexed semen or embryo transfer for improving genetic gain while managing fertility issues."
+        ]
+      },
+      "summary": "The fertility trends at farm 'GM' indicate fluctuations in conception and pregnancy rates, with urgent needs for improvement in estrus detection efficiency. Anomaly detection reveals elevated abortion rates and extended days open, which requires immediate attention to enhance the overall reproductive performance of the herd."
+    },
+    "Health": {
+      "domain": "Health",
+      "issues": [
+        "High incidence rates of metabolic diseases, particularly milk fever and ketosis.",
+        "Elevated occurrences of reproductive infections like metritis and retained placenta.",
+        "Increasing instances of lameness and digestive disorders impacting overall herd health.",
+        "Concerns about overall morbidity affecting herd productivity and welfare."
+      ],
+      "kpis_to_plot": [
+        "Incidence of milk fever per 100 cows",
+        "Incidence of ketosis per 100 cows",
+        "Rate of metritis per 100 calvings",
+        "Rate of retained placenta per 100 calvings",
+        "Lameness incidence per cow",
+        "Overall morbidity rate in the herd"
+      ],
+      "recommendations": {
+        "Immediate": [
+          "Conduct a comprehensive evaluation of nutrition and transition cow management strategies to mitigate metabolic diseases.",
+          "Implement immediate veterinary interventions for cows diagnosed with metabolic diseases or reproductive infections."
+        ],
+        "Short": [
+          "Enhance monitoring protocols for metabolic disease incidence in the high-risk period (antepartum and postpartum).",
+          "Initiate programs for consistent hoof trimming and lameness assessments."
+        ],
+        "Medium": [
+          "Establish a herd health plan that includes nutritional strategies to prevent metabolic disorders in future calving seasons.",
+          "Increase training for farm staff on identification and treatment of reproductive disorders in postpartum cows."
+        ],
+        "Long": [
+          "Develop a comprehensive breeding and replacement strategy aimed at improving the genetic resistances to metabolic and reproductive disorders.",
+          "Invest in technology or software to track health metrics more efficiently, aiding in better proactive health management."
+        ]
+      },
+      "summary": "The health analysis for farm 'GM' reveals concerning trends in metabolic disorders, reproductive issues, and overall lameness. Both milk fever and ketosis incidents are above the desirable thresholds, indicating a need for improved nutritional management and monitoring. Reproductive infections such as metritis and retained placenta rates are noteworthy, suggesting potential gaps in postpartum care. Additional evaluations on lameness and digestive disorders indicate a rising trend in overall morbidity within the herd."
+    },
+    "Production": {
+      "domain": "Production",
+      "issues": [
+        "Inconsistent lactation peaks affecting overall milk yield.",
+        "Suboptimal feed efficiency leading to increased costs.",
+        "Variability in body condition scores indicating herd health issues.",
+        "Seasonal production dips affecting annual yield.",
+        "Anomalies in low production metrics among certain parities."
+      ],
+      "kpis_to_plot": [
+        "305-day milk yield",
+        "Peak lactation yield",
+        "Feed conversion ratio",
+        "Body condition scores",
+        "Lactation length",
+        "Number of lactations",
+        "Seasonal production trends"
+      ],
+      "recommendations": {
+        "Immediate": [
+          "Conduct a thorough health check on low-producing cows.",
+          "Test feed quality and adjust rations to optimize feed efficiency."
+        ],
+        "Short": [
+          "Implement a monitoring system for body condition scores across lactating cows.",
+          "Evaluate and adjust milking routines to capture optimal lactation peaks."
+        ],
+        "Medium": [
+          "Introduce targeted nutritional programs for first-lactation heifers to improve consistency.",
+          "Utilize data analytics to identify and mitigate production bottlenecks."
+        ],
+        "Long": [
+          "Develop a comprehensive herd health management program to enhance overall fertility and lactation performance.",
+          "Invest in technology for predictive analytics to manage seasonal production fluctuations."
+        ]
+      },
+      "summary": "Analysis of dairy farm 'GM' reveals critical insights into milk yield performance, feed efficiency, lactation consistency, and production bottlenecks, indicating areas for improvement and timely interventions."
+    }
+  },
+  "farm_code": "GM",
+  "final_summary": {
+    "domains_overview": {
+      "Calf Raising": "Concerns in calf raising pertain to low average daily gain and high mortality rates, signaling deficiencies in health management and feeding protocols.",
+      "Culling": "Culling analysis reveals high early-lactation culling rates and mortality among heifers, suggesting a need for improved management practices and health assessments.",
+      "Fertility": "Fertility issues at farm 'GM' suggest urgent improvements are needed in estrus detection and reproductive health, with concerns around high abortion rates and extended days open.",
+      "Health": "Health concerns revolve around high incidence rates of metabolic disorders and reproductive issues, indicating a need for better nutritional management and monitoring practices.",
+      "Production": "Production analysis highlights inconsistencies in milk yield and body condition scores, necessitating enhanced nutritional management and monitoring."
+    },
+    "executive_summary": "The dairy performance analysis for farm 'GM' identifies critical areas needing immediate and strategic attention, particularly in fertility, production, health, calf raising, and culling. There are significant challenges, including fluctuating reproductive metrics, health issues related to metabolic disorders, low calf growth rates, and high culling rates associated with health problems. Strategic interventions are required to enhance herd performance and sustainability.",
+    "overall_health": "Medium",
+    "priority_actions": [
+      "Investigate and address causes of high abortion rates and enhance estrus detection training.",
+      "Conduct health checks on low-producing cows and improve feed quality to optimize feed efficiency.",
+      "Evaluate and improve calf health management practices, focusing on nutrition and housing conditions.",
+      "Implement health assessments targeting early-lactation cows to identify at-risk animals."
+    ]
+  },
+  "overview": "No KPI summaries were provided for analysis. Please provide a list of KPI summaries to identify trends, anomalies, and states of each domain.",
+  "urgent_kpis": []
+}

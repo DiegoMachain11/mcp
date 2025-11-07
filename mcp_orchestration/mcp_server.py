@@ -1,11 +1,11 @@
 # mcp_server.py
-from typing import List, Dict
+from typing import List, Dict, Optional
 import numpy as np
 import pandas as pd
 import logging
 from mcp.server.fastmcp import FastMCP
 
-from dairy_kpi_client import DairyKPIClient
+from mcp_orchestration.dairy_kpi_client import DairyKPIClient
 
 # Init your data client
 kpi_client = DairyKPIClient(api_base_url="http://200.23.18.75:8074/IREGIOService")
@@ -26,7 +26,12 @@ def _sanitize_df(df: pd.DataFrame) -> List[Dict]:
 
 
 @mcp.tool()
-def get_farm_kpis(farm_code: str, language: str = "es", months: int = 13) -> List[Dict]:
+def get_farm_kpis(
+    farm_code: str,
+    language: str = "es",
+    months: int = 13,
+    selected_kpis: Optional[List[str]] = None,
+) -> List[Dict]:
     """
     Return time-series KPI rows for a farm.
     Each row contains Date and KPI columns.
@@ -35,7 +40,10 @@ def get_farm_kpis(farm_code: str, language: str = "es", months: int = 13) -> Lis
         f"Fetching KPIs for farm {farm_code}, language={language}, months={months}"
     )
     df = kpi_client.fetch_farm_kpis(
-        farm_code=farm_code, language=language, months=months
+        farm_code=farm_code,
+        language=language,
+        months=months,
+        selected_kpis=selected_kpis,
     )
     return _sanitize_df(df)
 
@@ -47,7 +55,9 @@ def analyze_kpis(
     """
     Compute simple stats for a KPI over the last N days.
     """
-    df = kpi_client.fetch_farm_kpis(farm_code=farm_code, language=language)
+    df = kpi_client.fetch_farm_kpis(
+        farm_code=farm_code, language=language, selected_kpis=[metric]
+    )
     if metric not in df.columns:
         return {"error": f"Unknown metric '{metric}'"}
     now = pd.Timestamp.now(tz="UTC").tz_localize(None)
@@ -65,17 +75,25 @@ def analyze_kpis(
 
 
 @mcp.tool()
-def summarize_kpis(farm_code: str, language: str = "es", months: int = 13) -> Dict:
+def summarize_kpis(
+    farm_code: str,
+    language: str = "es",
+    months: int = 13,
+    selected_kpis: Optional[List[str]] = None,
+) -> Dict:
     """
     Summarize all KPIs for a farm over the last N days.
     Computes mean, std, min, max, and trend for each numeric KPI.
     Returns a dictionary of KPI summaries.
     """
     logging.info(
-        f"Summarizing KPIs for farm {farm_code}, language={language}, months={months}"
+        f"Summarizing KPIs for farm {farm_code}, selected_kpis={selected_kpis}, months={months}"
     )
     df = kpi_client.fetch_farm_kpis(
-        farm_code=farm_code, language=language, months=months
+        farm_code=farm_code,
+        language=language,
+        months=months,
+        selected_kpis=selected_kpis,
     )
     days = int(30 * months)
     now = pd.Timestamp.now(tz="UTC").tz_localize(None)
@@ -119,7 +137,9 @@ def plot_selected_kpis(
     Plot only the specified KPIs for a farm over the last N days.
     Returns a base64-encoded PNG image.
     """
-    df = kpi_client.fetch_farm_kpis(farm_code=farm_code, language=language)
+    df = kpi_client.fetch_farm_kpis(
+        farm_code=farm_code, language=language, selected_kpis=selected_kpis
+    )
     now = pd.Timestamp.now(tz="UTC").tz_localize(None)
     recent = df[df["Date"] > (now - pd.Timedelta(days=days))].copy()
 

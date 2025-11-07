@@ -1,7 +1,7 @@
 import json, os, requests
 from openai import OpenAI
 
-from helpers import _extract_rows
+from helpers import _extract_rows, normalize_kpi_list
 
 BRIDGE_URL = "http://localhost:8090"
 OPENAI_MODEL = "gpt-4o-mini"
@@ -9,10 +9,13 @@ openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 def run_health_agent(farm_code, kpis, language="es", months=3):
-    resp = requests.get(
-        f"{BRIDGE_URL}/get_farm_kpis",
-        params={"farm_code": farm_code, "language": language, "months": months},
-    )
+    kpi_names = normalize_kpi_list(kpis)
+
+    params = {"farm_code": farm_code, "language": language, "months": months}
+    if kpi_names:
+        params["selected_kpis"] = kpi_names
+
+    resp = requests.get(f"{BRIDGE_URL}/get_farm_kpis", params=params)
     resp.raise_for_status()
 
     rows = _extract_rows(resp.json())
@@ -22,10 +25,10 @@ def run_health_agent(farm_code, kpis, language="es", months=3):
             "summary": "No KPI data available for analysis.",
             "issues": [],
             "recommendations": {"Immediate": [], "Short": [], "Medium": [], "Long": []},
-            "kpis_to_plot": kpis,
+            "kpis_to_plot": kpi_names,
         }
 
-    data = [{k: r.get(k) for k in ["Date", *kpis]} for r in rows]
+    data = [{k: r.get(k) for k in ["Date", *kpi_names]} for r in rows]
     prompt = f"""
     You are a dairy herd health specialist.
     Analyze health KPIs for farm '{farm_code}'.
@@ -42,7 +45,7 @@ def run_health_agent(farm_code, kpis, language="es", months=3):
       "summary":"...",
       "issues":["..."],
       "recommendations":{{"Immediate":[],"Short":[],"Medium":[],"Long":[]}},
-      "kpis_to_plot":{json.dumps(kpis)}
+      "kpis_to_plot":{json.dumps(kpi_names)}
     }}
 
     Data sample:

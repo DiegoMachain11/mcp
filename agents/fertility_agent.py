@@ -3,7 +3,7 @@ import os
 import requests
 from openai import OpenAI
 
-from helpers import _extract_rows
+from helpers import _extract_rows, normalize_kpi_list
 
 # === CONFIG ===
 BRIDGE_URL = "http://localhost:8090"
@@ -16,11 +16,14 @@ def run_fertility_agent(
 ):
     """Deep-dive analysis for fertility KPIs."""
 
+    kpi_names = normalize_kpi_list(kpis)
+
     # --- Fetch detailed time series ---
-    resp = requests.get(
-        f"{BRIDGE_URL}/get_farm_kpis",
-        params={"farm_code": farm_code, "language": language, "months": months},
-    )
+    params = {"farm_code": farm_code, "language": language, "months": months}
+    if kpi_names:
+        params["selected_kpis"] = kpi_names
+
+    resp = requests.get(f"{BRIDGE_URL}/get_farm_kpis", params=params)
     resp.raise_for_status()
     rows = _extract_rows(resp.json())
     if not rows:
@@ -29,14 +32,14 @@ def run_fertility_agent(
             "summary": "No KPI data available for analysis.",
             "issues": [],
             "recommendations": {"Immediate": [], "Short": [], "Medium": [], "Long": []},
-            "kpis_to_plot": kpis,
+            "kpis_to_plot": kpi_names,
         }
 
     print("Fertility rows fetched:", rows)
 
     # Filter only relevant KPIs
     fertility_data = [
-        {k: row.get(k) for k in ["Date", *kpis] if k in row} for row in rows
+        {k: row.get(k) for k in ["Date", *kpi_names] if k in row} for row in rows
     ]
 
     # --- Build LLM prompt ---
