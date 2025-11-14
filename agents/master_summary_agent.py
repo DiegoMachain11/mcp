@@ -23,6 +23,7 @@ from agents.helpers import (
     load_causal_kpi_graph,
     load_cluster_members,
     get_at_risk_kpis,
+    get_kpi_level_risks_full,
     get_kpi_level_risks,
     alias_name_maps,
     _slugify,
@@ -33,7 +34,7 @@ try:
 except ImportError:  # pragma: no cover - optional dependency
     generate_master_summary_pdf = None
 
-OPENAI_MODEL = "gpt-4o-mini"
+OPENAI_MODEL = "gpt-5-nano"
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
@@ -126,25 +127,38 @@ async def run_master_summary(
     urgent = pre_summary.get("urgent_kpis", [])
 
     causal_risks = {}
+
     for alias in urgent:
         original = alias_to_name.get(alias)
         if not original:
             continue
-        risky_kpis = get_kpi_level_risks(
-            kpi_name=original,
-            causal_kpi_graph=causal_kpi_graph,
-            min_risk=0.05,
-            max_results=10,
-        )
-        if not risky_kpis:
-            continue
-        # Normalize back to alias names
-        normalized_risks = []
-        for name in risky_kpis:
-            normalized_risks.append(name_to_alias.get(name, _slugify(name)))
 
-        if normalized_risks:
-            causal_risks[alias] = normalize_kpi_list(normalized_risks)
+        risky_items = get_kpi_level_risks_full(
+            original, causal_kpi_graph, min_risk=0.05, max_results=10
+        )
+
+        if not risky_items:
+            continue
+
+        # Convert KPI names → alias and keep extra info
+        formatted = []
+        for item in risky_items:
+
+            tgt_name = item["kpi"]
+            tgt_alias = name_to_alias.get(tgt_name, _slugify(tgt_name))
+
+            formatted.append(
+                {
+                    "kpi": tgt_alias,
+                    "risk": item["risk"],
+                    "lag": item["lag"],
+                    "cluster_strength": item["cluster_strength"],
+                    "src_weight": item["src_weight"],
+                    "tgt_weight": item["tgt_weight"],
+                }
+            )
+
+        causal_risks[alias] = formatted
 
     pre_summary["causal_predicted_risks"] = causal_risks
 
@@ -247,18 +261,27 @@ async def run_master_summary(
     domain_summaries = json.dumps(combined["domains"], indent=2, ensure_ascii=False)
 
     prompt = f"""
-    You are a senior dairy management consultant.
+    You are a senior dairy management consultant and expert in causal farm performance analysis.
 
-    Combine the following domain analyses into one coherent report.
-    Highlight:
-    - Overall situation
-    - Key performance risks
-    - Return exact percentages and numbers where relevant.
-    - Strategic recommendations
-    - Priority actions for the next 3 months
-    - Confidence level (Low/Medium/High)
+    Your task is to synthesize all domain-level analyses and the causal predictions into a single, coherent, highly actionable farm-level report.
 
-    Return JSON strictly as:
+    You MUST incorporate both:
+    1. The domain findings (current measured performance)
+    2. The causal predictions (future risks inferred from the farm’s causal graph)
+
+    Your analysis MUST:
+    - Identify which KPIs are currently underperforming
+    - Identify which KPIs are likely to deteriorate next based on causal risk scores
+    - Explain the causal chains (e.g., “X anomaly → Y at-risk in 2 months”)
+    - Prioritize risks by causal strength and risk score
+    - Distinguish between root causes and downstream effects
+    - Include exact values, percentages, deltas, and observed KPI magnitudes when relevant
+    - Provide proactive, time-aware interventions based on lag structure (e.g., “take action within 30 days”)
+    - Give strategic, operational, and preventive recommendations
+    - Produce a clear prioritization for the next 3 months
+    - Provide a confidence rating (Low / Medium / High)
+
+    You MUST return JSON strictly as:
     {{
         "executive_summary": "...high-level insights...",
         "priority_actions": [ "...", "..." ],
@@ -266,18 +289,22 @@ async def run_master_summary(
         "domains_overview": {{ <short summary of each domain> }}
     }}
 
-    Domain Analyses:
+    Inputs you will use:
+
+    === Domain Analyses (current performance) ===
     {domain_summaries}
 
-    Also incorporate causal predictions from the farm’s causal graph:
-
-    Causal Predictions:
+    === Causal Predictions (future risks inferred from causal graph) ===
     {causal_risks_json}
 
-    Explain:
-    - Which KPIs caused the anomalies
-    - Which KPIs are likely to deteriorate next
-    - Time horizons based on lag structure
+    Instructions for causal reasoning:
+    - Identify the highest-risk causal pathways first (highest risk scores).
+    - For each upstream anomalous KPI, identify downstream KPIs with strong causal risk.
+    - Do not mention the exact score numbers, but use them to prioritize your analysis.
+    - Use lag values to infer timelines (“in ~2 months”, “within 1 month”, etc.).
+    - Highlight when multiple upstream indicators converge on the same future risk.
+    - Explain cause → effect relationships clearly.
+    - Include at least one preventive recommendation for each major causal risk cluster.
     """
 
     response = openai_client.chat.completions.create(

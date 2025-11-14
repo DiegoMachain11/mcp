@@ -77,6 +77,26 @@ def get_kpi_level_risks(
     return [r["kpi"] for r in risks[:max_results]]
 
 
+def get_kpi_level_risks_full(
+    kpi_name: str, causal_kpi_graph: dict, min_risk: float = 0.05, max_results: int = 10
+):
+    """
+    Return the top KPI-level causal risks with full metadata.
+    Output includes lag, risk, source/target weights, and cluster strength.
+    """
+    if kpi_name not in causal_kpi_graph:
+        return []
+
+    # filter by minimum risk
+    risks = [r for r in causal_kpi_graph[kpi_name] if r.get("risk", 0) >= min_risk]
+
+    # Sort by risk descending
+    risks.sort(key=lambda x: x["risk"], reverse=True)
+
+    # return top-N full dicts (not just KPI names!)
+    return risks[:max_results]
+
+
 def get_at_risk_kpis(
     kpi_name,
     cluster_members,
