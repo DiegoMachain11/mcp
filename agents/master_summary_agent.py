@@ -8,14 +8,14 @@ from typing import Optional
 
 from openai import OpenAI
 
-from pre_analyzer_agent import run_pre_analysis
-from fertility_agent import run_fertility_agent
-from production_agent import run_production_agent
-from health_agent import run_health_agent
-from calf_agent import run_calf_agent
-from culling_agent import run_culling_agent
-from helpers import normalize_kpi_list
-from domain_config import build_domain_kpi_list
+from agents.pre_analyzer_agent import run_pre_analysis
+from agents.fertility_agent import run_fertility_agent
+from agents.production_agent import run_production_agent
+from agents.health_agent import run_health_agent
+from agents.calf_agent import run_calf_agent
+from agents.culling_agent import run_culling_agent
+from agents.helpers import normalize_kpi_list
+from agents.domain_config import build_domain_kpi_list
 
 try:
     from pdf_reporter import generate_master_summary_pdf
@@ -131,9 +131,7 @@ async def run_master_summary(
         )
 
     if "Health" in domains_to_investigate:
-        health_kpis = _prepare_domain_kpis(
-            "Health", domains_to_investigate["Health"]
-        )
+        health_kpis = _prepare_domain_kpis("Health", domains_to_investigate["Health"])
         tasks.append(
             asyncio.to_thread(
                 run_health_agent,
@@ -194,6 +192,7 @@ async def run_master_summary(
     Highlight:
     - Overall situation
     - Key performance risks
+    - Return exact percentages and numbers where relevant.
     - Strategic recommendations
     - Priority actions for the next 3 months
     - Confidence level (Low/Medium/High)

@@ -1,16 +1,21 @@
-import streamlit as st
+import asyncio
+import base64
+import logging
+import sys
+from pathlib import Path
+
 import pandas as pd
 import requests
-import json
-import os
-from openai import OpenAI
-import logging
-import base64
+import streamlit as st
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.append(str(ROOT_DIR))
+
+from agents.master_summary_agent import run_master_summary
 
 # ================= CONFIG ====================
 BRIDGE_URL = "http://localhost:8090"
-OPENAI_MODEL = "gpt-4o-mini"
-openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # =============================================
 
 st.set_page_config(page_title="🐄 Dairy Farm AI Advisor", layout="wide")
@@ -79,53 +84,11 @@ def get_critical_plot(farm_code, language, days=90, top_n=5):
     return data
 
 
-def generate_ai_insight(df, farm_code):
-    """Use OpenAI to create natural-language recommendations."""
-    sample_data = json.dumps(
-        df.tail(10).to_dict(orient="records"), indent=2, ensure_ascii=False
+def generate_master_summary(farm_code: str, language: str, months: int):
+    """Run the async master summary agent."""
+    return asyncio.run(
+        run_master_summary(farm_code=farm_code, language=language, months=months)
     )
-    prompt = f"""
-    You are a dairy farm advisor.
-    1. Given the KPI data sample and the analysis, analyze:
-    - Fertility trends
-    - Production trends
-    - Health trends
-    - Culling levels trends
-    - Calf raising trends
-    - Key anomalies
-    - Actionable recommendations in:
-        Immediate (0-1 months)
-        Short (1-3 months)
-        Medium (3-6 months)
-        Long (6+ months)
-    - Each analysis should be divided into clear sections and bullet points must be used.
-    - The analysis is the most important part, so do not make it short try to explain every detail!
-
-    2. Then, identify up to 5 KPI variable names from the data that are most critical for visual monitoring.
-    3. Return your answer in strict JSON with two keys:
-    - "insights": a string of your narrative explanation
-    - "kpis_to_plot": a JSON list of the exact column names (e.g. ["pct_partos_logrados","prod_a_305_del_1a_lact"])
-
-    Farm: {farm_code}
-
-    KPI Data (sample):
-    {sample_data}
-    """
-
-    response = openai_client.chat.completions.create(
-        model=OPENAI_MODEL,
-        messages=[
-            {
-                "role": "system",
-                "content": "You are a dairy farm analyst skilled in data-driven reasoning.",
-            },
-            {"role": "user", "content": prompt},
-        ],
-        response_format={"type": "json_object"},  # ensures valid JSON response
-    )
-
-    ai_response = json.loads(response.choices[0].message.content)
-    return ai_response
 
 
 # --------------- UI FLOW ---------------
@@ -136,11 +99,58 @@ if analyze_button:
 
             st.markdown("---")
 
-            ai_response = generate_ai_insight(df, farm_code)
-            st.markdown(f"### 🧠 Insights\n{ai_response['insights']}")
+            master_report = generate_master_summary(farm_code, language, months)
+            final_summary = master_report.get("final_summary", {})
+            overview = master_report.get("overview", "")
 
-            selected_kpis = ai_response.get("kpis_to_plot", [])
-            st.markdown(f"**AI-selected KPIs:** {', '.join(selected_kpis)}")
+            st.markdown("### 🧠 Executive Summary")
+            if overview:
+                st.markdown(f"**Overview:** {overview}")
+            st.markdown(final_summary.get("executive_summary", ""))
+
+            priority_actions = final_summary.get("priority_actions", [])
+            if priority_actions:
+                st.markdown("### 🎯 Priority Actions")
+                for action in priority_actions:
+                    st.markdown(f"- {action}")
+
+            domains_overview = final_summary.get("domains_overview", {})
+            if domains_overview:
+                st.markdown("### 📂 Domain Snapshots")
+                for domain_name, note in domains_overview.items():
+                    st.markdown(f"**{domain_name}:** {note}")
+
+            if master_report.get("domains"):
+                st.markdown("### 🔍 Domain Deep Dives")
+                for domain, payload in master_report["domains"].items():
+                    st.markdown(f"#### {domain}")
+                    st.markdown(payload.get("summary", ""))
+                    issues = payload.get("issues") or []
+                    if issues:
+                        st.markdown("**Issues:**")
+                        for issue in issues:
+                            st.markdown(f"- {issue}")
+
+                    recommendations = payload.get("recommendations", {})
+                    for horizon, items in recommendations.items():
+                        if items:
+                            st.markdown(f"**{horizon} actions:**")
+                            for item in items:
+                                st.markdown(f"- {item}")
+
+            selected_kpis = master_report.get("urgent_kpis") or []
+            if not selected_kpis and master_report.get("domains"):
+                collected = []
+                for payload in master_report["domains"].values():
+                    for alias in payload.get("kpis_to_plot", []):
+                        if alias not in collected:
+                            collected.append(alias)
+                selected_kpis = collected
+
+            if selected_kpis:
+                st.markdown(f"**KPI focus:** {', '.join(selected_kpis)}")
+            else:
+                st.markdown("**KPI focus:** No KPIs highlighted.")
 
             if selected_kpis:
                 try:

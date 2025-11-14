@@ -1,8 +1,8 @@
 import json, os, requests
 from openai import OpenAI
 
-from helpers import _extract_rows, normalize_kpi_list
-from domain_config import build_domain_kpi_list
+from agents.helpers import _extract_rows, normalize_kpi_list
+from agents.domain_config import build_domain_kpi_list
 
 BRIDGE_URL = "http://localhost:8090"
 OPENAI_MODEL = "gpt-4o-mini"
@@ -28,6 +28,8 @@ def run_calf_agent(farm_code, kpis, language="es", months=3):
             "recommendations": {"Immediate": [], "Short": [], "Medium": [], "Long": []},
             "kpis_to_plot": kpi_names,
         }
+
+    print("Calf Raising rows fetched:", rows)
     data = [{k: r.get(k) for k in ["Date", *kpi_names]} for r in rows]
 
     prompt = f"""
@@ -38,6 +40,7 @@ def run_calf_agent(farm_code, kpis, language="es", months=3):
     - Mortality in hutches and pre/post-weaning phases
     - Heifer fertility and age at first service
     - Management or feeding issues affecting replacements
+    - Return exact percentages and numbers where relevant.
 
     Return JSON:
     {{

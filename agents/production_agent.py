@@ -3,8 +3,8 @@ import os
 import requests
 from openai import OpenAI
 
-from helpers import _extract_rows, normalize_kpi_list
-from domain_config import build_domain_kpi_list
+from agents.helpers import _extract_rows, normalize_kpi_list
+from agents.domain_config import build_domain_kpi_list
 
 # === CONFIG ===
 BRIDGE_URL = "http://localhost:8090"
@@ -38,6 +38,8 @@ def run_production_agent(
             "kpis_to_plot": kpi_names,
         }
 
+    print("Production rows fetched:", rows)
+
     # Filter only relevant KPIs
     production_data = [
         {k: row.get(k) for k in ["Date", *kpi_names] if k in row} for row in rows
@@ -57,6 +59,7 @@ def run_production_agent(
         Short (1–3 months)
         Medium (3–6 months)
         Long (6+ months)
+    - Return exact percentages and numbers where relevant.
 
     Return JSON strictly as:
     {{

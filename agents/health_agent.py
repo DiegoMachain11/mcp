@@ -1,8 +1,8 @@
 import json, os, requests
 from openai import OpenAI
 
-from helpers import _extract_rows, normalize_kpi_list
-from domain_config import build_domain_kpi_list
+from agents.helpers import _extract_rows, normalize_kpi_list
+from agents.domain_config import build_domain_kpi_list
 
 BRIDGE_URL = "http://localhost:8090"
 OPENAI_MODEL = "gpt-4o-mini"
@@ -30,6 +30,8 @@ def run_health_agent(farm_code, kpis, language="es", months=3):
             "kpis_to_plot": kpi_names,
         }
 
+    print("Health rows fetched:", rows)
+
     data = [{k: r.get(k) for k in ["Date", *kpi_names]} for r in rows]
     prompt = f"""
     You are a dairy herd health specialist.
@@ -40,6 +42,7 @@ def run_health_agent(farm_code, kpis, language="es", months=3):
     - Reproductive infections (metritis, retained placenta)
     - Lameness, digestive disorders, and overall morbidity
     - Risk patterns and intervention priorities
+    - Return exact percentages and numbers where relevant.
 
     Return JSON:
     {{

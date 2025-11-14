@@ -3,8 +3,8 @@ import os
 import requests
 from openai import OpenAI
 
-from helpers import _extract_rows, normalize_kpi_list
-from domain_config import build_domain_kpi_list
+from agents.helpers import _extract_rows, normalize_kpi_list
+from agents.domain_config import build_domain_kpi_list
 
 # === CONFIG ===
 BRIDGE_URL = "http://localhost:8090"
@@ -53,6 +53,7 @@ def run_fertility_agent(
     - Estrus detection efficiency
     - Days open, abortions, service ages
     - Key risks or anomalies (e.g., high abortions, low heat detection)
+    - Return exact percentages and numbers where relevant.
     - Practical recommendations by timeframe:
         Immediate (0–1 month)
         Short (1–3 months)
