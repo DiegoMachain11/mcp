@@ -44,7 +44,6 @@ def get_domain_kpi_aliases(domain: str) -> List[str]:
     config = _load_domain_config()
     if not config:
         return []
-
     if domain in config:
         entries = config[domain]["kpis"]
     else:

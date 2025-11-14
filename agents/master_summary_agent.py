@@ -1,4 +1,6 @@
 # agents/master_summary_agent.py
+from __future__ import annotations
+
 import asyncio
 import json
 import os
@@ -14,8 +16,17 @@ from agents.production_agent import run_production_agent
 from agents.health_agent import run_health_agent
 from agents.calf_agent import run_calf_agent
 from agents.culling_agent import run_culling_agent
-from agents.helpers import normalize_kpi_list
 from agents.domain_config import build_domain_kpi_list
+from agents.helpers import (
+    normalize_kpi_list,
+    load_causal_graph,
+    load_causal_kpi_graph,
+    load_cluster_members,
+    get_at_risk_kpis,
+    get_kpi_level_risks,
+    alias_name_maps,
+    _slugify,
+)
 
 try:
     from pdf_reporter import generate_master_summary_pdf
@@ -75,12 +86,29 @@ async def run_master_summary(
     """
 
     print("🔍 Step 1: Running PreAnalyzer...")
+
+    causal_graph = load_causal_graph()
+    causal_kpi_graph = load_causal_kpi_graph()
+    cluster_members = load_cluster_members()
+    alias_to_name, name_to_alias = alias_name_maps()
+
     progress = _ProgressBar("   PreAnalyzer")
     progress.start("Recopilando métricas")
 
     def _prepare_domain_kpis(domain_name: str, suggested):
         normalized = normalize_kpi_list(suggested or [])
-        return build_domain_kpi_list(domain_name, normalized)
+
+        # Add predicted downstream KPI risks
+        predicted = []
+        for kpi in normalized:
+            predicted += pre_summary["causal_predicted_risks"].get(kpi, [])
+
+        predicted = normalize_kpi_list(predicted)
+
+        normal_kpis = build_domain_kpi_list(domain_name, normalized)
+        predicted_kpis = build_domain_kpi_list(domain_name, predicted)
+
+        return normal_kpis, predicted_kpis
 
     def _progress_hook(value: float, msg: str):
         progress.update(value, msg)
@@ -95,6 +123,37 @@ async def run_master_summary(
     progress.finish("Listo")
     print("✅ PreAnalyzer completed")
 
+    urgent = pre_summary.get("urgent_kpis", [])
+
+    causal_risks = {}
+    for alias in urgent:
+        original = alias_to_name.get(alias)
+        if not original:
+            continue
+        risky_kpis = get_kpi_level_risks(
+            kpi_name=original,
+            causal_kpi_graph=causal_kpi_graph,
+            min_risk=0.05,
+            max_results=10,
+        )
+        if not risky_kpis:
+            continue
+        # Normalize back to alias names
+        normalized_risks = []
+        for name in risky_kpis:
+            normalized_risks.append(name_to_alias.get(name, _slugify(name)))
+
+        if normalized_risks:
+            causal_risks[alias] = normalize_kpi_list(normalized_risks)
+
+    pre_summary["causal_predicted_risks"] = causal_risks
+
+    causal_risks_json = json.dumps(
+        pre_summary["causal_predicted_risks"], indent=2, ensure_ascii=False
+    )
+
+    print("Causal Risks:", causal_risks_json)
+
     domains_to_investigate = pre_summary.get("domains_to_investigate", {})
     domains_in_good_state = pre_summary.get("domains_in_good_state", {})
 
@@ -103,7 +162,7 @@ async def run_master_summary(
     tasks = []
 
     if "Fertility" in domains_to_investigate:
-        fertility_kpis = _prepare_domain_kpis(
+        fertility_kpis, fertility_causalty = _prepare_domain_kpis(
             "Fertility", domains_to_investigate["Fertility"]
         )
         tasks.append(
@@ -117,7 +176,7 @@ async def run_master_summary(
         )
 
     if "Production" in domains_to_investigate:
-        production_kpis = _prepare_domain_kpis(
+        production_kpis, production_causalty = _prepare_domain_kpis(
             "Production", domains_to_investigate["Production"]
         )
         tasks.append(
@@ -131,7 +190,9 @@ async def run_master_summary(
         )
 
     if "Health" in domains_to_investigate:
-        health_kpis = _prepare_domain_kpis("Health", domains_to_investigate["Health"])
+        health_kpis, health_causalty = _prepare_domain_kpis(
+            "Health", domains_to_investigate["Health"]
+        )
         tasks.append(
             asyncio.to_thread(
                 run_health_agent,
@@ -143,7 +204,7 @@ async def run_master_summary(
         )
 
     if "Calf Raising" in domains_to_investigate:
-        calf_kpis = _prepare_domain_kpis(
+        calf_kpis, calf_causalty = _prepare_domain_kpis(
             "Calf Raising", domains_to_investigate["Calf Raising"]
         )
         tasks.append(
@@ -157,7 +218,7 @@ async def run_master_summary(
         )
 
     if "Culling" in domains_to_investigate:
-        culling_kpis = _prepare_domain_kpis(
+        culling_kpis, culling_causality = _prepare_domain_kpis(
             "Culling", domains_to_investigate["Culling"]
         )
         tasks.append(
@@ -207,6 +268,16 @@ async def run_master_summary(
 
     Domain Analyses:
     {domain_summaries}
+
+    Also incorporate causal predictions from the farm’s causal graph:
+
+    Causal Predictions:
+    {causal_risks_json}
+
+    Explain:
+    - Which KPIs caused the anomalies
+    - Which KPIs are likely to deteriorate next
+    - Time horizons based on lag structure
     """
 
     response = openai_client.chat.completions.create(

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 import os
 import requests
@@ -53,7 +55,6 @@ def run_fertility_agent(
     - Estrus detection efficiency
     - Days open, abortions, service ages
     - Key risks or anomalies (e.g., high abortions, low heat detection)
-    - Return exact percentages and numbers where relevant.
     - Practical recommendations by timeframe:
         Immediate (0–1 month)
         Short (1–3 months)
