@@ -14,6 +14,8 @@ from production_agent import run_production_agent
 from health_agent import run_health_agent
 from calf_agent import run_calf_agent
 from culling_agent import run_culling_agent
+from helpers import normalize_kpi_list
+from domain_config import build_domain_kpi_list
 
 try:
     from pdf_reporter import generate_master_summary_pdf
@@ -76,6 +78,10 @@ async def run_master_summary(
     progress = _ProgressBar("   PreAnalyzer")
     progress.start("Recopilando métricas")
 
+    def _prepare_domain_kpis(domain_name: str, suggested):
+        normalized = normalize_kpi_list(suggested or [])
+        return build_domain_kpi_list(domain_name, normalized)
+
     def _progress_hook(value: float, msg: str):
         progress.update(value, msg)
 
@@ -97,55 +103,70 @@ async def run_master_summary(
     tasks = []
 
     if "Fertility" in domains_to_investigate:
+        fertility_kpis = _prepare_domain_kpis(
+            "Fertility", domains_to_investigate["Fertility"]
+        )
         tasks.append(
             asyncio.to_thread(
                 run_fertility_agent,
                 farm_code,
-                domains_to_investigate["Fertility"],
+                fertility_kpis,
                 language,
                 months,
             )
         )
 
     if "Production" in domains_to_investigate:
+        production_kpis = _prepare_domain_kpis(
+            "Production", domains_to_investigate["Production"]
+        )
         tasks.append(
             asyncio.to_thread(
                 run_production_agent,
                 farm_code,
-                domains_to_investigate["Production"],
+                production_kpis,
                 language,
                 months,
             )
         )
 
     if "Health" in domains_to_investigate:
+        health_kpis = _prepare_domain_kpis(
+            "Health", domains_to_investigate["Health"]
+        )
         tasks.append(
             asyncio.to_thread(
                 run_health_agent,
                 farm_code,
-                domains_to_investigate["Health"],
+                health_kpis,
                 language,
                 months,
             )
         )
 
     if "Calf Raising" in domains_to_investigate:
+        calf_kpis = _prepare_domain_kpis(
+            "Calf Raising", domains_to_investigate["Calf Raising"]
+        )
         tasks.append(
             asyncio.to_thread(
                 run_calf_agent,
                 farm_code,
-                domains_to_investigate["Calf Raising"],
+                calf_kpis,
                 language,
                 months,
             )
         )
 
     if "Culling" in domains_to_investigate:
+        culling_kpis = _prepare_domain_kpis(
+            "Culling", domains_to_investigate["Culling"]
+        )
         tasks.append(
             asyncio.to_thread(
                 run_culling_agent,
                 farm_code,
-                domains_to_investigate["Culling"],
+                culling_kpis,
                 language,
                 months,
             )

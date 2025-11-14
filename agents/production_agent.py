@@ -4,6 +4,7 @@ import requests
 from openai import OpenAI
 
 from helpers import _extract_rows, normalize_kpi_list
+from domain_config import build_domain_kpi_list
 
 # === CONFIG ===
 BRIDGE_URL = "http://localhost:8090"
@@ -16,7 +17,8 @@ def run_production_agent(
 ):
     """Deep-dive analysis for production KPIs."""
 
-    kpi_names = normalize_kpi_list(kpis)
+    normalized_kpis = normalize_kpi_list(kpis)
+    kpi_names = build_domain_kpi_list("Production", normalized_kpis)
 
     # --- Fetch detailed time series ---
     params = {"farm_code": farm_code, "language": language, "months": months}

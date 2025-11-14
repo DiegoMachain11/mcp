@@ -2,6 +2,7 @@ import json, os, requests
 from openai import OpenAI
 
 from helpers import _extract_rows, normalize_kpi_list
+from domain_config import build_domain_kpi_list
 
 BRIDGE_URL = "http://localhost:8090"
 OPENAI_MODEL = "gpt-4o-mini"
@@ -9,7 +10,8 @@ openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 def run_health_agent(farm_code, kpis, language="es", months=3):
-    kpi_names = normalize_kpi_list(kpis)
+    normalized_kpis = normalize_kpi_list(kpis)
+    kpi_names = build_domain_kpi_list("Health", normalized_kpis)
 
     params = {"farm_code": farm_code, "language": language, "months": months}
     if kpi_names:
