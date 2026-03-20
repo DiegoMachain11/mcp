@@ -1,6 +1,7 @@
 import logging
+import os
 import unicodedata
-from typing import List, Optional, Sequence
+from typing import List, Optional, Sequence, Union
 
 import pandas as pd
 import requests
@@ -195,7 +196,7 @@ class DairyKPIClient:
 
     def _make_api_call(self, url: str) -> dict:
         try:
-            r = requests.get(url, timeout=30)
+            r = requests.get(url, timeout=30, verify=False)
             r.raise_for_status()
             return r.json()
         except requests.exceptions.RequestException as e:

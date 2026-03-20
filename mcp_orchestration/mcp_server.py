@@ -8,7 +8,7 @@ from mcp.server.fastmcp import FastMCP
 from mcp_orchestration.dairy_kpi_client import DairyKPIClient
 
 # Init your data client
-kpi_client = DairyKPIClient(api_base_url="http://200.23.18.75:8074/IREGIOService")
+kpi_client = DairyKPIClient(api_base_url="https://rgiomadero.com:9091/IREGIOService")
 
 # Build MCP server
 mcp = FastMCP("Dairy KPIs")

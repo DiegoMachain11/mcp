@@ -7,7 +7,7 @@ import numpy as np
 app = FastAPI(title="Dairy Farm KPI MCP Service")
 
 # Initialize your client
-client = DairyKPIClient(api_base_url="http://200.23.18.75:8074/IREGIOService")
+client = DairyKPIClient(api_base_url="https://rgiomadero.com:9091/IREGIOService")
 
 
 @app.get("/mcp/resources/farm_kpis", response_class=ORJSONResponse)
