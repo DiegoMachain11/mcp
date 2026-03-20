@@ -7,6 +7,8 @@ from openai import OpenAI
 
 from agents.helpers import _extract_rows, normalize_kpi_list
 from agents.domain_config import build_domain_kpi_list
+from agents.kpi_signals import compute_kpi_signals, format_signals_for_prompt, build_rag_query_from_signals
+from rag.retriever import get_rag_context
 
 # === CONFIG ===
 BRIDGE_URL = "http://localhost:8090"
@@ -46,9 +48,21 @@ def run_fertility_agent(
         {k: row.get(k) for k in ["Date", *kpi_names] if k in row} for row in rows
     ]
 
+    # --- Pre-process signals and retrieve scientific context ---
+    signals = compute_kpi_signals(rows, kpi_names)
+    signals_text = format_signals_for_prompt(signals)
+    rag_query = build_rag_query_from_signals(signals, "Fertility")
+    rag_context = get_rag_context(rag_query, domain="Fertility")
+
+    rag_section = (
+        f"\n=== SCIENTIFIC CONTEXT (from research literature) ===\n{rag_context}\n"
+        if rag_context
+        else ""
+    )
+
     # --- Build LLM prompt ---
     prompt = f"""
-    You are an expert dairy reproduction analyst.
+    You are an expert dairy reproduction analyst with 20 years of experience in Holstein herd management.
 
     Given fertility KPI data from farm '{farm_code}', analyze:
     - Conception, pregnancy and fertility trends
@@ -61,11 +75,14 @@ def run_fertility_agent(
         Medium (3–6 months)
         Long (6+ months)
 
+    When issues are found, reference the benchmark ranges and explain the magnitude of deviation.
+    Ground your recommendations in the scientific context when available.
+
     Return JSON strictly as:
     {{
         "domain": "Fertility",
         "summary": "...short paragraph overview...",
-        "issues": [ "list of detected problems" ],
+        "issues": [ "list of detected problems with current values vs. benchmarks" ],
         "recommendations": {{
             "Immediate": [ "..." ],
             "Short": [ "..." ],
@@ -75,8 +92,19 @@ def run_fertility_agent(
         "kpis_to_plot": [ "list of the key KPI column names" ]
     }}
 
-    KPI data (sample):
-    {json.dumps(fertility_data[-10:], indent=2, ensure_ascii=False)}
+=== BENCHMARK REFERENCE RANGES ===
+  pct_partos_logrados       : target 85–95% (concern <75%)
+  taza_prenez_21_dias       : target ≥21% (concern <15%)
+  deteccion_de_celos_ult2   : target ≥65% (concern <50%)
+  dias_abiertos_mx          : target <120 days (concern >150)
+  pct_total_abortos         : target <3% (concern >5%)
+  pct_fertilidad_en_vaquillas: target ≥65% (concern <50%)
+
+=== KPI SIGNAL ANALYSIS (trend, anomaly, benchmark status) ===
+{signals_text}
+{rag_section}
+=== RAW KPI DATA (last 10 periods) ===
+{json.dumps(fertility_data[-10:], indent=2, ensure_ascii=False)}
     """
 
     response = openai_client.chat.completions.create(

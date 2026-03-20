@@ -5,6 +5,8 @@ from openai import OpenAI
 
 from agents.helpers import _extract_rows, normalize_kpi_list
 from agents.domain_config import build_domain_kpi_list
+from agents.kpi_signals import compute_kpi_signals, format_signals_for_prompt, build_rag_query_from_signals
+from rag.retriever import get_rag_context
 
 BRIDGE_URL = "http://localhost:8090"
 OPENAI_MODEL = "gpt-4o-mini"
@@ -35,28 +37,55 @@ def run_health_agent(farm_code, kpis, language="es", months=3):
     print("Health rows fetched:", rows)
 
     data = [{k: r.get(k) for k in ["Date", *kpi_names]} for r in rows]
+
+    # --- Pre-process signals and retrieve scientific context ---
+    signals = compute_kpi_signals(rows, kpi_names)
+    signals_text = format_signals_for_prompt(signals)
+    rag_query = build_rag_query_from_signals(signals, "Health")
+    rag_context = get_rag_context(rag_query, domain="Health")
+
+    rag_section = (
+        f"\n=== SCIENTIFIC CONTEXT (from research literature) ===\n{rag_context}\n"
+        if rag_context
+        else ""
+    )
+
     prompt = f"""
-    You are a dairy herd health specialist.
+    You are a dairy herd veterinarian specializing in transition cow health with 20 years of experience.
     Analyze health KPIs for farm '{farm_code}'.
 
     Focus areas:
-    - Metabolic diseases (milk fever, ketosis)
+    - Metabolic diseases (milk fever/hypocalcemia, ketosis/hyperketonemia)
     - Reproductive infections (metritis, retained placenta)
     - Lameness, digestive disorders, and overall morbidity
     - Risk patterns and intervention priorities
-    - Return exact percentages and numbers where relevant.
+    - Return exact percentages and deviation from benchmarks where relevant.
+
+    When issues are found, reference the benchmark ranges and explain the magnitude of deviation.
+    Ground your recommendations in the scientific context when available.
 
     Return JSON:
     {{
       "domain":"Health",
       "summary":"...",
-      "issues":["..."],
+      "issues":["list of detected problems with current values vs. benchmarks"],
       "recommendations":{{"Immediate":[],"Short":[],"Medium":[],"Long":[]}},
       "kpis_to_plot":{json.dumps(kpi_names)}
     }}
 
-    Data sample:
-    {json.dumps(data[-10:],indent=2,ensure_ascii=False)}
+=== BENCHMARK REFERENCE RANGES ===
+  pct_cetosis                  : target <10% (concern >15%)
+  pct_fiebre_de_leche          : target <3% (concern >6%)
+  pct_metritis_primaria        : target <15% (concern >25%)
+  pct_retencion_de_placenta    : target <8% (concern >14%)
+  pct_vacas_c_prob_digestivos  : target <5% (concern >10%)
+  pct_vacas_c_prob_locomotores : target <10% (concern >20%)
+
+=== KPI SIGNAL ANALYSIS (trend, anomaly, benchmark status) ===
+{signals_text}
+{rag_section}
+=== RAW KPI DATA (last 10 periods) ===
+{json.dumps(data[-10:],indent=2,ensure_ascii=False)}
     """
     r = openai_client.chat.completions.create(
         model=OPENAI_MODEL,

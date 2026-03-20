@@ -5,6 +5,8 @@ from openai import OpenAI
 
 from agents.helpers import _extract_rows, normalize_kpi_list
 from agents.domain_config import build_domain_kpi_list
+from agents.kpi_signals import compute_kpi_signals, format_signals_for_prompt, build_rag_query_from_signals
+from rag.retriever import get_rag_context
 
 BRIDGE_URL = "http://localhost:8090"
 OPENAI_MODEL = "gpt-4o-mini"
@@ -36,28 +38,52 @@ def run_culling_agent(farm_code, kpis, language="es", months=3):
 
     data = [{k: r.get(k) for k in ["Date", *kpi_names]} for r in rows]
 
+    # --- Pre-process signals and retrieve scientific context ---
+    signals = compute_kpi_signals(rows, kpi_names)
+    signals_text = format_signals_for_prompt(signals)
+    rag_query = build_rag_query_from_signals(signals, "Culling")
+    rag_context = get_rag_context(rag_query, domain="Culling")
+
+    rag_section = (
+        f"\n=== SCIENTIFIC CONTEXT (from research literature) ===\n{rag_context}\n"
+        if rag_context
+        else ""
+    )
+
     prompt = f"""
-    You are an expert in dairy herd structure and longevity analysis.
+    You are an expert in dairy herd structure, longevity, and replacement economics.
 
     Analyze culling and mortality KPIs for farm '{farm_code}'.
     Focus on:
-    - Early-lactation culling and mortality
-    - Culling causes and age distribution
+    - Early-lactation culling and mortality (vs. target <5% before 60 DIM)
+    - Culling causes and age/parity distribution
     - Long-term retention and replacement balance
     - Strategies to reduce involuntary culling
-    - Return exact percentages and numbers where relevant.
+    - Return exact percentages and deviation from benchmarks where relevant.
+
+    When issues are found, reference the benchmark ranges and explain the magnitude of deviation.
+    Ground your recommendations in the scientific context when available.
 
     Return JSON:
     {{
       "domain":"Culling",
       "summary":"...",
-      "issues":["..."],
+      "issues":["list of detected problems with current values vs. benchmarks"],
       "recommendations":{{"Immediate":[],"Short":[],"Medium":[],"Long":[]}},
       "kpis_to_plot":{json.dumps(kpi_names)}
     }}
 
-    Data sample:
-    {json.dumps(data[-10:],indent=2,ensure_ascii=False)}
+=== BENCHMARK REFERENCE RANGES ===
+  pct_desecho_vacas_lt_60_del_periodo  : target <5% early culling (concern >8%)
+  pct_desecho_plus                     : target <25% total annual culling (concern >35%)
+  vacas_muertas_frescas_lt_30_del      : target <2% fresh cow deaths (concern >4%)
+  pct_vacas_muertas_frescas_lt_30_del  : target <2% fresh cow deaths (concern >4%)
+
+=== KPI SIGNAL ANALYSIS (trend, anomaly, benchmark status) ===
+{signals_text}
+{rag_section}
+=== RAW KPI DATA (last 10 periods) ===
+{json.dumps(data[-10:],indent=2,ensure_ascii=False)}
     """
     r = openai_client.chat.completions.create(
         model=OPENAI_MODEL,

@@ -7,6 +7,8 @@ from openai import OpenAI
 
 from agents.helpers import _extract_rows, normalize_kpi_list
 from agents.domain_config import build_domain_kpi_list
+from agents.kpi_signals import compute_kpi_signals, format_signals_for_prompt, build_rag_query_from_signals
+from rag.retriever import get_rag_context
 
 # === CONFIG ===
 BRIDGE_URL = "http://localhost:8090"
@@ -47,27 +49,42 @@ def run_production_agent(
         {k: row.get(k) for k in ["Date", *kpi_names] if k in row} for row in rows
     ]
 
+    # --- Pre-process signals and retrieve scientific context ---
+    signals = compute_kpi_signals(rows, kpi_names)
+    signals_text = format_signals_for_prompt(signals)
+    rag_query = build_rag_query_from_signals(signals, "Production")
+    rag_context = get_rag_context(rag_query, domain="Production")
+
+    rag_section = (
+        f"\n=== SCIENTIFIC CONTEXT (from research literature) ===\n{rag_context}\n"
+        if rag_context
+        else ""
+    )
+
     # --- Build LLM prompt ---
     prompt = f"""
-    You are an expert dairy production analyst.
+    You are an expert dairy production analyst with deep knowledge of lactation physiology.
     Analyze KPIs for farm '{farm_code}' focusing on:
-    - Milk yield performance (305-day, lactation peaks)
+    - Milk yield performance (305-day, lactation peaks by parity)
     - Feed efficiency and body condition implications
     - Lactation consistency across parities
     - Key production bottlenecks and seasonality
-    - Key risks or anomalies (e.g., low productions)
+    - Key risks or anomalies (e.g., low peak yields, poor persistency)
     - Practical recommendations by timeframe:
         Immediate (0–1 month)
         Short (1–3 months)
         Medium (3–6 months)
         Long (6+ months)
-    - Return exact percentages and numbers where relevant.
+    - Return exact values and deviation from benchmarks where relevant.
+
+    When issues are found, reference the benchmark ranges and explain the magnitude of deviation.
+    Ground your recommendations in the scientific context when available.
 
     Return JSON strictly as:
     {{
         "domain": "Production",
         "summary": "...short paragraph overview...",
-        "issues": [ "list of detected problems" ],
+        "issues": [ "list of detected problems with current values vs. benchmarks" ],
         "recommendations": {{
             "Immediate": [ "..." ],
             "Short": [ "..." ],
@@ -77,8 +94,19 @@ def run_production_agent(
         "kpis_to_plot": [ "list of the key KPI column names" ]
     }}
 
-    KPI data (sample):
-    {json.dumps(production_data[-10:], indent=2, ensure_ascii=False)}
+=== BENCHMARK REFERENCE RANGES ===
+  pico_de_prod_1a_lact      : target 25–35 kg/day (concern <20)
+  pico_de_prod_3_lact       : target 35–45 kg/day (concern <28)
+  prod_a_305_del_1a_lact    : target 7,000–9,000 kg (concern <5,500)
+  prod_a_305_del_2a_lact    : target 8,000–10,500 kg (concern <6,500)
+  prod_a_305_del_3_lact     : target 9,000–12,000 kg (concern <7,000)
+  eficiencia_de_ganancia_de_peso: target ≥0.55 (concern <0.45)
+
+=== KPI SIGNAL ANALYSIS (trend, anomaly, benchmark status) ===
+{signals_text}
+{rag_section}
+=== RAW KPI DATA (last 10 periods) ===
+{json.dumps(production_data[-10:], indent=2, ensure_ascii=False)}
     """
 
     response = openai_client.chat.completions.create(
