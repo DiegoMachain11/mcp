@@ -74,6 +74,47 @@ class _ProgressBar:
         sys.stdout.flush()
 
 
+def _format_causal_chains(causal_risks: dict) -> str:
+    """
+    Convert the raw causal_risks dict into human-readable chain sentences.
+
+    Instead of sending the LLM a blob of risk scores, we send:
+      "pct_cetosis (ANOMALOUS) → pct_metritis_primaria in ~2 months (strength: high)"
+
+    Strength labels:
+      cluster_strength >= 0.5  → high
+      cluster_strength >= 0.3  → moderate
+      else                     → low
+    """
+    if not causal_risks:
+        return "No significant causal risks identified from current anomalies."
+
+    def _strength_label(cluster_strength: float) -> str:
+        if cluster_strength >= 0.5:
+            return "high"
+        if cluster_strength >= 0.3:
+            return "moderate"
+        return "low"
+
+    def _lag_label(lag: int) -> str:
+        if lag <= 1:
+            return "~1 month"
+        return f"~{lag} months"
+
+    lines = []
+    for cause_alias, effects in causal_risks.items():
+        if not effects:
+            continue
+        lines.append(f"{cause_alias} is ANOMALOUS → likely downstream effects:")
+        for e in effects:
+            strength = _strength_label(e.get("cluster_strength", 0))
+            lag = _lag_label(e.get("lag", 1))
+            lines.append(f"    • {e['kpi']} in {lag} (causal strength: {strength})")
+        lines.append("")
+
+    return "\n".join(lines).strip()
+
+
 async def run_master_summary(
     farm_code: str = "GM",
     language: str = "es",
@@ -166,7 +207,9 @@ async def run_master_summary(
         pre_summary["causal_predicted_risks"], indent=2, ensure_ascii=False
     )
 
+    causal_chains_text = _format_causal_chains(causal_risks)
     print("Causal Risks:", causal_risks_json)
+    print("Causal Chains:\n", causal_chains_text)
 
     domains_to_investigate = pre_summary.get("domains_to_investigate", {})
     domains_in_good_state = pre_summary.get("domains_in_good_state", {})
@@ -260,52 +303,37 @@ async def run_master_summary(
     print("🧠 Step 4: Synthesizing overall summary...")
     domain_summaries = json.dumps(combined["domains"], indent=2, ensure_ascii=False)
 
-    prompt = f"""
-    You are a senior dairy management consultant and expert in causal farm performance analysis.
-
-    Your task is to synthesize all domain-level analyses and the causal predictions into a single, coherent, highly actionable farm-level report.
-
-    You MUST incorporate both:
-    1. The domain findings (current measured performance)
-    2. The causal predictions (future risks inferred from the farm’s causal graph)
-
-    Your analysis MUST:
-    - Identify which KPIs are currently underperforming
-    - Identify which KPIs are likely to deteriorate next based on causal risk scores
-    - Explain the causal chains (e.g., “X anomaly → Y at-risk in 2 months”)
-    - Prioritize risks by causal strength and risk score
-    - Distinguish between root causes and downstream effects
-    - Include exact values, percentages, deltas, and observed KPI magnitudes when relevant
-    - Provide proactive, time-aware interventions based on lag structure (e.g., “take action within 30 days”)
-    - Give strategic, operational, and preventive recommendations
-    - Produce a clear prioritization for the next 3 months
-    - Provide a confidence rating (Low / Medium / High)
-
-    You MUST return JSON strictly as:
-    {{
-        "executive_summary": "...high-level insights...",
-        "priority_actions": [ "...", "..." ],
-        "overall_health": "High | Medium | Low",
-        "domains_overview": {{ <short summary of each domain> }}
-    }}
-
-    Inputs you will use:
-
-    === Domain Analyses (current performance) ===
-    {domain_summaries}
-
-    === Causal Predictions (future risks inferred from causal graph) ===
-    {causal_risks_json}
-
-    Instructions for causal reasoning:
-    - Identify the highest-risk causal pathways first (highest risk scores).
-    - For each upstream anomalous KPI, identify downstream KPIs with strong causal risk.
-    - Do not mention the exact score numbers, but use them to prioritize your analysis.
-    - Use lag values to infer timelines (“in ~2 months”, “within 1 month”, etc.).
-    - Highlight when multiple upstream indicators converge on the same future risk.
-    - Explain cause → effect relationships clearly.
-    - Include at least one preventive recommendation for each major causal risk cluster.
-    """
+    prompt = (
+        "You are a senior dairy management consultant and expert in causal farm performance analysis.\n\n"
+        "Your task is to synthesize all domain-level analyses and the causal chain predictions "
+        "into a single, coherent, highly actionable farm-level report.\n\n"
+        "You MUST return JSON strictly as:\n"
+        "{\n"
+        '  "executive_summary": "2-3 sentence overview of the farm current state and most critical risks",\n'
+        '  "priority_actions": ["Top 3-5 actions, each starting with a verb and including a timeline"],\n'
+        '  "overall_health": "High | Medium | Low",\n'
+        '  "domains_overview": {"DomainName": "one sentence summary"},\n'
+        '  "causal_chains": [\n'
+        "    {\n"
+        '      "cause": "alias of the anomalous KPI",\n'
+        '      "effect": "alias of the downstream KPI at risk",\n'
+        '      "timeline": "e.g. ~2 months",\n'
+        '      "severity": "high | moderate | low",\n'
+        '      "reasoning": "one sentence explaining why this causal link matters",\n'
+        '      "preventive_action": "one concrete action to take now to prevent the downstream effect"\n'
+        "    }\n"
+        "  ]\n"
+        "}\n\n"
+        "Rules:\n"
+        "- Only include causal chains where the causal strength is moderate or high.\n"
+        "- For causal chains, use the exact KPI aliases from the input.\n"
+        "- Priority actions should be ordered by urgency (most urgent first).\n"
+        "- Use exact values from the domain analyses when available.\n\n"
+        "=== Domain Analyses (current performance) ===\n"
+        f"{domain_summaries}\n\n"
+        "=== Causal Risk Chains (pre-computed from farm causal graph) ===\n"
+        f"{causal_chains_text}\n"
+    )
 
     response = openai_client.chat.completions.create(
         model=OPENAI_MODEL,
