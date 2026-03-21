@@ -114,6 +114,28 @@ if analyze_button:
                 for action in priority_actions:
                     st.markdown(f"- {action}")
 
+            causal_chains = final_summary.get("causal_chains", [])
+            if causal_chains:
+                st.markdown("### 🔗 Causal Risk Chains")
+                st.caption("KPIs that are anomalous today and their predicted downstream effects.")
+                severity_colors = {"high": "🔴", "moderate": "🟡", "low": "🟢"}
+                for chain in causal_chains:
+                    severity = chain.get("severity", "low")
+                    icon = severity_colors.get(severity, "⚪")
+                    cause = chain.get("cause", "?")
+                    effect = chain.get("effect", "?")
+                    timeline = chain.get("timeline", "?")
+                    reasoning = chain.get("reasoning", "")
+                    action = chain.get("preventive_action", "")
+                    with st.container(border=True):
+                        st.markdown(
+                            f"{icon} **{cause}** → **{effect}** &nbsp;&nbsp; `{timeline}` &nbsp;&nbsp; severity: *{severity}*"
+                        )
+                        if reasoning:
+                            st.markdown(f"_{reasoning}_")
+                        if action:
+                            st.markdown(f"**Preventive action:** {action}")
+
             domains_overview = final_summary.get("domains_overview", {})
             if domains_overview:
                 st.markdown("### 📂 Domain Snapshots")
