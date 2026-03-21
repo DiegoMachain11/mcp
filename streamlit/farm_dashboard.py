@@ -102,7 +102,7 @@ if analyze_button:
 
             master_report = generate_master_summary(farm_code, language, months)
             try:
-                saved_path = save_run(master_report)
+                saved_path = save_run(master_report, months=months)
                 st.toast(f"Run saved to history: {saved_path.name}", icon="💾")
             except Exception as e:
                 st.warning(f"Could not save run history: {e}")
@@ -225,8 +225,10 @@ if analyze_button:
                     health_icon = {"High": "🟢", "Medium": "🟡", "Low": "🔴"}.get(
                         health, "⚪"
                     )
+                    months_label = rec.get("months_analyzed")
+                    months_str = f" · {months_label}mo window" if months_label else ""
                     with st.expander(
-                        f"{health_icon} {run_date} — Overall health: {health}"
+                        f"{health_icon} {run_date}{months_str} — Overall health: {health}"
                     ):
                         urgent = rec.get("urgent_kpis", [])
                         if urgent:

@@ -21,12 +21,13 @@ HISTORY_DIR = REPO_ROOT / "data" / "farm_history"
 
 # ── Save ─────────────────────────────────────────────────────────────────────
 
-def save_run(combined: dict) -> Path:
+def save_run(combined: dict, months: int = 0) -> Path:
     """
     Extract the key conclusions from a master summary result and persist them.
 
     Args:
         combined: The dict returned by run_master_summary().
+        months:   Analysis window in months (for context in future prompts).
 
     Returns:
         Path to the saved file.
@@ -37,6 +38,7 @@ def save_run(combined: dict) -> Path:
     record = {
         "run_date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         "run_timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "months_analyzed": months,
         "overall_health": final.get("overall_health", "Unknown"),
         "urgent_kpis": combined.get("urgent_kpis", []),
         "executive_summary": final.get("executive_summary", ""),
@@ -60,7 +62,12 @@ def save_run(combined: dict) -> Path:
     farm_dir = HISTORY_DIR / farm_code
     farm_dir.mkdir(parents=True, exist_ok=True)
 
-    filename = datetime.now(timezone.utc).strftime("%Y-%m-%d_%H%M%S") + ".json"
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    existing = list(farm_dir.glob(f"{today}_*.json"))
+    if existing:
+        return existing[0]
+
+    filename = today + datetime.now(timezone.utc).strftime("_%H%M%S") + ".json"
     path = farm_dir / filename
 
     with path.open("w", encoding="utf-8") as f:
@@ -113,7 +120,9 @@ def format_history_for_prompt(records: list[dict]) -> str:
     for rec in records:
         date = rec.get("run_date", "unknown date")
         health = rec.get("overall_health", "?")
-        lines.append(f"[Run: {date} | Overall health: {health}]")
+        months_analyzed = rec.get("months_analyzed")
+        window_str = f" | Window: {months_analyzed} months" if months_analyzed else ""
+        lines.append(f"[Run: {date}{window_str} | Overall health: {health}]")
 
         urgent = rec.get("urgent_kpis", [])
         if urgent:
