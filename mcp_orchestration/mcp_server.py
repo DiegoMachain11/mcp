@@ -3,15 +3,44 @@ from typing import List, Dict, Optional
 import numpy as np
 import pandas as pd
 import logging
+import sys
+from pathlib import Path
 from mcp.server.fastmcp import FastMCP
 
 from mcp_orchestration.dairy_kpi_client import DairyKPIClient
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.append(str(ROOT_DIR))
+
+from agents.kpi_cache import get as cache_get, put as cache_put
 
 # Init your data client
 kpi_client = DairyKPIClient(api_base_url="https://rgiomadero.com:9091/IREGIOService")
 
 # Build MCP server
 mcp = FastMCP("Dairy KPIs")
+
+
+def _fetch_with_cache(farm_code: str, language: str, months: int) -> pd.DataFrame:
+    """
+    Return full KPI DataFrame for a farm, using the monthly cache.
+    On cache miss: fetches ALL KPIs from IREGIO and caches the result.
+    On cache hit: returns the cached DataFrame instantly.
+    """
+    cached = cache_get(farm_code)
+    if cached is not None:
+        logging.info(f"Cache hit for farm {farm_code}")
+        return cached
+
+    logging.info(f"Cache miss for farm {farm_code} — fetching from IREGIO")
+    df = kpi_client.fetch_farm_kpis(
+        farm_code=farm_code,
+        language=language,
+        months=months,
+    )
+    cache_put(farm_code, df)
+    return df
 
 
 def _sanitize_df(df: pd.DataFrame) -> List[Dict]:
@@ -39,12 +68,15 @@ def get_farm_kpis(
     logging.info(
         f"Fetching KPIs for farm {farm_code}, language={language}, months={months}"
     )
-    df = kpi_client.fetch_farm_kpis(
-        farm_code=farm_code,
-        language=language,
-        months=months,
-        selected_kpis=selected_kpis,
-    )
+    df = _fetch_with_cache(farm_code, language, months)
+
+    if selected_kpis:
+        cols = ["Date"] + [c for c in selected_kpis if c in df.columns]
+        df = df[cols]
+
+    now = pd.Timestamp.now(tz="UTC").tz_localize(None)
+    df = df[df["Date"] > (now - pd.Timedelta(days=int(30 * months)))]
+
     return _sanitize_df(df)
 
 
@@ -89,15 +121,14 @@ def summarize_kpis(
     logging.info(
         f"Summarizing KPIs for farm {farm_code}, selected_kpis={selected_kpis}, months={months}"
     )
-    df = kpi_client.fetch_farm_kpis(
-        farm_code=farm_code,
-        language=language,
-        months=months,
-        selected_kpis=selected_kpis,
-    )
+    df = _fetch_with_cache(farm_code, language, months)
     days = int(30 * months)
     now = pd.Timestamp.now(tz="UTC").tz_localize(None)
     recent = df[df["Date"] > (now - pd.Timedelta(days=days))].copy()
+
+    if selected_kpis:
+        keep = ["Date"] + [c for c in selected_kpis if c in recent.columns]
+        recent = recent[keep]
 
     logging.info(df)
 
