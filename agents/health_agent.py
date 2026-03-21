@@ -61,14 +61,17 @@ def run_health_agent(farm_code, kpis, language="es", months=3):
     - Risk patterns and intervention priorities
     - Return exact percentages and deviation from benchmarks where relevant.
 
-    When issues are found, reference the benchmark ranges and explain the magnitude of deviation.
+    Use the `last_value` from the KPI SIGNAL ANALYSIS as the current value for each KPI.
+    When reporting issues, always state the current value and the benchmark it violates.
+    If a KPI shows `data_quality: poor` or `sparse`, note the limited data but still report the last known value.
+    Do NOT invent values or say "not provided" — only report what the signal analysis shows.
     Ground your recommendations in the scientific context when available.
 
     Return JSON:
     {{
       "domain":"Health",
       "summary":"...",
-      "issues":["list of detected problems with current values vs. benchmarks"],
+      "issues":["Each issue as a plain string, e.g.: 'Ketosis at 18% (benchmark <10%) — critical_high, worsening trend'"],
       "recommendations":{{"Immediate":[],"Short":[],"Medium":[],"Long":[]}},
       "kpis_to_plot":{json.dumps(kpi_names)}
     }}

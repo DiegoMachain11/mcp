@@ -98,7 +98,7 @@ KPI_BENCHMARKS: dict[str, dict] = {
         "target_range": "30–40 kg/day (concern <25)",
         "rag_query": "peak milk yield second lactation multiparous dairy cow",
     },
-    "pico_de_prod_3_lact": {
+    "pico_de_prod_3plus_lact": {
         "name": "Peak Production – 3rd+ Lactation",
         "unit": "kg/day",
         "higher_is_better": True,
@@ -125,7 +125,7 @@ KPI_BENCHMARKS: dict[str, dict] = {
         "target_range": "8,000–10,500 kg (concern <6,500)",
         "rag_query": "305-day milk production lactation persistency dairy cow management",
     },
-    "prod_a_305_del_3_lact": {
+    "prod_a_305_del_3plus_lact": {
         "name": "305-Day Production – 3rd+ Lactation",
         "unit": "kg",
         "higher_is_better": True,

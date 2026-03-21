@@ -6,3 +6,6 @@ __pycache__/
 .DS_Store
 
 notes.txt
+
+papers/*
+rag/db/

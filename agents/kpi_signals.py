@@ -50,7 +50,8 @@ def compute_kpi_signals(rows: list[dict], kpi_names: list[str]) -> dict[str, dic
         total = len(df)
         valid = len(series)
         null_pct = (total - valid) / total if total > 0 else 1.0
-        data_quality = "good" if null_pct < 0.2 else ("sparse" if null_pct < 0.5 else "poor")
+        # Even sparse/poor quality — still surface the last known value
+        data_quality = "good" if null_pct < 0.2 else ("sparse" if null_pct < 0.5 else "poor (limited data — use with caution)")
 
         last_val = float(series.iloc[-1])
         mean_val = float(series.mean())

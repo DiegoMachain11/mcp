@@ -77,14 +77,17 @@ def run_production_agent(
         Long (6+ months)
     - Return exact values and deviation from benchmarks where relevant.
 
-    When issues are found, reference the benchmark ranges and explain the magnitude of deviation.
+    Use the `last_value` from the KPI SIGNAL ANALYSIS as the current value for each KPI.
+    When reporting issues, always state the current value and the benchmark it violates.
+    If a KPI shows `data_quality: poor` or `sparse`, note the limited data but still report the last known value.
+    Do NOT invent values or say "not provided" — only report what the signal analysis shows.
     Ground your recommendations in the scientific context when available.
 
     Return JSON strictly as:
     {{
         "domain": "Production",
         "summary": "...short paragraph overview...",
-        "issues": [ "list of detected problems with current values vs. benchmarks" ],
+        "issues": [ "Each issue as a plain string, e.g.: 'Peak production 1st lactation at 19 kg/day (benchmark 25–35) — below_target, worsening trend'" ],
         "recommendations": {{
             "Immediate": [ "..." ],
             "Short": [ "..." ],
@@ -95,11 +98,12 @@ def run_production_agent(
     }}
 
 === BENCHMARK REFERENCE RANGES ===
-  pico_de_prod_1a_lact      : target 25–35 kg/day (concern <20)
-  pico_de_prod_3_lact       : target 35–45 kg/day (concern <28)
-  prod_a_305_del_1a_lact    : target 7,000–9,000 kg (concern <5,500)
-  prod_a_305_del_2a_lact    : target 8,000–10,500 kg (concern <6,500)
-  prod_a_305_del_3_lact     : target 9,000–12,000 kg (concern <7,000)
+  pico_de_prod_1a_lact       : target 25–35 kg/day (concern <20)
+  pico_de_prod_2a_lact       : target 30–40 kg/day (concern <25)
+  pico_de_prod_3plus_lact    : target 35–45 kg/day (concern <28)
+  prod_a_305_del_1a_lact     : target 7,000–9,000 kg (concern <5,500)
+  prod_a_305_del_2a_lact     : target 8,000–10,500 kg (concern <6,500)
+  prod_a_305_del_3plus_lact  : target 9,000–12,000 kg (concern <7,000)
   eficiencia_de_ganancia_de_peso: target ≥0.55 (concern <0.45)
 
 === KPI SIGNAL ANALYSIS (trend, anomaly, benchmark status) ===

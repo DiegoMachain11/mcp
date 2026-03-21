@@ -75,14 +75,17 @@ def run_fertility_agent(
         Medium (3–6 months)
         Long (6+ months)
 
-    When issues are found, reference the benchmark ranges and explain the magnitude of deviation.
+    Use the `last_value` from the KPI SIGNAL ANALYSIS as the current value for each KPI.
+    When reporting issues, always state the current value and the benchmark it violates.
+    If a KPI shows `data_quality: poor` or `sparse`, note the limited data but still report the last known value.
+    Do NOT invent values or say "not provided" — only report what the signal analysis shows.
     Ground your recommendations in the scientific context when available.
 
     Return JSON strictly as:
     {{
         "domain": "Fertility",
         "summary": "...short paragraph overview...",
-        "issues": [ "list of detected problems with current values vs. benchmarks" ],
+        "issues": [ "Each issue as a plain string, e.g.: '21-day pregnancy rate at 14% (benchmark ≥21%) — below_target, worsening trend'" ],
         "recommendations": {{
             "Immediate": [ "..." ],
             "Short": [ "..." ],

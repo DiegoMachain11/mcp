@@ -20,13 +20,16 @@ import os
 import re
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PAPERS_DIR = REPO_ROOT / "papers"
 DB_DIR = REPO_ROOT / "rag" / "db"
 
-CHUNK_SIZE = 1400       # characters per chunk
-CHUNK_OVERLAP = 180     # overlap between consecutive chunks
+CHUNK_SIZE = 1400  # characters per chunk
+CHUNK_OVERLAP = 180  # overlap between consecutive chunks
 EMBEDDING_MODEL = "text-embedding-3-small"
 COLLECTION_NAME = "dairy_science"
 
@@ -49,7 +52,9 @@ def _read_txt(path: Path) -> str:
     return path.read_text(encoding="utf-8", errors="replace")
 
 
-def _chunk_text(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP) -> list[str]:
+def _chunk_text(
+    text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP
+) -> list[str]:
     """Split text into overlapping chunks."""
     # Normalize whitespace
     text = re.sub(r"\s+", " ", text).strip()
@@ -77,11 +82,32 @@ def _infer_domain_tags(filename: str, text_snippet: str) -> list[str]:
     """Guess which farm domains are most relevant based on filename and content."""
     text = (filename + " " + text_snippet[:500]).lower()
     tags = []
-    if any(w in text for w in ["fertility", "conception", "reproduction", "pregnanc", "estrus", "calving"]):
+    if any(
+        w in text
+        for w in [
+            "fertility",
+            "conception",
+            "reproduction",
+            "pregnancy",
+            "estrus",
+            "calving",
+        ]
+    ):
         tags.append("Fertility")
     if any(w in text for w in ["milk yield", "production", "lactation", "peak milk"]):
         tags.append("Production")
-    if any(w in text for w in ["ketosis", "metritis", "lameness", "health", "disease", "hypocalcemia", "transition"]):
+    if any(
+        w in text
+        for w in [
+            "ketosis",
+            "metritis",
+            "lameness",
+            "health",
+            "disease",
+            "hypocalcemia",
+            "transition",
+        ]
+    ):
         tags.append("Health")
     if any(w in text for w in ["calf", "heifer", "weaning", "colostrum", "preweaning"]):
         tags.append("Calf Raising")
@@ -94,7 +120,11 @@ def run_ingestion():
     import chromadb
     from openai import OpenAI
 
-    openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    api_key = os.getenv("OPENAI_API_KEY")
+
+    print("API_KEY = ", api_key)
+
+    openai_client = OpenAI(api_key=api_key)
 
     DB_DIR.mkdir(parents=True, exist_ok=True)
     chroma = chromadb.PersistentClient(path=str(DB_DIR))
@@ -140,7 +170,9 @@ def run_ingestion():
             )
             embeddings = [item.embedding for item in response.data]
 
-            ids = [_stable_id(paper_path.name, batch_start + i) for i in range(len(batch))]
+            ids = [
+                _stable_id(paper_path.name, batch_start + i) for i in range(len(batch))
+            ]
             metadatas = [
                 {
                     "source": paper_path.name,
@@ -160,7 +192,9 @@ def run_ingestion():
         total_chunks += len(chunks)
         print(f"  ✓ Ingested {len(chunks)} chunks from {paper_path.name}")
 
-    print(f"\n✅ Done. Total chunks in DB: {collection.count()} (added {total_chunks} this run).")
+    print(
+        f"\n✅ Done. Total chunks in DB: {collection.count()} (added {total_chunks} this run)."
+    )
 
 
 if __name__ == "__main__":
