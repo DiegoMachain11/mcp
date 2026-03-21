@@ -11,6 +11,7 @@ from typing import Optional
 from openai import OpenAI
 
 from agents.pre_analyzer_agent import run_pre_analysis
+from agents.farm_history import load_recent_runs, format_history_for_prompt
 from agents.fertility_agent import run_fertility_agent
 from agents.production_agent import run_production_agent
 from agents.health_agent import run_health_agent
@@ -303,6 +304,16 @@ async def run_master_summary(
     print("🧠 Step 4: Synthesizing overall summary...")
     domain_summaries = json.dumps(combined["domains"], indent=2, ensure_ascii=False)
 
+    past_runs = load_recent_runs(farm_code, n=2)
+    history_text = format_history_for_prompt(past_runs)
+    if past_runs:
+        print(f"📚 Loaded {len(past_runs)} historical run(s) for farm {farm_code}")
+
+    history_section = (
+        f"\n{history_text}\n\n"
+        if history_text else ""
+    )
+
     prompt = (
         "You are a senior dairy management consultant and expert in causal farm performance analysis.\n\n"
         "Your task is to synthesize all domain-level analyses and the causal chain predictions "
@@ -328,7 +339,10 @@ async def run_master_summary(
         "- Only include causal chains where the causal strength is moderate or high.\n"
         "- For causal chains, use the exact KPI aliases from the input.\n"
         "- Priority actions should be ordered by urgency (most urgent first).\n"
-        "- Use exact values from the domain analyses when available.\n\n"
+        "- Use exact values from the domain analyses when available.\n"
+        "- If historical context is provided, reference it: note if a problem persists across runs "
+        "or if a previously recommended action appears to have improved a KPI.\n\n"
+        f"{history_section}"
         "=== Domain Analyses (current performance) ===\n"
         f"{domain_summaries}\n\n"
         "=== Causal Risk Chains (pre-computed from farm causal graph) ===\n"
