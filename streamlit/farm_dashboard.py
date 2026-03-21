@@ -13,6 +13,7 @@ if str(ROOT_DIR) not in sys.path:
     sys.path.append(str(ROOT_DIR))
 
 from agents.master_summary_agent import run_master_summary
+from agents.farm_history import save_run, load_recent_runs
 
 # ================= CONFIG ====================
 BRIDGE_URL = "http://localhost:8090"
@@ -29,7 +30,7 @@ Your data, your insights — powered by Dairy Farm Intelligence Unit.
 
 farm_code = st.text_input("Farm Code", "GM")
 language = "es"
-months = st.slider("Months to analyze", 1, 24, 3)
+months = st.slider("Months to analyze", 3, 24, 3)
 
 analyze_button = st.button("🔍 Analyze Farm Performance")
 
@@ -100,6 +101,11 @@ if analyze_button:
             st.markdown("---")
 
             master_report = generate_master_summary(farm_code, language, months)
+            try:
+                saved_path = save_run(master_report)
+                st.toast(f"Run saved to history: {saved_path.name}", icon="💾")
+            except Exception as e:
+                st.warning(f"Could not save run history: {e}")
             final_summary = master_report.get("final_summary", {})
             overview = master_report.get("overview", "")
 
@@ -117,7 +123,9 @@ if analyze_button:
             causal_chains = final_summary.get("causal_chains", [])
             if causal_chains:
                 st.markdown("### 🔗 Causal Risk Chains")
-                st.caption("KPIs that are anomalous today and their predicted downstream effects.")
+                st.caption(
+                    "KPIs that are anomalous today and their predicted downstream effects."
+                )
                 severity_colors = {"high": "🔴", "moderate": "🟡", "low": "🟢"}
                 for chain in causal_chains:
                     severity = chain.get("severity", "low")
@@ -206,6 +214,57 @@ if analyze_button:
                     st.error(f"Error plotting AI-selected KPIs: {e}")
             else:
                 st.info("No KPIs suggested by AI for plotting.")
+            # --- History panel ---
+            past_runs = load_recent_runs(farm_code, n=5)
+            if past_runs:
+                st.markdown("---")
+                st.markdown("### 📋 Past Analyses")
+                for rec in past_runs:
+                    run_date = rec.get("run_date", "unknown")
+                    health = rec.get("overall_health", "?")
+                    health_icon = {"High": "🟢", "Medium": "🟡", "Low": "🔴"}.get(
+                        health, "⚪"
+                    )
+                    with st.expander(
+                        f"{health_icon} {run_date} — Overall health: {health}"
+                    ):
+                        urgent = rec.get("urgent_kpis", [])
+                        if urgent:
+                            st.markdown(f"**Urgent KPIs:** {', '.join(urgent)}")
+
+                        summary = rec.get("executive_summary", "")
+                        if summary:
+                            st.markdown(f"_{summary}_")
+
+                        actions = rec.get("priority_actions", [])
+                        if actions:
+                            st.markdown("**Priority actions recommended:**")
+                            for a in actions:
+                                st.markdown(f"- {a}")
+
+                        chains = rec.get("causal_chains", [])
+                        if chains:
+                            st.markdown("**Causal risks flagged:**")
+                            severity_icons = {
+                                "high": "🔴",
+                                "moderate": "🟡",
+                                "low": "🟢",
+                            }
+                            for c in chains:
+                                icon = severity_icons.get(c.get("severity", ""), "⚪")
+                                st.markdown(
+                                    f"{icon} `{c['cause']}` → `{c['effect']}` "
+                                    f"in {c.get('timeline','?')} — _{c.get('preventive_action','')}_"
+                                )
+
+                        domain_issues = rec.get("domain_issues", {})
+                        if domain_issues:
+                            st.markdown("**Issues detected:**")
+                            for domain, issues in domain_issues.items():
+                                if issues:
+                                    for issue in issues:
+                                        st.markdown(f"- **{domain}:** {issue}")
+
         except requests.exceptions.RequestException as e:
             st.error(f"Error calling MCP bridge: {e}")
         except Exception as e:
