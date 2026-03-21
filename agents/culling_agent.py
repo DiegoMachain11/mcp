@@ -67,6 +67,12 @@ def run_culling_agent(farm_code, kpis, language="es", months=3):
     Do NOT invent values or say "not provided" — only report what the signal analysis shows.
     Ground your recommendations in the scientific context when available.
 
+    Before writing your JSON, reason in this order:
+    1. Which KPIs violate their benchmark? (compare last_value to reference ranges)
+    2. For each violation: is the trend worsening, stable, or improving?
+    3. Are any flagged KPIs causally linked to each other?
+    4. What is the single most urgent action?
+
     Return JSON:
     {{
       "domain":"Culling",

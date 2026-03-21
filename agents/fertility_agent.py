@@ -81,6 +81,12 @@ def run_fertility_agent(
     Do NOT invent values or say "not provided" — only report what the signal analysis shows.
     Ground your recommendations in the scientific context when available.
 
+    Before writing your JSON, reason in this order:
+    1. Which KPIs violate their benchmark? (compare last_value to reference ranges)
+    2. For each violation: is the trend worsening, stable, or improving?
+    3. Are any flagged KPIs causally linked to each other?
+    4. What is the single most urgent action?
+
     Return JSON strictly as:
     {{
         "domain": "Fertility",
