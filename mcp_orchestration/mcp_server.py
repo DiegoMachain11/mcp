@@ -213,16 +213,29 @@ def plot_selected_kpis(
         return {"error": f"No valid KPIs found among {selected_kpis}"}
 
     import io, base64, matplotlib.pyplot as plt
+    import math as _math
 
-    fig, ax = plt.subplots(figsize=(10, 6))
-    for kpi in valid_kpis:
-        ax.plot(recent["Date"], recent[kpi], label=kpi.replace("_", " ").title())
+    n_kpis = len(valid_kpis)
+    cols = min(n_kpis, 3)
+    rows = _math.ceil(n_kpis / cols)
+    fig, axes = plt.subplots(rows, cols, figsize=(5 * cols, 3 * rows), squeeze=False)
 
-    ax.set_title(f"AI-Selected KPIs for {farm_code}")
-    ax.set_xlabel("Date")
-    ax.set_ylabel("Value")
-    ax.legend()
-    ax.grid(True)
+    for idx, kpi in enumerate(valid_kpis):
+        r, c = divmod(idx, cols)
+        ax = axes[r][c]
+        series = recent[["Date", kpi]].dropna()
+        ax.plot(series["Date"], series[kpi], marker="o", markersize=3, linewidth=1.5)
+        ax.set_title(kpi.replace("_", " ").title(), fontsize=9, fontweight="bold")
+        ax.tick_params(axis="both", labelsize=7)
+        ax.grid(True, alpha=0.3)
+        plt.setp(ax.get_xticklabels(), rotation=30, ha="right")
+
+    # Hide unused subplots
+    for idx in range(n_kpis, rows * cols):
+        r, c = divmod(idx, cols)
+        axes[r][c].set_visible(False)
+
+    fig.suptitle(f"AI-Selected KPIs — {farm_code}", fontsize=12, fontweight="bold")
     plt.tight_layout()
 
     buf = io.BytesIO()
