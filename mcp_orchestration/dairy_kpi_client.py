@@ -1,6 +1,7 @@
 import logging
 import os
 import unicodedata
+from pathlib import Path
 from typing import List, Optional, Sequence, Union
 
 import pandas as pd
@@ -124,8 +125,15 @@ class DairyKPIClient:
         self._kpi_catalog = self._load_catalog()
 
     def _load_catalog(self) -> pd.DataFrame:
-        """Return the legacy KPI dictionary that is known to work reliably."""
-        df = pd.DataFrame(LEGACY_KPI_DATA)
+        """Load KPI catalog from expanded JSON file, falling back to legacy data."""
+        catalog_path = Path(__file__).resolve().parents[1] / "data" / "expanded_kpi_catalog.json"
+        if catalog_path.exists():
+            import json as _json
+            with catalog_path.open("r", encoding="utf-8") as fh:
+                data = _json.load(fh)
+            df = pd.DataFrame(data)
+        else:
+            df = pd.DataFrame(LEGACY_KPI_DATA)
         df["alias"] = df["Description"].apply(self._make_alias)
         return df
 

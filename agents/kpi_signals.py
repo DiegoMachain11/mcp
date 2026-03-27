@@ -79,7 +79,7 @@ def compute_kpi_signals(rows: list[dict], kpi_names: list[str]) -> dict[str, dic
         if std_val > 0:
             anomaly = abs(last_val - mean_val) / std_val > 1.5
 
-        # Benchmark comparison
+        # Benchmark comparison — direction-aware
         bench = KPI_BENCHMARKS.get(kpi, {})
         vs_benchmark = "unknown"
         if bench:
@@ -89,16 +89,22 @@ def compute_kpi_signals(rows: list[dict], kpi_names: list[str]) -> dict[str, dic
             t_min = bench.get("target_min")
             t_max = bench.get("target_max")
 
-            if w_min is not None and last_val < w_min:
-                vs_benchmark = "critical_low"
-            elif w_max is not None and last_val > w_max:
-                vs_benchmark = "critical_high"
-            elif t_min is not None and last_val < t_min:
-                vs_benchmark = "below_target"
-            elif t_max is not None and last_val > t_max:
-                vs_benchmark = "above_target"
+            if higher_is_better:
+                # Only flag LOW values as problems; high values are good
+                if w_min is not None and last_val < w_min:
+                    vs_benchmark = "critical_low"
+                elif t_min is not None and last_val < t_min:
+                    vs_benchmark = "below_target"
+                else:
+                    vs_benchmark = "within_target"
             else:
-                vs_benchmark = "within_target"
+                # Only flag HIGH values as problems; low values are good
+                if w_max is not None and last_val > w_max:
+                    vs_benchmark = "critical_high"
+                elif t_max is not None and last_val > t_max:
+                    vs_benchmark = "above_target"
+                else:
+                    vs_benchmark = "within_target"
 
         signals[kpi] = {
             "last_value": round(last_val, 3),

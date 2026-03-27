@@ -1,0 +1,6651 @@
+{
+  "RG": {
+    "section": "RG",
+    "description": "RESUMEN GENERAL DEL ESTABLO",
+    "kpis": [
+      {
+        "code": "1",
+        "name": "Becerras < 1 M",
+        "alias": "becerras_lt_1_m"
+      },
+      {
+        "code": "2",
+        "name": "Becerras 1 a 2 M",
+        "alias": "becerras_1_a_2_m"
+      },
+      {
+        "code": "3",
+        "name": "Novillas 2 a 6 M",
+        "alias": "novillas_2_a_6_m"
+      },
+      {
+        "code": "4",
+        "name": "Novillas 7 a 13 M",
+        "alias": "novillas_7_a_13_m"
+      },
+      {
+        "code": "6",
+        "name": "V. Inseminadas 13-17 M",
+        "alias": "v_inseminadas_13_17_m"
+      },
+      {
+        "code": "7",
+        "name": "V. Inseminadas > 17 M",
+        "alias": "v_inseminadas_gt_17_m"
+      },
+      {
+        "code": "8",
+        "name": "V. Prenadas > 13 M",
+        "alias": "v_prenadas_gt_13_m"
+      },
+      {
+        "code": "9",
+        "name": "V. Vacias > 13 M",
+        "alias": "v_vacias_gt_13_m"
+      },
+      {
+        "code": "12",
+        "name": "Ordeno 1a Lact",
+        "alias": "ordeno_1a_lact"
+      },
+      {
+        "code": "13",
+        "name": "Ordeno 2a Lact",
+        "alias": "ordeno_2a_lact"
+      },
+      {
+        "code": "14",
+        "name": "Ordeno 3+ Lact",
+        "alias": "ordeno_3plus_lact"
+      },
+      {
+        "code": "12a",
+        "name": "Secas 1a Lact",
+        "alias": "secas_1a_lact"
+      },
+      {
+        "code": "13a",
+        "name": "Secas 2a Lact",
+        "alias": "secas_2a_lact"
+      },
+      {
+        "code": "14a",
+        "name": "Secas 3+ Lact",
+        "alias": "secas_3plus_lact"
+      },
+      {
+        "code": "21",
+        "name": "Promedio Dias en Leche",
+        "alias": "promedio_dias_en_leche"
+      },
+      {
+        "code": "22",
+        "name": "Promedio Lactancias",
+        "alias": "promedio_lactancias"
+      },
+      {
+        "code": "23",
+        "name": "Promedio Hato Prenado",
+        "alias": "promedio_hato_prenado"
+      },
+      {
+        "code": "24",
+        "name": "Dias Abiertos (EUR)",
+        "alias": "dias_abiertos_eur"
+      },
+      {
+        "code": "24a",
+        "name": "Dias Abiertos (MX)",
+        "alias": "dias_abiertos_mx"
+      },
+      {
+        "code": "25",
+        "name": "Vacas Frescas < 30 DEL",
+        "alias": "vacas_frescas_lt_30_del"
+      },
+      {
+        "code": "26",
+        "name": "Anestros 30-60 DEL",
+        "alias": "anestros_30_60_del"
+      },
+      {
+        "code": "27",
+        "name": "Anestros > 60 DEL",
+        "alias": "anestros_gt_60_del"
+      },
+      {
+        "code": "28",
+        "name": "Vacas > 150 DEL Abiertas",
+        "alias": "vacas_gt_150_del_abiertas"
+      },
+      {
+        "code": "29",
+        "name": "Vacas sin Produccion > 15 DEL",
+        "alias": "vacas_sin_produccion_gt_15_del"
+      },
+      {
+        "code": "30",
+        "name": "Secas no Prenadas",
+        "alias": "secas_no_prenadas"
+      },
+      {
+        "code": "31",
+        "name": "Machos",
+        "alias": "machos"
+      },
+      {
+        "code": "5",
+        "name": "T. Novillas",
+        "alias": "t_novillas"
+      },
+      {
+        "code": "10",
+        "name": "T.Vaquillas",
+        "alias": "tvaquillas"
+      },
+      {
+        "code": "11",
+        "name": "T.Crianza",
+        "alias": "tcrianza"
+      },
+      {
+        "code": "15",
+        "name": "T. Hato Ordeno",
+        "alias": "t_hato_ordeno"
+      },
+      {
+        "code": "15a",
+        "name": "T. Hato Secas",
+        "alias": "t_hato_secas"
+      },
+      {
+        "code": "15b",
+        "name": "T.Hato",
+        "alias": "thato"
+      },
+      {
+        "code": "16",
+        "name": "Rel 100% Ordeno",
+        "alias": "rel_100pct_ordeno"
+      },
+      {
+        "code": "16a",
+        "name": "Rel 100% Secas",
+        "alias": "rel_100pct_secas"
+      },
+      {
+        "code": "17",
+        "name": "Rel Novillas/Vacas",
+        "alias": "rel_novillas_vacas"
+      },
+      {
+        "code": "12b",
+        "name": "Total 1a Lact",
+        "alias": "total_1a_lact"
+      },
+      {
+        "code": "18",
+        "name": "Rel. Vaquillas/1a Lact",
+        "alias": "rel_vaquillas_1a_lact"
+      },
+      {
+        "code": "13b",
+        "name": "Total 2a Lact",
+        "alias": "total_2a_lact"
+      },
+      {
+        "code": "14b",
+        "name": "Total 3+ Lact",
+        "alias": "total_3plus_lact"
+      },
+      {
+        "code": "19",
+        "name": "Rel 2+ Lact/1a Lact",
+        "alias": "rel_2plus_lact_1a_lact"
+      },
+      {
+        "code": "20",
+        "name": "Gran Total del Establo",
+        "alias": "gran_total_del_establo"
+      },
+      {
+        "code": "23a",
+        "name": "% Hato Prenado",
+        "alias": "pct_hato_prenado"
+      },
+      {
+        "code": "25a",
+        "name": "% Vacas Frescas < 30 DEL",
+        "alias": "pct_vacas_frescas_lt_30_del"
+      },
+      {
+        "code": "1a",
+        "name": "% Becerras < 1 M",
+        "alias": "pct_becerras_lt_1_m"
+      },
+      {
+        "code": "2a",
+        "name": "% Becerras < 1 a 2 M",
+        "alias": "pct_becerras_lt_1_a_2_m"
+      },
+      {
+        "code": "3a",
+        "name": "% Novillas 2 a 6 M",
+        "alias": "pct_novillas_2_a_6_m"
+      },
+      {
+        "code": "4a",
+        "name": "% Novillas 7 a 13 M",
+        "alias": "pct_novillas_7_a_13_m"
+      },
+      {
+        "code": "5a",
+        "name": "% T. Novilllas",
+        "alias": "pct_t_novilllas"
+      },
+      {
+        "code": "6a",
+        "name": "% V. Inseminadas 13-17 M",
+        "alias": "pct_v_inseminadas_13_17_m"
+      },
+      {
+        "code": "7a",
+        "name": "% V. Inseminadas > 17 M",
+        "alias": "pct_v_inseminadas_gt_17_m"
+      },
+      {
+        "code": "8a",
+        "name": "% V. Prenadas > 13 M",
+        "alias": "pct_v_prenadas_gt_13_m"
+      },
+      {
+        "code": "9a",
+        "name": "% V. Vacias > 13 M",
+        "alias": "pct_v_vacias_gt_13_m"
+      },
+      {
+        "code": "10a",
+        "name": "% T. Vaquillas",
+        "alias": "pct_t_vaquillas"
+      },
+      {
+        "code": "12c",
+        "name": "% Total 1a Lact",
+        "alias": "pct_total_1a_lact"
+      },
+      {
+        "code": "13c",
+        "name": "% Total 2a Lact",
+        "alias": "pct_total_2a_lact"
+      },
+      {
+        "code": "14c",
+        "name": "% Total 3+ Lact",
+        "alias": "pct_total_3plus_lact"
+      },
+      {
+        "code": "26a",
+        "name": "% Anestros 30-60 DEL",
+        "alias": "pct_anestros_30_60_del"
+      },
+      {
+        "code": "27a",
+        "name": "% Anestros > 60 DEL",
+        "alias": "pct_anestros_gt_60_del"
+      },
+      {
+        "code": "28a",
+        "name": "% Vacas > 150 DEL Abiertas",
+        "alias": "pct_vacas_gt_150_del_abiertas"
+      },
+      {
+        "code": "29a",
+        "name": "% Vacas sin Produccion > 15 DEL",
+        "alias": "pct_vacas_sin_produccion_gt_15_del"
+      },
+      {
+        "code": "30a",
+        "name": "% Secas no Pre+¦adas",
+        "alias": "pct_secas_no_preplus¦adas"
+      },
+      {
+        "code": "23ab",
+        "name": "% Hato Vacio",
+        "alias": "pct_hato_vacio"
+      },
+      {
+        "code": "23ac",
+        "name": "% Hato Parto",
+        "alias": "pct_hato_parto"
+      },
+      {
+        "code": "23ad",
+        "name": "% Hato Celo",
+        "alias": "pct_hato_celo"
+      },
+      {
+        "code": "23ae",
+        "name": "% Hato IA",
+        "alias": "pct_hato_ia"
+      },
+      {
+        "code": "23af",
+        "name": "% Hato No Inseminar",
+        "alias": "pct_hato_no_inseminar"
+      },
+      {
+        "code": "23ah",
+        "name": "% Hato Prenado Ordeno",
+        "alias": "pct_hato_prenado_ordeno"
+      },
+      {
+        "code": "23ai",
+        "name": "% Hato Vacio Ordeno",
+        "alias": "pct_hato_vacio_ordeno"
+      },
+      {
+        "code": "23aj",
+        "name": "% Hato Parto Ordeno",
+        "alias": "pct_hato_parto_ordeno"
+      },
+      {
+        "code": "23ak",
+        "name": "% Hato Celo Ordeno",
+        "alias": "pct_hato_celo_ordeno"
+      },
+      {
+        "code": "23al",
+        "name": "% Hato IA Ordeno",
+        "alias": "pct_hato_ia_ordeno"
+      },
+      {
+        "code": "23am",
+        "name": "% Hato No Inseminar Ordeno",
+        "alias": "pct_hato_no_inseminar_ordeno"
+      },
+      {
+        "code": "26e",
+        "name": "% Anestros 30-60 DEL 1Lact",
+        "alias": "pct_anestros_30_60_del_1lact"
+      },
+      {
+        "code": "26f",
+        "name": "% Anestros 30-60 DEL 2Lact",
+        "alias": "pct_anestros_30_60_del_2lact"
+      },
+      {
+        "code": "26g",
+        "name": "% Anestros 30-60 DEL 3Lact",
+        "alias": "pct_anestros_30_60_del_3lact"
+      },
+      {
+        "code": "27e",
+        "name": "% Anestros > 60 DEL 1Lact",
+        "alias": "pct_anestros_gt_60_del_1lact"
+      },
+      {
+        "code": "17a",
+        "name": "Rel. Vacas 2+ Lact/1a Lact",
+        "alias": "rel_vacas_2plus_lact_1a_lact"
+      },
+      {
+        "code": "23fa",
+        "name": "% Hato Preñadao (No Ins)",
+        "alias": "pct_hato_preñadao_no_ins"
+      }
+    ]
+  },
+  "MC": {
+    "section": "MC",
+    "description": "MANEJO EN CRIANZA",
+    "kpis": [
+      {
+        "code": "32",
+        "name": "Nacimientos",
+        "alias": "nacimientos"
+      },
+      {
+        "code": "34",
+        "name": "Datos Peso Nacidas",
+        "alias": "datos_peso_nacidas"
+      },
+      {
+        "code": "34a",
+        "name": "Datos Altura Nacidas",
+        "alias": "datos_altura_nacidas"
+      },
+      {
+        "code": "36",
+        "name": "Peso al Nacimiento (Kgs)",
+        "alias": "peso_al_nacimiento_kgs"
+      },
+      {
+        "code": "37",
+        "name": "Altura al Nacimiento (Cms)",
+        "alias": "altura_al_nacimiento_cms"
+      },
+      {
+        "code": "33",
+        "name": "Destetadas, Nacidas",
+        "alias": "destetadas_nacidas"
+      },
+      {
+        "code": "35",
+        "name": "Datos Peso de Destetes",
+        "alias": "datos_peso_de_destetes"
+      },
+      {
+        "code": "35a",
+        "name": "Datos Altura de Destetes",
+        "alias": "datos_altura_de_destetes"
+      },
+      {
+        "code": "38",
+        "name": "Peso al Destete (Kgs)",
+        "alias": "peso_al_destete_kgs"
+      },
+      {
+        "code": "39",
+        "name": "Altura al Destete (Cms)",
+        "alias": "altura_al_destete_cms"
+      },
+      {
+        "code": "40",
+        "name": "Peso Destete, Nacidas",
+        "alias": "peso_destete_nacidas"
+      },
+      {
+        "code": "41",
+        "name": "Altura Destete, Nacidas",
+        "alias": "altura_destete_nacidas"
+      },
+      {
+        "code": "42",
+        "name": "Promedio Edad/Dias al Destete Becerras",
+        "alias": "promedio_edad_dias_al_destete_becerras"
+      },
+      {
+        "code": "46",
+        "name": "F. 1er Servicio (Vaquillas)",
+        "alias": "f_1er_servicio_vaquillas"
+      },
+      {
+        "code": "47",
+        "name": "Promedio Edad 1er Servicio (Meses)",
+        "alias": "promedio_edad_1er_servicio_meses"
+      },
+      {
+        "code": "48",
+        "name": "Media Servicios X prenez Vaquillas",
+        "alias": "media_servicios_x_prenez_vaquillas"
+      },
+      {
+        "code": "49",
+        "name": "Detec. Celos 5-17 Dias",
+        "alias": "detec_celos_5_17_dias"
+      },
+      {
+        "code": "50",
+        "name": "Detec. Celos 18-25 Dias",
+        "alias": "detec_celos_18_25_dias"
+      },
+      {
+        "code": "51",
+        "name": "Detec. Celos 26-35 dias",
+        "alias": "detec_celos_26_35_dias"
+      },
+      {
+        "code": "52",
+        "name": "Detec. Celos 36-60 dias",
+        "alias": "detec_celos_36_60_dias"
+      },
+      {
+        "code": "125a",
+        "name": "Deteccion de Celos (Ult 2)",
+        "alias": "deteccion_de_celos_ult_2"
+      },
+      {
+        "code": "53",
+        "name": "Edad 1er Servicio < 13",
+        "alias": "edad_1er_servicio_lt_13"
+      },
+      {
+        "code": "54",
+        "name": "Edad 1er Servicio 13 < 14",
+        "alias": "edad_1er_servicio_13_lt_14"
+      },
+      {
+        "code": "55",
+        "name": "Edad 1er Servicio 14 < 15",
+        "alias": "edad_1er_servicio_14_lt_15"
+      },
+      {
+        "code": "56",
+        "name": "Edad 1er Servicio > 15",
+        "alias": "edad_1er_servicio_gt_15"
+      },
+      {
+        "code": "58",
+        "name": "Prenez 1er Serv < 13",
+        "alias": "prenez_1er_serv_lt_13"
+      },
+      {
+        "code": "59",
+        "name": "Prenez 1er Serv 13 < 14",
+        "alias": "prenez_1er_serv_13_lt_14"
+      },
+      {
+        "code": "45",
+        "name": "Fertilidad",
+        "alias": "fertilidad"
+      },
+      {
+        "code": "60",
+        "name": "Prenez 1er Serv 14 < 15",
+        "alias": "prenez_1er_serv_14_lt_15"
+      },
+      {
+        "code": "61",
+        "name": "Prenez 1er Serv > 15",
+        "alias": "prenez_1er_serv_gt_15"
+      },
+      {
+        "code": "63",
+        "name": "Peso Genetica 1er Serv < 13",
+        "alias": "peso_genetica_1er_serv_lt_13"
+      },
+      {
+        "code": "64",
+        "name": "Peso Genetica 1er Serv 13 < 14",
+        "alias": "peso_genetica_1er_serv_13_lt_14"
+      },
+      {
+        "code": "65",
+        "name": "Peso Genetica 1er Serv 14 < 15",
+        "alias": "peso_genetica_1er_serv_14_lt_15"
+      },
+      {
+        "code": "66",
+        "name": "Peso Genetica 1er Serv > 15",
+        "alias": "peso_genetica_1er_serv_gt_15"
+      },
+      {
+        "code": "63b",
+        "name": "Altura Genetica 1er Serv < 13",
+        "alias": "altura_genetica_1er_serv_lt_13"
+      },
+      {
+        "code": "64b",
+        "name": "Altura Genetica 1er Serv 13 < 14",
+        "alias": "altura_genetica_1er_serv_13_lt_14"
+      },
+      {
+        "code": "65b",
+        "name": "Altura Genetica 1er Serv 14 < 15",
+        "alias": "altura_genetica_1er_serv_14_lt_15"
+      },
+      {
+        "code": "66a",
+        "name": "Altura Genetica 1er Serv > 15",
+        "alias": "altura_genetica_1er_serv_gt_15"
+      },
+      {
+        "code": "45a",
+        "name": "Fertilidad PD(+)",
+        "alias": "fertilidad_pdplus"
+      },
+      {
+        "code": "35b",
+        "name": "% Datos Peso de Destete",
+        "alias": "pct_datos_peso_de_destete"
+      },
+      {
+        "code": "35c",
+        "name": "% Datos Altura de Destete",
+        "alias": "pct_datos_altura_de_destete"
+      },
+      {
+        "code": "34c",
+        "name": "% Datos Altura Nacidas",
+        "alias": "pct_datos_altura_nacidas"
+      },
+      {
+        "code": "34b",
+        "name": "% Datos Peso Nacidas",
+        "alias": "pct_datos_peso_nacidas"
+      },
+      {
+        "code": "43",
+        "name": "Ganancia Peso Diaria (Nac. vs Destete)",
+        "alias": "ganancia_peso_diaria_nac_vs_destete"
+      },
+      {
+        "code": "44",
+        "name": "Eficiencia de Ganancia de Peso",
+        "alias": "eficiencia_de_ganancia_de_peso"
+      },
+      {
+        "code": "45b",
+        "name": "% Fertilidad en Vaquillas",
+        "alias": "pct_fertilidad_en_vaquillas"
+      },
+      {
+        "code": "49a",
+        "name": "% Distribucion Celos 5-17 dias",
+        "alias": "pct_distribucion_celos_5_17_dias"
+      },
+      {
+        "code": "50a",
+        "name": "% Distribucion Celos 18-25 dias",
+        "alias": "pct_distribucion_celos_18_25_dias"
+      },
+      {
+        "code": "51a",
+        "name": "% Distribucion Celos 26-35 dias",
+        "alias": "pct_distribucion_celos_26_35_dias"
+      },
+      {
+        "code": "52a",
+        "name": "% Distribucion Celos 36-60 dias",
+        "alias": "pct_distribucion_celos_36_60_dias"
+      },
+      {
+        "code": "57",
+        "name": "Total 1er Servicio",
+        "alias": "total_1er_servicio"
+      },
+      {
+        "code": "53a",
+        "name": "% Edad 1er Servicio < 13",
+        "alias": "pct_edad_1er_servicio_lt_13"
+      },
+      {
+        "code": "54a",
+        "name": "% Edad 1er Servicio 13 < 14",
+        "alias": "pct_edad_1er_servicio_13_lt_14"
+      },
+      {
+        "code": "55a",
+        "name": "% Edad 1er Servicio 14 < 15",
+        "alias": "pct_edad_1er_servicio_14_lt_15"
+      },
+      {
+        "code": "56a",
+        "name": "% Edad 1er Servicio > 15",
+        "alias": "pct_edad_1er_servicio_gt_15"
+      },
+      {
+        "code": "62",
+        "name": "Total Prenez 1er Serv",
+        "alias": "total_prenez_1er_serv"
+      },
+      {
+        "code": "58a",
+        "name": "% Prenez 1er Serv < 13",
+        "alias": "pct_prenez_1er_serv_lt_13"
+      },
+      {
+        "code": "59a",
+        "name": "% Prenez 1er Serv 13 < 14",
+        "alias": "pct_prenez_1er_serv_13_lt_14"
+      },
+      {
+        "code": "60a",
+        "name": "% Prenez 1er Serv 14 < 15",
+        "alias": "pct_prenez_1er_serv_14_lt_15"
+      },
+      {
+        "code": "61a",
+        "name": "% Prenez 1er Serv > 15",
+        "alias": "pct_prenez_1er_serv_gt_15"
+      },
+      {
+        "code": "63c",
+        "name": "Altura Genetica 1er Serv",
+        "alias": "altura_genetica_1er_serv"
+      },
+      {
+        "code": "62c",
+        "name": "Peso Genetica 1er Serv",
+        "alias": "peso_genetica_1er_serv"
+      }
+    ]
+  },
+  "PL": {
+    "section": "PL",
+    "description": "PRODUCCION DE LECHE",
+    "kpis": [
+      {
+        "code": "67",
+        "name": "Promedio de Vacas en Ordeno",
+        "alias": "promedio_de_vacas_en_ordeno"
+      },
+      {
+        "code": "68b",
+        "name": "Produccion Total Periodo (Kgs) AFI",
+        "alias": "produccion_total_periodo_kgs_afi"
+      },
+      {
+        "code": "68a",
+        "name": "Produccion Total Periodo (Kgs) Venta",
+        "alias": "produccion_total_periodo_kgs_venta"
+      },
+      {
+        "code": "71",
+        "name": "Leche Inhibida(kgs)",
+        "alias": "leche_inhibidakgs"
+      },
+      {
+        "code": "72",
+        "name": "Prom (Periodo) 1a lact",
+        "alias": "prom_periodo_1a_lact"
+      },
+      {
+        "code": "72a",
+        "name": "Prom (Periodo) 2a lact",
+        "alias": "prom_periodo_2a_lact"
+      },
+      {
+        "code": "72b",
+        "name": "Prom (Periodo) 3+ lact",
+        "alias": "prom_periodo_3plus_lact"
+      },
+      {
+        "code": "73",
+        "name": "Prod 15 DEL 1a lact",
+        "alias": "prod_15_del_1a_lact"
+      },
+      {
+        "code": "73a",
+        "name": "Prod 15 DEL 2a lact",
+        "alias": "prod_15_del_2a_lact"
+      },
+      {
+        "code": "73b",
+        "name": "Prod 15 DEL 3+ lact",
+        "alias": "prod_15_del_3plus_lact"
+      },
+      {
+        "code": "74",
+        "name": "Prod 30 DEL 1a lact",
+        "alias": "prod_30_del_1a_lact"
+      },
+      {
+        "code": "74a",
+        "name": "Prod 30 DEL 2a lact",
+        "alias": "prod_30_del_2a_lact"
+      },
+      {
+        "code": "74b",
+        "name": "Prod 30 DEL 3+ lact",
+        "alias": "prod_30_del_3plus_lact"
+      },
+      {
+        "code": "75",
+        "name": "Prod 45 DEL 1a lact",
+        "alias": "prod_45_del_1a_lact"
+      },
+      {
+        "code": "75a",
+        "name": "Prod 45 DEL 2a lact",
+        "alias": "prod_45_del_2a_lact"
+      },
+      {
+        "code": "75b",
+        "name": "Prod 45 DEL 3+ lact",
+        "alias": "prod_45_del_3plus_lact"
+      },
+      {
+        "code": "76",
+        "name": "Prod 75 DEL 1a lact",
+        "alias": "prod_75_del_1a_lact"
+      },
+      {
+        "code": "76a",
+        "name": "Prod 75 DEL 2a lact",
+        "alias": "prod_75_del_2a_lact"
+      },
+      {
+        "code": "76b",
+        "name": "Prod 75 DEL 3+ lact",
+        "alias": "prod_75_del_3plus_lact"
+      },
+      {
+        "code": "77",
+        "name": "Prod 90 DEL 1a Lact",
+        "alias": "prod_90_del_1a_lact"
+      },
+      {
+        "code": "77a",
+        "name": "Prod 90 DEL 2a Lact",
+        "alias": "prod_90_del_2a_lact"
+      },
+      {
+        "code": "77b",
+        "name": "Prod 90 DEL 3+ Lact",
+        "alias": "prod_90_del_3plus_lact"
+      },
+      {
+        "code": "69",
+        "name": "Promedio Prod. Diaria Venta",
+        "alias": "promedio_prod_diaria_venta"
+      },
+      {
+        "code": "69a",
+        "name": "Promedio Prod. Diaria AFI",
+        "alias": "promedio_prod_diaria_afi"
+      },
+      {
+        "code": "70",
+        "name": "Promedio / Vaca (Kgs) Venta",
+        "alias": "promedio_vaca_kgs_venta"
+      },
+      {
+        "code": "70a",
+        "name": "Promedio / Vaca (Kgs) AFI",
+        "alias": "promedio_vaca_kgs_afi"
+      },
+      {
+        "code": "68c",
+        "name": "% Dif Produccion Total del Periodo",
+        "alias": "pct_dif_produccion_total_del_periodo"
+      },
+      {
+        "code": "69b",
+        "name": "% Dif Promedio Prod. Diaria",
+        "alias": "pct_dif_promedio_prod_diaria"
+      },
+      {
+        "code": "70b",
+        "name": "% Dif Promedio / Vaca (Kgs)",
+        "alias": "pct_dif_promedio_vaca_kgs"
+      },
+      {
+        "code": "71a",
+        "name": "% Dif Leche Inhibida",
+        "alias": "pct_dif_leche_inhibida"
+      },
+      {
+        "code": "78",
+        "name": "Prod a 305 DEL 1a Lact",
+        "alias": "prod_a_305_del_1a_lact"
+      },
+      {
+        "code": "78a",
+        "name": "Prod a 305 DEL 2a Lact",
+        "alias": "prod_a_305_del_2a_lact"
+      },
+      {
+        "code": "78b",
+        "name": "Prod a 305 DEL 3+ Lact",
+        "alias": "prod_a_305_del_3plus_lact"
+      },
+      {
+        "code": "79",
+        "name": "Pico de Prod. 1a Lact",
+        "alias": "pico_de_prod_1a_lact"
+      },
+      {
+        "code": "79a",
+        "name": "Pico de Prod. 2a Lact",
+        "alias": "pico_de_prod_2a_lact"
+      },
+      {
+        "code": "79b",
+        "name": "Pico de Prod. 3+ Lact",
+        "alias": "pico_de_prod_3plus_lact"
+      },
+      {
+        "code": "80",
+        "name": "DEL al Pico 1a Lact",
+        "alias": "del_al_pico_1a_lact"
+      },
+      {
+        "code": "80a",
+        "name": "DEL al Pico 2a Lact",
+        "alias": "del_al_pico_2a_lact"
+      },
+      {
+        "code": "80b",
+        "name": "DEL al Pico 3+ Lact",
+        "alias": "del_al_pico_3plus_lact"
+      },
+      {
+        "code": "81a",
+        "name": "Prom a 305D 1a Lact",
+        "alias": "prom_a_305d_1a_lact"
+      },
+      {
+        "code": "81b",
+        "name": "Prom a 305D 2a Lact",
+        "alias": "prom_a_305d_2a_lact"
+      },
+      {
+        "code": "81c",
+        "name": "Prom a 305D 3+ Lact",
+        "alias": "prom_a_305d_3plus_lact"
+      },
+      {
+        "code": "82a",
+        "name": "% Persistencia 1a Lact",
+        "alias": "pct_persistencia_1a_lact"
+      },
+      {
+        "code": "82b",
+        "name": "% Persistencia 2a Lact",
+        "alias": "pct_persistencia_2a_lact"
+      },
+      {
+        "code": "82c",
+        "name": "% Persistencia 3+ Lact",
+        "alias": "pct_persistencia_3plus_lact"
+      },
+      {
+        "code": "83",
+        "name": "Numero de Sesiones",
+        "alias": "numero_de_sesiones"
+      },
+      {
+        "code": "357a",
+        "name": "ECM/Vaca 1ra Lact G4%",
+        "alias": "ecm_vaca_1ra_lact_g4pct"
+      },
+      {
+        "code": "357b",
+        "name": "ECM/Vaca 2da Lact G4%",
+        "alias": "ecm_vaca_2da_lact_g4pct"
+      },
+      {
+        "code": "357c",
+        "name": "ECM/Vaca 3ra Lact G4%",
+        "alias": "ecm_vaca_3ra_lact_g4pct"
+      },
+      {
+        "code": "357",
+        "name": "ECM/Vaca G4%",
+        "alias": "ecm_vaca_g4pct"
+      },
+      {
+        "code": "358a",
+        "name": "FCM/Vaca 1ra Lact G4%",
+        "alias": "fcm_vaca_1ra_lact_g4pct"
+      },
+      {
+        "code": "358b",
+        "name": "FCM/Vaca 2da Lact G4%",
+        "alias": "fcm_vaca_2da_lact_g4pct"
+      },
+      {
+        "code": "358c",
+        "name": "FCM/Vaca 3ra Lact G4%",
+        "alias": "fcm_vaca_3ra_lact_g4pct"
+      },
+      {
+        "code": "358",
+        "name": "FCM/Vaca G4%",
+        "alias": "fcm_vaca_g4pct"
+      },
+      {
+        "code": "357e",
+        "name": "ECM/Vaca 1ra Lact G3.5% P3.2%",
+        "alias": "ecm_vaca_1ra_lact_g35pct_p32pct"
+      },
+      {
+        "code": "357f",
+        "name": "ECM/Vaca 2da Lact G3.5% P3.2%",
+        "alias": "ecm_vaca_2da_lact_g35pct_p32pct"
+      },
+      {
+        "code": "357g",
+        "name": "ECM/Vaca 3ra Lact G3.5% P3.2%",
+        "alias": "ecm_vaca_3ra_lact_g35pct_p32pct"
+      },
+      {
+        "code": "357d",
+        "name": "ECM/Vaca G3.5% P3.2%",
+        "alias": "ecm_vaca_g35pct_p32pct"
+      },
+      {
+        "code": "358e",
+        "name": "FCM/Vaca 1ra Lact G3.5%",
+        "alias": "fcm_vaca_1ra_lact_g35pct"
+      },
+      {
+        "code": "358f",
+        "name": "FCM/Vaca 2da Lact G3.5%",
+        "alias": "fcm_vaca_2da_lact_g35pct"
+      },
+      {
+        "code": "358g",
+        "name": "FCM/Vaca 3ra Lact G3.5%",
+        "alias": "fcm_vaca_3ra_lact_g35pct"
+      },
+      {
+        "code": "358d",
+        "name": "FCM/Vaca G3.5%",
+        "alias": "fcm_vaca_g35pct"
+      },
+      {
+        "code": "94",
+        "name": "ECM/Vaca Venta G4%",
+        "alias": "ecm_vaca_venta_g4pct"
+      },
+      {
+        "code": "95",
+        "name": "FCM/Vaca Venta G4%",
+        "alias": "fcm_vaca_venta_g4pct"
+      },
+      {
+        "code": "94d",
+        "name": "ECM/Vaca Venta G3.5% P3.2%",
+        "alias": "ecm_vaca_venta_g35pct_p32pct"
+      },
+      {
+        "code": "95d",
+        "name": "FCM/Vaca Venta G3.5%",
+        "alias": "fcm_vaca_venta_g35pct"
+      },
+      {
+        "code": "450e",
+        "name": "ECM/Vaca 1ra Lact Muestreo G3.5% P3.2%",
+        "alias": "ecm_vaca_1ra_lact_muestreo_g35pct_p32pct"
+      },
+      {
+        "code": "450f",
+        "name": "ECM/Vaca 2da Lact Muestreo G3.5% P3.2%",
+        "alias": "ecm_vaca_2da_lact_muestreo_g35pct_p32pct"
+      },
+      {
+        "code": "450g",
+        "name": "ECM/Vaca 3ra Lact Muestreo G3.5% P3.2%",
+        "alias": "ecm_vaca_3ra_lact_muestreo_g35pct_p32pct"
+      },
+      {
+        "code": "450d",
+        "name": "ECM/Vaca Muestreo G3.5% P3.2%",
+        "alias": "ecm_vaca_muestreo_g35pct_p32pct"
+      },
+      {
+        "code": "451e",
+        "name": "FCM/Vaca 1ra Lact Muestreo G3.5% P3.2%",
+        "alias": "fcm_vaca_1ra_lact_muestreo_g35pct_p32pct"
+      },
+      {
+        "code": "451f",
+        "name": "FCM/Vaca 2da Lact Muestreo G3.5% P3.2%",
+        "alias": "fcm_vaca_2da_lact_muestreo_g35pct_p32pct"
+      },
+      {
+        "code": "451g",
+        "name": "FCM/Vaca 3ra Lact Muestreo G3.5% P3.2%",
+        "alias": "fcm_vaca_3ra_lact_muestreo_g35pct_p32pct"
+      },
+      {
+        "code": "451d",
+        "name": "FCM/Vaca Muestreo G3.5% P3.2%",
+        "alias": "fcm_vaca_muestreo_g35pct_p32pct"
+      }
+    ]
+  },
+  "CL": {
+    "section": "CL",
+    "description": "CALIDAD DE LECHE",
+    "kpis": [
+      {
+        "code": "87",
+        "name": "% Grasa",
+        "alias": "pct_grasa"
+      },
+      {
+        "code": "88",
+        "name": "% Proteina",
+        "alias": "pct_proteina"
+      },
+      {
+        "code": "90",
+        "name": "% Lactosa",
+        "alias": "pct_lactosa"
+      },
+      {
+        "code": "91",
+        "name": "Prom SCC",
+        "alias": "prom_scc"
+      },
+      {
+        "code": "92",
+        "name": "Cuenta Std",
+        "alias": "cuenta_std"
+      },
+      {
+        "code": "93",
+        "name": "% Solidos T.",
+        "alias": "pct_solidos_t"
+      },
+      {
+        "code": "350a",
+        "name": "Total Vacas 1a lact (Afilab)",
+        "alias": "total_vacas_1a_lact_afilab"
+      },
+      {
+        "code": "350b",
+        "name": "Total Vacas 2a lact (Afilab)",
+        "alias": "total_vacas_2a_lact_afilab"
+      },
+      {
+        "code": "350c",
+        "name": "Total Vacas 3+ lact (Afilab)",
+        "alias": "total_vacas_3plus_lact_afilab"
+      },
+      {
+        "code": "351a",
+        "name": "% Grasa 1a Lact (Afilab)",
+        "alias": "pct_grasa_1a_lact_afilab"
+      },
+      {
+        "code": "351b",
+        "name": "% Grasa 2a Lact (Afilab)",
+        "alias": "pct_grasa_2a_lact_afilab"
+      },
+      {
+        "code": "351c",
+        "name": "% Grasa 3+ Lact (Afilab)",
+        "alias": "pct_grasa_3plus_lact_afilab"
+      },
+      {
+        "code": "352a",
+        "name": "% Proteina 1a lact (Afilab)",
+        "alias": "pct_proteina_1a_lact_afilab"
+      },
+      {
+        "code": "352b",
+        "name": "% Proteina 2a lact (Afilab)",
+        "alias": "pct_proteina_2a_lact_afilab"
+      },
+      {
+        "code": "352c",
+        "name": "% Proteina 3+ lact (Afilab)",
+        "alias": "pct_proteina_3plus_lact_afilab"
+      },
+      {
+        "code": "353a",
+        "name": "% Lactosa 1a lact (Afilab)",
+        "alias": "pct_lactosa_1a_lact_afilab"
+      },
+      {
+        "code": "353b",
+        "name": "% Lactosa 2a lact (Afilab)",
+        "alias": "pct_lactosa_2a_lact_afilab"
+      },
+      {
+        "code": "353c",
+        "name": "% Lactosa 3+ lact (Afilab)",
+        "alias": "pct_lactosa_3plus_lact_afilab"
+      },
+      {
+        "code": "112a",
+        "name": "Muestreo Afilab % < 400 CSS",
+        "alias": "muestreo_afilab_pct_lt_400_css"
+      },
+      {
+        "code": "109",
+        "name": "Muestreo < 100 CSS",
+        "alias": "muestreo_lt_100_css"
+      },
+      {
+        "code": "110",
+        "name": "Muestreo 100 < 250 CSS",
+        "alias": "muestreo_100_lt_250_css"
+      },
+      {
+        "code": "111",
+        "name": "Muestreo 250 < 400 CSS",
+        "alias": "muestreo_250_lt_400_css"
+      },
+      {
+        "code": "112",
+        "name": "Muestreo < 400 CSS",
+        "alias": "muestreo_lt_400_css"
+      },
+      {
+        "code": "113",
+        "name": "Muestreo 400 < 800 CSS",
+        "alias": "muestreo_400_lt_800_css"
+      },
+      {
+        "code": "114",
+        "name": "Muestreo > 800 CSS",
+        "alias": "muestreo_gt_800_css"
+      },
+      {
+        "code": "115",
+        "name": "Muestreo S/D CSS",
+        "alias": "muestreo_s_d_css"
+      },
+      {
+        "code": "102",
+        "name": "Vacas Muestreo 1a Lact",
+        "alias": "vacas_muestreo_1a_lact"
+      },
+      {
+        "code": "102a",
+        "name": "Vacas Muestreo 2a Lact",
+        "alias": "vacas_muestreo_2a_lact"
+      },
+      {
+        "code": "102b",
+        "name": "Vacas Muestreo 3+ Lact",
+        "alias": "vacas_muestreo_3plus_lact"
+      },
+      {
+        "code": "103",
+        "name": "Grasa Muestreo 1a Lact",
+        "alias": "grasa_muestreo_1a_lact"
+      },
+      {
+        "code": "103a",
+        "name": "Grasa Muestreo 2a Lact",
+        "alias": "grasa_muestreo_2a_lact"
+      },
+      {
+        "code": "103b",
+        "name": "Grasa Muestreo 3+ Lact",
+        "alias": "grasa_muestreo_3plus_lact"
+      },
+      {
+        "code": "104",
+        "name": "Proteina Muestreo 1a Lact",
+        "alias": "proteina_muestreo_1a_lact"
+      },
+      {
+        "code": "104a",
+        "name": "Proteina Muestreo 2a Lact",
+        "alias": "proteina_muestreo_2a_lact"
+      },
+      {
+        "code": "104b",
+        "name": "Proteina Muestreo 3+ Lact",
+        "alias": "proteina_muestreo_3plus_lact"
+      },
+      {
+        "code": "106",
+        "name": "Lactosa Muestreo 1a Lact",
+        "alias": "lactosa_muestreo_1a_lact"
+      },
+      {
+        "code": "106a",
+        "name": "Lactosa Muestreo 2a Lact",
+        "alias": "lactosa_muestreo_2a_lact"
+      },
+      {
+        "code": "106b",
+        "name": "Lactosa Muestreo 3+ Lact",
+        "alias": "lactosa_muestreo_3plus_lact"
+      },
+      {
+        "code": "107",
+        "name": "Prom CSS Muestreo 1a Lact",
+        "alias": "prom_css_muestreo_1a_lact"
+      },
+      {
+        "code": "107a",
+        "name": "Prom CSS Muestreo 2a Lact",
+        "alias": "prom_css_muestreo_2a_lact"
+      },
+      {
+        "code": "107b",
+        "name": "Prom CSS Muestreo 3+ Lact",
+        "alias": "prom_css_muestreo_3plus_lact"
+      },
+      {
+        "code": "108",
+        "name": "CSS Muestreo < 250 1a Lact",
+        "alias": "css_muestreo_lt_250_1a_lact"
+      },
+      {
+        "code": "108a",
+        "name": "CSS Muestreo < 250 2a Lact",
+        "alias": "css_muestreo_lt_250_2a_lact"
+      },
+      {
+        "code": "108b",
+        "name": "CSS Muestreo < 250 3+ Lact",
+        "alias": "css_muestreo_lt_250_3plus_lact"
+      },
+      {
+        "code": "108h",
+        "name": "Fecha Muestra",
+        "alias": "fecha_muestra"
+      },
+      {
+        "code": "400a",
+        "name": "Grasa-Proteina 1a 1act",
+        "alias": "grasa_proteina_1a_1act"
+      },
+      {
+        "code": "400b",
+        "name": "Grasa-Proteina 2a lact",
+        "alias": "grasa_proteina_2a_lact"
+      },
+      {
+        "code": "400c",
+        "name": "Grasa-Proteina 3+ lact",
+        "alias": "grasa_proteina_3plus_lact"
+      },
+      {
+        "code": "401a",
+        "name": "Grasa-Proteina 5-15 DEL 1a lact",
+        "alias": "grasa_proteina_5_15_del_1a_lact"
+      },
+      {
+        "code": "401b",
+        "name": "Grasa-Proteina 5-15 DEL 2a lact",
+        "alias": "grasa_proteina_5_15_del_2a_lact"
+      },
+      {
+        "code": "401c",
+        "name": "Grasa-Proteina 5-15 DEL 3+ lact",
+        "alias": "grasa_proteina_5_15_del_3plus_lact"
+      },
+      {
+        "code": "402a",
+        "name": "Grasa-Proteina 16-30 DEL 1a lact",
+        "alias": "grasa_proteina_16_30_del_1a_lact"
+      },
+      {
+        "code": "402b",
+        "name": "Grasa-Proteina 16-30 DEL 2a lact",
+        "alias": "grasa_proteina_16_30_del_2a_lact"
+      },
+      {
+        "code": "402c",
+        "name": "Grasa-Proteina 16-30 DEL 3+ lact",
+        "alias": "grasa_proteina_16_30_del_3plus_lact"
+      },
+      {
+        "code": "403a",
+        "name": "Grasa-Proteina 31-45 DEL 1a lact",
+        "alias": "grasa_proteina_31_45_del_1a_lact"
+      },
+      {
+        "code": "403b",
+        "name": "Grasa-Proteina 31-45 DEL 2a lact",
+        "alias": "grasa_proteina_31_45_del_2a_lact"
+      },
+      {
+        "code": "403c",
+        "name": "Grasa-Proteina 31-45 DEL 3+ lact",
+        "alias": "grasa_proteina_31_45_del_3plus_lact"
+      },
+      {
+        "code": "89",
+        "name": "Rel G/P",
+        "alias": "rel_g_p"
+      },
+      {
+        "code": "350",
+        "name": "T. Vacas Afilab",
+        "alias": "t_vacas_afilab"
+      },
+      {
+        "code": "351",
+        "name": "% Grasa Afilab",
+        "alias": "pct_grasa_afilab"
+      },
+      {
+        "code": "352",
+        "name": "% Proteina Afilab",
+        "alias": "pct_proteina_afilab"
+      },
+      {
+        "code": "356a",
+        "name": "Rel G/P 1a Lact (Afilab)",
+        "alias": "rel_g_p_1a_lact_afilab"
+      },
+      {
+        "code": "356b",
+        "name": "Rel G/P 2a Lact (Afilab)",
+        "alias": "rel_g_p_2a_lact_afilab"
+      },
+      {
+        "code": "356c",
+        "name": "Rel G/P 3+ Lact (Afilab)",
+        "alias": "rel_g_p_3plus_lact_afilab"
+      },
+      {
+        "code": "356",
+        "name": "Rel G/P Afilab",
+        "alias": "rel_g_p_afilab"
+      },
+      {
+        "code": "353",
+        "name": "% Lactosa Afilab",
+        "alias": "pct_lactosa_afilab"
+      },
+      {
+        "code": "354",
+        "name": "Prom CSS Afilab",
+        "alias": "prom_css_afilab"
+      },
+      {
+        "code": "116a",
+        "name": "T. CSS Afilab",
+        "alias": "t_css_afilab"
+      },
+      {
+        "code": "109b",
+        "name": "% < 100 CSS Afilab",
+        "alias": "pct_lt_100_css_afilab"
+      },
+      {
+        "code": "110b",
+        "name": "% 100 < 250 CSS Afilab",
+        "alias": "pct_100_lt_250_css_afilab"
+      },
+      {
+        "code": "111b",
+        "name": "% 250 < 400 CSS Afilab",
+        "alias": "pct_250_lt_400_css_afilab"
+      },
+      {
+        "code": "112b",
+        "name": "% < 400 CSS Afilab",
+        "alias": "pct_lt_400_css_afilab"
+      },
+      {
+        "code": "113b",
+        "name": "% 400 < 800 CSS Afilab",
+        "alias": "pct_400_lt_800_css_afilab"
+      },
+      {
+        "code": "114b",
+        "name": "%  > 800 CSS Afilab",
+        "alias": "pct_gt_800_css_afilab"
+      },
+      {
+        "code": "115b",
+        "name": "% S/D CSS (Afilab)",
+        "alias": "pct_s_d_css_afilab"
+      },
+      {
+        "code": "102c",
+        "name": "Vacas Evaluadas Muestreo",
+        "alias": "vacas_evaluadas_muestreo"
+      },
+      {
+        "code": "103c",
+        "name": "% Grasa Muestreo",
+        "alias": "pct_grasa_muestreo"
+      },
+      {
+        "code": "104c",
+        "name": "% Proteina Muestreo",
+        "alias": "pct_proteina_muestreo"
+      },
+      {
+        "code": "105",
+        "name": "Rel G/P Muestreo 1a Lact",
+        "alias": "rel_g_p_muestreo_1a_lact"
+      },
+      {
+        "code": "105a",
+        "name": "Rel G/P Muestreo 2a Lact",
+        "alias": "rel_g_p_muestreo_2a_lact"
+      },
+      {
+        "code": "105b",
+        "name": "Rel G/P Muestreo 3+ Lact",
+        "alias": "rel_g_p_muestreo_3plus_lact"
+      },
+      {
+        "code": "105c",
+        "name": "Rel G/P Muestreo",
+        "alias": "rel_g_p_muestreo"
+      },
+      {
+        "code": "106c",
+        "name": "% Lactosa Muestreo",
+        "alias": "pct_lactosa_muestreo"
+      },
+      {
+        "code": "107c",
+        "name": "T. CSS Muestreo",
+        "alias": "t_css_muestreo"
+      },
+      {
+        "code": "108d",
+        "name": "% CSS < 250 Muestreo 1a Lact",
+        "alias": "pct_css_lt_250_muestreo_1a_lact"
+      },
+      {
+        "code": "108e",
+        "name": "% CSS < 250 Muestreo 2a Lact",
+        "alias": "pct_css_lt_250_muestreo_2a_lact"
+      },
+      {
+        "code": "108f",
+        "name": "% CSS < 250 Muestreo 3+ Lact",
+        "alias": "pct_css_lt_250_muestreo_3plus_lact"
+      },
+      {
+        "code": "108c",
+        "name": "CSS < 250  Muestreo",
+        "alias": "css_lt_250_muestreo"
+      },
+      {
+        "code": "108g",
+        "name": "% CSS < 250 Muestreo",
+        "alias": "pct_css_lt_250_muestreo"
+      },
+      {
+        "code": "116",
+        "name": "T. CSS Muestreo",
+        "alias": "t_css_muestreo"
+      },
+      {
+        "code": "109c",
+        "name": "% < 100 CSS Muestreo",
+        "alias": "pct_lt_100_css_muestreo"
+      },
+      {
+        "code": "110c",
+        "name": "% 100 < 250 CSS Muestreo",
+        "alias": "pct_100_lt_250_css_muestreo"
+      },
+      {
+        "code": "111c",
+        "name": "% 250 < 400 CSS Muestreo",
+        "alias": "pct_250_lt_400_css_muestreo"
+      },
+      {
+        "code": "112c",
+        "name": "% < 400 CSS Muestreo",
+        "alias": "pct_lt_400_css_muestreo"
+      },
+      {
+        "code": "113c",
+        "name": "% 400 < 800 CSS Muestreo",
+        "alias": "pct_400_lt_800_css_muestreo"
+      },
+      {
+        "code": "114c",
+        "name": "% > 800 CSS Muestreo",
+        "alias": "pct_gt_800_css_muestreo"
+      },
+      {
+        "code": "115c",
+        "name": "% S/D CSS Muestreo",
+        "alias": "pct_s_d_css_muestreo"
+      },
+      {
+        "code": "94a",
+        "name": "% Vacas Evaluadas Afilab",
+        "alias": "pct_vacas_evaluadas_afilab"
+      },
+      {
+        "code": "94b",
+        "name": "% Vacas Evaluadas Muestreo",
+        "alias": "pct_vacas_evaluadas_muestreo"
+      },
+      {
+        "code": "355d",
+        "name": "% CSS < 250 1a lact (Afilab)",
+        "alias": "pct_css_lt_250_1a_lact_afilab"
+      },
+      {
+        "code": "355e",
+        "name": "% CSS < 250 2a lact (Afilab)",
+        "alias": "pct_css_lt_250_2a_lact_afilab"
+      },
+      {
+        "code": "355f",
+        "name": "% CSS < 250 3+ lact (Afilab)",
+        "alias": "pct_css_lt_250_3plus_lact_afilab"
+      },
+      {
+        "code": "355g",
+        "name": "% CSS < 250 Afilab",
+        "alias": "pct_css_lt_250_afilab"
+      },
+      {
+        "code": "404a",
+        "name": "% Grasa Proteina 5-15 DEL 1a Lact",
+        "alias": "pct_grasa_proteina_5_15_del_1a_lact"
+      },
+      {
+        "code": "404b",
+        "name": "% Grasa Proteina 5-15 DEL 2a Lact",
+        "alias": "pct_grasa_proteina_5_15_del_2a_lact"
+      },
+      {
+        "code": "404c",
+        "name": "% Grasa Proteina 5-15 DEL 3+ Lact",
+        "alias": "pct_grasa_proteina_5_15_del_3plus_lact"
+      },
+      {
+        "code": "405a",
+        "name": "% Grasa Proteina 16-30 DEL 1a Lact",
+        "alias": "pct_grasa_proteina_16_30_del_1a_lact"
+      },
+      {
+        "code": "405b",
+        "name": "% Grasa Proteina 16-30 DEL 2a Lact",
+        "alias": "pct_grasa_proteina_16_30_del_2a_lact"
+      },
+      {
+        "code": "405c",
+        "name": "% Grasa Proteina 16-30 DEL 3+ Lact",
+        "alias": "pct_grasa_proteina_16_30_del_3plus_lact"
+      },
+      {
+        "code": "406a",
+        "name": "% Grasa Proteina 31-45 DEL 1a Lact",
+        "alias": "pct_grasa_proteina_31_45_del_1a_lact"
+      },
+      {
+        "code": "406b",
+        "name": "% Grasa Proteina 31-45 DEL 2a Lact",
+        "alias": "pct_grasa_proteina_31_45_del_2a_lact"
+      },
+      {
+        "code": "406c",
+        "name": "% Grasa Proteina 31-45 DEL 3+ Lact",
+        "alias": "pct_grasa_proteina_31_45_del_3plus_lact"
+      },
+      {
+        "code": "450a",
+        "name": "ECM/Vaca 1ra Lact Muestreo G 4%",
+        "alias": "ecm_vaca_1ra_lact_muestreo_g_4pct"
+      },
+      {
+        "code": "450b",
+        "name": "ECM/Vaca 2da Lact Muestreo G 4%",
+        "alias": "ecm_vaca_2da_lact_muestreo_g_4pct"
+      },
+      {
+        "code": "450c",
+        "name": "ECM/Vaca 3ra Lact Muestreo G 4%",
+        "alias": "ecm_vaca_3ra_lact_muestreo_g_4pct"
+      },
+      {
+        "code": "450",
+        "name": "ECM/Vaca Muestreo G 4%",
+        "alias": "ecm_vaca_muestreo_g_4pct"
+      },
+      {
+        "code": "451a",
+        "name": "FCM/Vaca 1ra Lact Muestreo G 4%",
+        "alias": "fcm_vaca_1ra_lact_muestreo_g_4pct"
+      },
+      {
+        "code": "451b",
+        "name": "FCM/Vaca 2da Lact Muestreo G 4%",
+        "alias": "fcm_vaca_2da_lact_muestreo_g_4pct"
+      },
+      {
+        "code": "451c",
+        "name": "FCM/Vaca 3ra Lact Muestreo G 4%",
+        "alias": "fcm_vaca_3ra_lact_muestreo_g_4pct"
+      },
+      {
+        "code": "451",
+        "name": "FCM/Vaca Muestreo G 4%",
+        "alias": "fcm_vaca_muestreo_g_4pct"
+      }
+    ]
+  },
+  "FE": {
+    "section": "FE",
+    "description": "FERTILIDAD",
+    "kpis": [
+      {
+        "code": "117",
+        "name": "Inseminaciones (Periodo)",
+        "alias": "inseminaciones_periodo"
+      },
+      {
+        "code": "126",
+        "name": "Inseminaciones 1a lact",
+        "alias": "inseminaciones_1a_lact"
+      },
+      {
+        "code": "135",
+        "name": "Inseminaciones 2+ lact",
+        "alias": "inseminaciones_2plus_lact"
+      },
+      {
+        "code": "117a",
+        "name": "Preneces (Periodo)",
+        "alias": "preneces_periodo"
+      },
+      {
+        "code": "126a",
+        "name": "Preneces 1a lact",
+        "alias": "preneces_1a_lact"
+      },
+      {
+        "code": "135a",
+        "name": "Preneces 2+ lact",
+        "alias": "preneces_2plus_lact"
+      },
+      {
+        "code": "119",
+        "name": "% Fertilidad 1er Servicio",
+        "alias": "pct_fertilidad_1er_servicio"
+      },
+      {
+        "code": "128",
+        "name": "% Fertilidad 1er Serv 1a lact",
+        "alias": "pct_fertilidad_1er_serv_1a_lact"
+      },
+      {
+        "code": "137",
+        "name": "% Fertilidad 1er Serv 2+ lact",
+        "alias": "pct_fertilidad_1er_serv_2plus_lact"
+      },
+      {
+        "code": "120",
+        "name": "% Fertilidad 2do Servicio",
+        "alias": "pct_fertilidad_2do_servicio"
+      },
+      {
+        "code": "129",
+        "name": "% Fertilidad 2do Serv 1a lact",
+        "alias": "pct_fertilidad_2do_serv_1a_lact"
+      },
+      {
+        "code": "138",
+        "name": "% Fertilidad 2do Serv 2+ lact",
+        "alias": "pct_fertilidad_2do_serv_2plus_lact"
+      },
+      {
+        "code": "121",
+        "name": "Dias 1er Servicio",
+        "alias": "dias_1er_servicio"
+      },
+      {
+        "code": "130",
+        "name": "Dias 1er Servicio 1a lact",
+        "alias": "dias_1er_servicio_1a_lact"
+      },
+      {
+        "code": "139",
+        "name": "Dias 1er Servicio 2+ lact",
+        "alias": "dias_1er_servicio_2plus_lact"
+      },
+      {
+        "code": "139a",
+        "name": "Dias 1er Servicio 3+ lact",
+        "alias": "dias_1er_servicio_3plus_lact"
+      },
+      {
+        "code": "122",
+        "name": "Media Serv. X prenez",
+        "alias": "media_serv_x_prenez"
+      },
+      {
+        "code": "131",
+        "name": "Media Serv. X prenez 1a lact",
+        "alias": "media_serv_x_prenez_1a_lact"
+      },
+      {
+        "code": "140",
+        "name": "Media Serv. X prenez 2+ lact",
+        "alias": "media_serv_x_prenez_2plus_lact"
+      },
+      {
+        "code": "123",
+        "name": "Media Dias Abiertos",
+        "alias": "media_dias_abiertos"
+      },
+      {
+        "code": "132",
+        "name": "Media Dias Abiertos 1a lact",
+        "alias": "media_dias_abiertos_1a_lact"
+      },
+      {
+        "code": "141",
+        "name": "Media Dias Abiertos 2+ lact",
+        "alias": "media_dias_abiertos_2plus_lact"
+      },
+      {
+        "code": "124",
+        "name": "Inseminaciones Dobles",
+        "alias": "inseminaciones_dobles"
+      },
+      {
+        "code": "133",
+        "name": "Inseminaciones Dobles 1a lact",
+        "alias": "inseminaciones_dobles_1a_lact"
+      },
+      {
+        "code": "142",
+        "name": "Inseminaciones Dobles 2+ lact",
+        "alias": "inseminaciones_dobles_2plus_lact"
+      },
+      {
+        "code": "125",
+        "name": "Deteccion de Celos (Ult2)",
+        "alias": "deteccion_de_celos_ult2"
+      },
+      {
+        "code": "194",
+        "name": "Deteccion de Celos 5-17 dias",
+        "alias": "deteccion_de_celos_5_17_dias"
+      },
+      {
+        "code": "195",
+        "name": "Deteccion de Celos 18-25 dias",
+        "alias": "deteccion_de_celos_18_25_dias"
+      },
+      {
+        "code": "196",
+        "name": "Deteccion de Celos  26-35 dias",
+        "alias": "deteccion_de_celos_26_35_dias"
+      },
+      {
+        "code": "197",
+        "name": "Deteccion de Celos 36-60 dias",
+        "alias": "deteccion_de_celos_36_60_dias"
+      },
+      {
+        "code": "155",
+        "name": "Peso Secado (-1) 2a Lact",
+        "alias": "peso_secado_1_2a_lact"
+      },
+      {
+        "code": "166",
+        "name": "Peso Secado (-1) 3+ Lact",
+        "alias": "peso_secado_1_3plus_lact"
+      },
+      {
+        "code": "145",
+        "name": "Peso Reto (-1) 1a Lact",
+        "alias": "peso_reto_1_1a_lact"
+      },
+      {
+        "code": "156",
+        "name": "Peso Reto (-1) 2a Lact",
+        "alias": "peso_reto_1_2a_lact"
+      },
+      {
+        "code": "167",
+        "name": "Peso Reto (-1) 3+ Lact",
+        "alias": "peso_reto_1_3plus_lact"
+      },
+      {
+        "code": "146",
+        "name": "Peso al Parto 1a Lact",
+        "alias": "peso_al_parto_1a_lact"
+      },
+      {
+        "code": "157",
+        "name": "Peso al Parto 2a Lact",
+        "alias": "peso_al_parto_2a_lact"
+      },
+      {
+        "code": "168",
+        "name": "Peso al Parto 3+ Lact",
+        "alias": "peso_al_parto_3plus_lact"
+      },
+      {
+        "code": "147",
+        "name": "Peso 5 DEL 1a Lact",
+        "alias": "peso_5_del_1a_lact"
+      },
+      {
+        "code": "158",
+        "name": "Peso 5 DEL 2a Lact",
+        "alias": "peso_5_del_2a_lact"
+      },
+      {
+        "code": "169",
+        "name": "Peso 5 DEL 3+ Lact",
+        "alias": "peso_5_del_3plus_lact"
+      },
+      {
+        "code": "148",
+        "name": "Peso 10 DEL 1a Lact",
+        "alias": "peso_10_del_1a_lact"
+      },
+      {
+        "code": "159",
+        "name": "Peso 10 DEL 2a Lact",
+        "alias": "peso_10_del_2a_lact"
+      },
+      {
+        "code": "170",
+        "name": "Peso 10 DEL 3+ Lact",
+        "alias": "peso_10_del_3plus_lact"
+      },
+      {
+        "code": "149",
+        "name": "Peso 20 DEL 1a Lact",
+        "alias": "peso_20_del_1a_lact"
+      },
+      {
+        "code": "160",
+        "name": "Peso 20 DEL 2a Lact",
+        "alias": "peso_20_del_2a_lact"
+      },
+      {
+        "code": "171",
+        "name": "Peso 20 DEL 3+ Lact",
+        "alias": "peso_20_del_3plus_lact"
+      },
+      {
+        "code": "150",
+        "name": "Peso 30 DEL 1a Lact",
+        "alias": "peso_30_del_1a_lact"
+      },
+      {
+        "code": "161",
+        "name": "Peso 30 DEL 2a Lact",
+        "alias": "peso_30_del_2a_lact"
+      },
+      {
+        "code": "172",
+        "name": "Peso 30 DEL 3+ Lact",
+        "alias": "peso_30_del_3plus_lact"
+      },
+      {
+        "code": "151",
+        "name": "Peso 40 DEL 1a Lact",
+        "alias": "peso_40_del_1a_lact"
+      },
+      {
+        "code": "162",
+        "name": "Peso 40 DEL 2a Lact",
+        "alias": "peso_40_del_2a_lact"
+      },
+      {
+        "code": "173",
+        "name": "Peso 40 DEL 3+ Lact",
+        "alias": "peso_40_del_3plus_lact"
+      },
+      {
+        "code": "152",
+        "name": "Peso 50 DEL 1a Lact",
+        "alias": "peso_50_del_1a_lact"
+      },
+      {
+        "code": "163",
+        "name": "Peso 50 DEL 2a Lact",
+        "alias": "peso_50_del_2a_lact"
+      },
+      {
+        "code": "174",
+        "name": "Peso 50 DEL 3+ Lact",
+        "alias": "peso_50_del_3plus_lact"
+      },
+      {
+        "code": "153",
+        "name": "Peso 60 DEL 1a Lact",
+        "alias": "peso_60_del_1a_lact"
+      },
+      {
+        "code": "164",
+        "name": "Peso 60 DEL 2a Lact",
+        "alias": "peso_60_del_2a_lact"
+      },
+      {
+        "code": "175",
+        "name": "Peso 60 DEL 3+ Lact",
+        "alias": "peso_60_del_3plus_lact"
+      },
+      {
+        "code": "154",
+        "name": "Peso 1er Serv 1a Lact",
+        "alias": "peso_1er_serv_1a_lact"
+      },
+      {
+        "code": "165",
+        "name": "Peso 1er Serv 2a Lact",
+        "alias": "peso_1er_serv_2a_lact"
+      },
+      {
+        "code": "176",
+        "name": "Peso 1er Serv 3+ Lact",
+        "alias": "peso_1er_serv_3plus_lact"
+      },
+      {
+        "code": "177b",
+        "name": "Peso Secado (-1) 6M 2a Lact",
+        "alias": "peso_secado_1_6m_2a_lact"
+      },
+      {
+        "code": "177c",
+        "name": "Peso Secado (-1) 6M 3+ Lact",
+        "alias": "peso_secado_1_6m_3plus_lact"
+      },
+      {
+        "code": "178a",
+        "name": "Peso Reto (-1) 6M 1a Lact",
+        "alias": "peso_reto_1_6m_1a_lact"
+      },
+      {
+        "code": "178b",
+        "name": "Peso Reto (-1) 6M 2a Lact",
+        "alias": "peso_reto_1_6m_2a_lact"
+      },
+      {
+        "code": "178c",
+        "name": "Peso Reto (-1) 6M 3+ Lact",
+        "alias": "peso_reto_1_6m_3plus_lact"
+      },
+      {
+        "code": "179a",
+        "name": "Peso al Parto 6M 1a Lact",
+        "alias": "peso_al_parto_6m_1a_lact"
+      },
+      {
+        "code": "179b",
+        "name": "Peso al Parto 6M 2a Lact",
+        "alias": "peso_al_parto_6m_2a_lact"
+      },
+      {
+        "code": "179c",
+        "name": "Peso al Parto 6M 3+ Lact",
+        "alias": "peso_al_parto_6m_3plus_lact"
+      },
+      {
+        "code": "180a",
+        "name": "Peso 3 DEL 6M 1a Lact",
+        "alias": "peso_3_del_6m_1a_lact"
+      },
+      {
+        "code": "180b",
+        "name": "Peso 3 DEL 6M 2a Lact",
+        "alias": "peso_3_del_6m_2a_lact"
+      },
+      {
+        "code": "180c",
+        "name": "Peso 3 DEL 6M 3+ Lact",
+        "alias": "peso_3_del_6m_3plus_lact"
+      },
+      {
+        "code": "181a",
+        "name": "Peso 5 DEL 6M 1a Lact",
+        "alias": "peso_5_del_6m_1a_lact"
+      },
+      {
+        "code": "181b",
+        "name": "Peso 5 DEL 6M 2a Lact",
+        "alias": "peso_5_del_6m_2a_lact"
+      },
+      {
+        "code": "181c",
+        "name": "Peso 5 DEL 6M 3+Lact",
+        "alias": "peso_5_del_6m_3pluslact"
+      },
+      {
+        "code": "182a",
+        "name": "Peso 10 DEL 6M 1a Lact",
+        "alias": "peso_10_del_6m_1a_lact"
+      },
+      {
+        "code": "182b",
+        "name": "Peso 10 DEL 6M 2a Lact",
+        "alias": "peso_10_del_6m_2a_lact"
+      },
+      {
+        "code": "182c",
+        "name": "Peso 10 DEL 6M 3+ Lact",
+        "alias": "peso_10_del_6m_3plus_lact"
+      },
+      {
+        "code": "183a",
+        "name": "Peso 20 DEL 6M 1a Lact",
+        "alias": "peso_20_del_6m_1a_lact"
+      },
+      {
+        "code": "183b",
+        "name": "Peso 20 DEL 6M 2a Lact",
+        "alias": "peso_20_del_6m_2a_lact"
+      },
+      {
+        "code": "183c",
+        "name": "Peso 20 DEL 6M 3+ Lact",
+        "alias": "peso_20_del_6m_3plus_lact"
+      },
+      {
+        "code": "184a",
+        "name": "Peso 30 DEL 6M 1a Lact",
+        "alias": "peso_30_del_6m_1a_lact"
+      },
+      {
+        "code": "184b",
+        "name": "Peso 30 DEL 6M 2a Lact",
+        "alias": "peso_30_del_6m_2a_lact"
+      },
+      {
+        "code": "184c",
+        "name": "Peso 30 DEL 6M 3+ Lact",
+        "alias": "peso_30_del_6m_3plus_lact"
+      },
+      {
+        "code": "185a",
+        "name": "Peso 40 DEL 6M 1a Lact",
+        "alias": "peso_40_del_6m_1a_lact"
+      },
+      {
+        "code": "185b",
+        "name": "Peso 40 DEL 6M 2a Lact",
+        "alias": "peso_40_del_6m_2a_lact"
+      },
+      {
+        "code": "185c",
+        "name": "Peso 40 DEL 6M 3+ Lact",
+        "alias": "peso_40_del_6m_3plus_lact"
+      },
+      {
+        "code": "186a",
+        "name": "Peso 50 DEL 6M 1a Lact",
+        "alias": "peso_50_del_6m_1a_lact"
+      },
+      {
+        "code": "186b",
+        "name": "Peso 50 DEL 6M 2a Lact",
+        "alias": "peso_50_del_6m_2a_lact"
+      },
+      {
+        "code": "186c",
+        "name": "Peso 50 DEL 6M 3+ Lact",
+        "alias": "peso_50_del_6m_3plus_lact"
+      },
+      {
+        "code": "187a",
+        "name": "Peso 60 DEL 6M 1a Lact",
+        "alias": "peso_60_del_6m_1a_lact"
+      },
+      {
+        "code": "187b",
+        "name": "Peso 60 DEL 6M 2a Lact",
+        "alias": "peso_60_del_6m_2a_lact"
+      },
+      {
+        "code": "187c",
+        "name": "Peso 60 DEL 6M 3+ Lact",
+        "alias": "peso_60_del_6m_3plus_lact"
+      },
+      {
+        "code": "188a",
+        "name": "Peso 70 DEL 6M 1a Lact",
+        "alias": "peso_70_del_6m_1a_lact"
+      },
+      {
+        "code": "188b",
+        "name": "Peso 70 DEL 6M 2a Lact",
+        "alias": "peso_70_del_6m_2a_lact"
+      },
+      {
+        "code": "188c",
+        "name": "Peso 70 DEL 6M 3+ Lact",
+        "alias": "peso_70_del_6m_3plus_lact"
+      },
+      {
+        "code": "189a",
+        "name": "Peso 80 DEL 6M 1a Lact",
+        "alias": "peso_80_del_6m_1a_lact"
+      },
+      {
+        "code": "189b",
+        "name": "Peso 80 DEL 6M 2a Lact",
+        "alias": "peso_80_del_6m_2a_lact"
+      },
+      {
+        "code": "189c",
+        "name": "Peso 80 DEL 6M 3+ Lact",
+        "alias": "peso_80_del_6m_3plus_lact"
+      },
+      {
+        "code": "190a",
+        "name": "Peso 90 DEL 6M 1a Lact",
+        "alias": "peso_90_del_6m_1a_lact"
+      },
+      {
+        "code": "190b",
+        "name": "Peso 90 DEL 6M 2a Lact",
+        "alias": "peso_90_del_6m_2a_lact"
+      },
+      {
+        "code": "190c",
+        "name": "Peso 90 DEL 6M 3+ Lact",
+        "alias": "peso_90_del_6m_3plus_lact"
+      },
+      {
+        "code": "191a",
+        "name": "Peso 100 DEL 6M 1a Lact",
+        "alias": "peso_100_del_6m_1a_lact"
+      },
+      {
+        "code": "191b",
+        "name": "Peso 100 DEL 6M 2a Lact",
+        "alias": "peso_100_del_6m_2a_lact"
+      },
+      {
+        "code": "191c",
+        "name": "Peso 100 DEL 6M 3+ Lact",
+        "alias": "peso_100_del_6m_3plus_lact"
+      },
+      {
+        "code": "192a",
+        "name": "Peso 110 DEL 6M 1a Lact",
+        "alias": "peso_110_del_6m_1a_lact"
+      },
+      {
+        "code": "192b",
+        "name": "Peso 110 DEL 6M 2a Lact",
+        "alias": "peso_110_del_6m_2a_lact"
+      },
+      {
+        "code": "192c",
+        "name": "Peso 110 DEL 6M 3+ Lact",
+        "alias": "peso_110_del_6m_3plus_lact"
+      },
+      {
+        "code": "193a",
+        "name": "Peso 120 DEL 6M 1a Lact",
+        "alias": "peso_120_del_6m_1a_lact"
+      },
+      {
+        "code": "193b",
+        "name": "Peso 120 DEL 6M 2a Lact",
+        "alias": "peso_120_del_6m_2a_lact"
+      },
+      {
+        "code": "193c",
+        "name": "Peso 120 DEL 6M 3+ Lact",
+        "alias": "peso_120_del_6m_3plus_lact"
+      },
+      {
+        "code": "118",
+        "name": "% Fertildad del Periodo",
+        "alias": "pct_fertildad_del_periodo"
+      },
+      {
+        "code": "118a",
+        "name": "% Fertilidad 1a Lact",
+        "alias": "pct_fertilidad_1a_lact"
+      },
+      {
+        "code": "118b",
+        "name": "% Fertilidad 2+ Lact",
+        "alias": "pct_fertilidad_2plus_lact"
+      },
+      {
+        "code": "124a",
+        "name": "% Inseminaciones Dobles",
+        "alias": "pct_inseminaciones_dobles"
+      },
+      {
+        "code": "133a",
+        "name": "% Inseminaciones Dobles 1a Lact",
+        "alias": "pct_inseminaciones_dobles_1a_lact"
+      },
+      {
+        "code": "142a",
+        "name": "% Inseminaciones Dobles 2a Lact",
+        "alias": "pct_inseminaciones_dobles_2a_lact"
+      },
+      {
+        "code": "134",
+        "name": "Taza Prenez (21 Dias)",
+        "alias": "taza_prenez_21_dias"
+      },
+      {
+        "code": "194a",
+        "name": "% Distribucion Celos 5-17 dias",
+        "alias": "pct_distribucion_celos_5_17_dias"
+      },
+      {
+        "code": "195a",
+        "name": "% Distribucion Celos 18-25 dias",
+        "alias": "pct_distribucion_celos_18_25_dias"
+      },
+      {
+        "code": "196a",
+        "name": "% Distribucion Celos 26-35 dias",
+        "alias": "pct_distribucion_celos_26_35_dias"
+      },
+      {
+        "code": "197a",
+        "name": "% Distribucion Celos 36-60 dias",
+        "alias": "pct_distribucion_celos_36_60_dias"
+      },
+      {
+        "code": "155a",
+        "name": "T. Peso al Secado",
+        "alias": "t_peso_al_secado"
+      },
+      {
+        "code": "145a",
+        "name": "T. Peso al Reto",
+        "alias": "t_peso_al_reto"
+      },
+      {
+        "code": "146a",
+        "name": "T. Peso al Parto",
+        "alias": "t_peso_al_parto"
+      },
+      {
+        "code": "146b",
+        "name": "Dif. Peso Secado vs al Parto",
+        "alias": "dif_peso_secado_vs_al_parto"
+      },
+      {
+        "code": "146c",
+        "name": "Dif. Peso Secado vs al Parto 1a Lact",
+        "alias": "dif_peso_secado_vs_al_parto_1a_lact"
+      },
+      {
+        "code": "146d",
+        "name": "Dif. Peso Secado vs al Parto 2a Lact",
+        "alias": "dif_peso_secado_vs_al_parto_2a_lact"
+      },
+      {
+        "code": "146e",
+        "name": "Dif. Peso Secado vs al Parto 3+ Lact",
+        "alias": "dif_peso_secado_vs_al_parto_3plus_lact"
+      },
+      {
+        "code": "145b",
+        "name": "Dif. Peso Reto vs al Parto",
+        "alias": "dif_peso_reto_vs_al_parto"
+      },
+      {
+        "code": "145c",
+        "name": "Dif. Peso Reto vs al Parto 1a Lact",
+        "alias": "dif_peso_reto_vs_al_parto_1a_lact"
+      },
+      {
+        "code": "145d",
+        "name": "Dif. Peso Reto vs al Parto 2a Lact",
+        "alias": "dif_peso_reto_vs_al_parto_2a_lact"
+      },
+      {
+        "code": "145e",
+        "name": "Dif. Peso Reto vs al Parto 3+ Lact",
+        "alias": "dif_peso_reto_vs_al_parto_3plus_lact"
+      },
+      {
+        "code": "155m",
+        "name": "% Peso Secado (-1) 2a Lact",
+        "alias": "pct_peso_secado_1_2a_lact"
+      },
+      {
+        "code": "166m",
+        "name": "% Peso Secado (-1) 3+ Lact",
+        "alias": "pct_peso_secado_1_3plus_lact"
+      },
+      {
+        "code": "145m",
+        "name": "% Peso Reto (-1) 1a Lact",
+        "alias": "pct_peso_reto_1_1a_lact"
+      },
+      {
+        "code": "156m",
+        "name": "% Peso Reto (-1) 2a Lact",
+        "alias": "pct_peso_reto_1_2a_lact"
+      },
+      {
+        "code": "167m",
+        "name": "% Peso Reto (-1) 3+ Lact",
+        "alias": "pct_peso_reto_1_3plus_lact"
+      },
+      {
+        "code": "146m",
+        "name": "% Peso al Parto 1a Lact",
+        "alias": "pct_peso_al_parto_1a_lact"
+      },
+      {
+        "code": "157m",
+        "name": "% Peso al Parto 2a Lact",
+        "alias": "pct_peso_al_parto_2a_lact"
+      },
+      {
+        "code": "168m",
+        "name": "% Peso al Parto 3+ Lact",
+        "alias": "pct_peso_al_parto_3plus_lact"
+      },
+      {
+        "code": "147m",
+        "name": "% Peso 5 DEL 1a Lact",
+        "alias": "pct_peso_5_del_1a_lact"
+      },
+      {
+        "code": "158m",
+        "name": "% Peso 5 DEL 2a Lact",
+        "alias": "pct_peso_5_del_2a_lact"
+      },
+      {
+        "code": "169m",
+        "name": "% Peso 5 DEL 3+ Lact",
+        "alias": "pct_peso_5_del_3plus_lact"
+      },
+      {
+        "code": "148m",
+        "name": "% Peso 10 DEL 1a Lact",
+        "alias": "pct_peso_10_del_1a_lact"
+      },
+      {
+        "code": "159m",
+        "name": "% Peso 10 DEL 2a Lact",
+        "alias": "pct_peso_10_del_2a_lact"
+      },
+      {
+        "code": "170m",
+        "name": "% Peso 10 DEL 3+ Lact",
+        "alias": "pct_peso_10_del_3plus_lact"
+      },
+      {
+        "code": "149m",
+        "name": "% Peso 20 DEL 1a Lact",
+        "alias": "pct_peso_20_del_1a_lact"
+      },
+      {
+        "code": "160m",
+        "name": "% Peso 20 DEL 2a Lact",
+        "alias": "pct_peso_20_del_2a_lact"
+      },
+      {
+        "code": "171m",
+        "name": "% Peso 20 DEL 3+ Lact",
+        "alias": "pct_peso_20_del_3plus_lact"
+      },
+      {
+        "code": "150m",
+        "name": "% Peso 30 DEL 1a Lact",
+        "alias": "pct_peso_30_del_1a_lact"
+      },
+      {
+        "code": "161m",
+        "name": "% Peso 30 DEL 2a Lact",
+        "alias": "pct_peso_30_del_2a_lact"
+      },
+      {
+        "code": "172m",
+        "name": "% Peso 30 DEL 3+ Lact",
+        "alias": "pct_peso_30_del_3plus_lact"
+      },
+      {
+        "code": "151m",
+        "name": "% Peso 40 DEL 1a Lact",
+        "alias": "pct_peso_40_del_1a_lact"
+      },
+      {
+        "code": "162m",
+        "name": "% Peso 40 DEL 2a Lact",
+        "alias": "pct_peso_40_del_2a_lact"
+      },
+      {
+        "code": "173m",
+        "name": "% Peso 40 DEL 3+ Lact",
+        "alias": "pct_peso_40_del_3plus_lact"
+      },
+      {
+        "code": "152m",
+        "name": "% Peso 50 DEL 1a Lact",
+        "alias": "pct_peso_50_del_1a_lact"
+      },
+      {
+        "code": "163m",
+        "name": "% Peso 50 DEL 2a Lact",
+        "alias": "pct_peso_50_del_2a_lact"
+      },
+      {
+        "code": "174m",
+        "name": "% Peso 50 DEL 3+ Lact",
+        "alias": "pct_peso_50_del_3plus_lact"
+      },
+      {
+        "code": "153m",
+        "name": "% Peso 60 DEL 1a Lact",
+        "alias": "pct_peso_60_del_1a_lact"
+      },
+      {
+        "code": "164m",
+        "name": "% Peso 60 DEL 2a Lact",
+        "alias": "pct_peso_60_del_2a_lact"
+      },
+      {
+        "code": "175m",
+        "name": "% Peso 60 DEL 3+ Lact",
+        "alias": "pct_peso_60_del_3plus_lact"
+      },
+      {
+        "code": "154m",
+        "name": "% Peso 1er Serv 1a Lact",
+        "alias": "pct_peso_1er_serv_1a_lact"
+      },
+      {
+        "code": "165m",
+        "name": "% Peso 1er Serv 2a Lact",
+        "alias": "pct_peso_1er_serv_2a_lact"
+      },
+      {
+        "code": "176m",
+        "name": "% Peso 1er Serv 3+ Lact",
+        "alias": "pct_peso_1er_serv_3plus_lact"
+      },
+      {
+        "code": "177n",
+        "name": "% Peso Secado (-1) 6M 2a Lact",
+        "alias": "pct_peso_secado_1_6m_2a_lact"
+      },
+      {
+        "code": "177o",
+        "name": "% Peso Secado (-1) 6M 3+ Lact",
+        "alias": "pct_peso_secado_1_6m_3plus_lact"
+      },
+      {
+        "code": "178m",
+        "name": "% Peso Reto (-1) 6M 1a Lact",
+        "alias": "pct_peso_reto_1_6m_1a_lact"
+      },
+      {
+        "code": "178n",
+        "name": "% Peso Reto (-1) 6M 2a Lact",
+        "alias": "pct_peso_reto_1_6m_2a_lact"
+      },
+      {
+        "code": "178o",
+        "name": "% Peso Reto (-1) 6M 3+ Lact",
+        "alias": "pct_peso_reto_1_6m_3plus_lact"
+      },
+      {
+        "code": "179m",
+        "name": "% Peso al Parto 6M 1a Lact",
+        "alias": "pct_peso_al_parto_6m_1a_lact"
+      },
+      {
+        "code": "179n",
+        "name": "% Peso al Parto 6M 2a Lact",
+        "alias": "pct_peso_al_parto_6m_2a_lact"
+      },
+      {
+        "code": "179o",
+        "name": "% Peso al Parto 6M 3+ Lact",
+        "alias": "pct_peso_al_parto_6m_3plus_lact"
+      },
+      {
+        "code": "180m",
+        "name": "% Peso 3 DEL 6M 1a Lact",
+        "alias": "pct_peso_3_del_6m_1a_lact"
+      },
+      {
+        "code": "180n",
+        "name": "% Peso 3 DEL 6M 2a Lact",
+        "alias": "pct_peso_3_del_6m_2a_lact"
+      },
+      {
+        "code": "180o",
+        "name": "% Peso 3 DEL 6M 3+ Lact",
+        "alias": "pct_peso_3_del_6m_3plus_lact"
+      },
+      {
+        "code": "181m",
+        "name": "% Peso 5 DEL 6M 1a Lact",
+        "alias": "pct_peso_5_del_6m_1a_lact"
+      },
+      {
+        "code": "181n",
+        "name": "% Peso 5 DEL 6M 2a Lact",
+        "alias": "pct_peso_5_del_6m_2a_lact"
+      },
+      {
+        "code": "181o",
+        "name": "% Peso 5 DEL 6M 3+Lact",
+        "alias": "pct_peso_5_del_6m_3pluslact"
+      },
+      {
+        "code": "182m",
+        "name": "% Peso 10 DEL 6M 1a Lact",
+        "alias": "pct_peso_10_del_6m_1a_lact"
+      },
+      {
+        "code": "182n",
+        "name": "% Peso 10 DEL 6M 2a Lact",
+        "alias": "pct_peso_10_del_6m_2a_lact"
+      },
+      {
+        "code": "182o",
+        "name": "% Peso 10 DEL 6M 3+ Lact",
+        "alias": "pct_peso_10_del_6m_3plus_lact"
+      },
+      {
+        "code": "183m",
+        "name": "% Peso 20 DEL 6M 1a Lact",
+        "alias": "pct_peso_20_del_6m_1a_lact"
+      },
+      {
+        "code": "183n",
+        "name": "% Peso 20 DEL 6M 2a Lact",
+        "alias": "pct_peso_20_del_6m_2a_lact"
+      },
+      {
+        "code": "183o",
+        "name": "% Peso 20 DEL 6M 3+ Lact",
+        "alias": "pct_peso_20_del_6m_3plus_lact"
+      },
+      {
+        "code": "184m",
+        "name": "% Peso 30 DEL 6M 1a Lact",
+        "alias": "pct_peso_30_del_6m_1a_lact"
+      },
+      {
+        "code": "184n",
+        "name": "% Peso 30 DEL 6M 2a Lact",
+        "alias": "pct_peso_30_del_6m_2a_lact"
+      },
+      {
+        "code": "184o",
+        "name": "% Peso 30 DEL 6M 3+ Lact",
+        "alias": "pct_peso_30_del_6m_3plus_lact"
+      },
+      {
+        "code": "185m",
+        "name": "% Peso 40 DEL 6M 1a Lact",
+        "alias": "pct_peso_40_del_6m_1a_lact"
+      },
+      {
+        "code": "185n",
+        "name": "% Peso 40 DEL 6M 2a Lact",
+        "alias": "pct_peso_40_del_6m_2a_lact"
+      },
+      {
+        "code": "185o",
+        "name": "% Peso 40 DEL 6M 3+ Lact",
+        "alias": "pct_peso_40_del_6m_3plus_lact"
+      },
+      {
+        "code": "186m",
+        "name": "% Peso 50 DEL 6M 1a Lact",
+        "alias": "pct_peso_50_del_6m_1a_lact"
+      },
+      {
+        "code": "186n",
+        "name": "% Peso 50 DEL 6M 2a Lact",
+        "alias": "pct_peso_50_del_6m_2a_lact"
+      },
+      {
+        "code": "186o",
+        "name": "% Peso 50 DEL 6M 3+ Lact",
+        "alias": "pct_peso_50_del_6m_3plus_lact"
+      },
+      {
+        "code": "187m",
+        "name": "% Peso 60 DEL 6M 1a Lact",
+        "alias": "pct_peso_60_del_6m_1a_lact"
+      },
+      {
+        "code": "187n",
+        "name": "% Peso 60 DEL 6M 2a Lact",
+        "alias": "pct_peso_60_del_6m_2a_lact"
+      },
+      {
+        "code": "187o",
+        "name": "% Peso 60 DEL 6M 3+ Lact",
+        "alias": "pct_peso_60_del_6m_3plus_lact"
+      },
+      {
+        "code": "188m",
+        "name": "% Peso 70 DEL 6M 1a Lact",
+        "alias": "pct_peso_70_del_6m_1a_lact"
+      },
+      {
+        "code": "188n",
+        "name": "% Peso 70 DEL 6M 2a Lact",
+        "alias": "pct_peso_70_del_6m_2a_lact"
+      },
+      {
+        "code": "188o",
+        "name": "% Peso 70 DEL 6M 3+ Lact",
+        "alias": "pct_peso_70_del_6m_3plus_lact"
+      },
+      {
+        "code": "189m",
+        "name": "% Peso 80 DEL 6M 1a Lact",
+        "alias": "pct_peso_80_del_6m_1a_lact"
+      },
+      {
+        "code": "189n",
+        "name": "% Peso 80 DEL 6M 2a Lact",
+        "alias": "pct_peso_80_del_6m_2a_lact"
+      },
+      {
+        "code": "189o",
+        "name": "% Peso 80 DEL 6M 3+ Lact",
+        "alias": "pct_peso_80_del_6m_3plus_lact"
+      },
+      {
+        "code": "190m",
+        "name": "% Peso 90 DEL 6M 1a Lact",
+        "alias": "pct_peso_90_del_6m_1a_lact"
+      },
+      {
+        "code": "190n",
+        "name": "% Peso 90 DEL 6M 2a Lact",
+        "alias": "pct_peso_90_del_6m_2a_lact"
+      },
+      {
+        "code": "190o",
+        "name": "% Peso 90 DEL 6M 3+ Lact",
+        "alias": "pct_peso_90_del_6m_3plus_lact"
+      },
+      {
+        "code": "191m",
+        "name": "% Peso 100 DEL 6M 1a Lact",
+        "alias": "pct_peso_100_del_6m_1a_lact"
+      },
+      {
+        "code": "191n",
+        "name": "% Peso 100 DEL 6M 2a Lact",
+        "alias": "pct_peso_100_del_6m_2a_lact"
+      },
+      {
+        "code": "191o",
+        "name": "% Peso 100 DEL 6M 3+ Lact",
+        "alias": "pct_peso_100_del_6m_3plus_lact"
+      },
+      {
+        "code": "192m",
+        "name": "% Peso 110 DEL 6M 1a Lact",
+        "alias": "pct_peso_110_del_6m_1a_lact"
+      },
+      {
+        "code": "192n",
+        "name": "% Peso 110 DEL 6M 2a Lact",
+        "alias": "pct_peso_110_del_6m_2a_lact"
+      },
+      {
+        "code": "192o",
+        "name": "% Peso 110 DEL 6M 3+ Lact",
+        "alias": "pct_peso_110_del_6m_3plus_lact"
+      },
+      {
+        "code": "193m",
+        "name": "% Peso 120 DEL 6M 1a Lact",
+        "alias": "pct_peso_120_del_6m_1a_lact"
+      },
+      {
+        "code": "193n",
+        "name": "% Peso 120 DEL 6M 2a Lact",
+        "alias": "pct_peso_120_del_6m_2a_lact"
+      },
+      {
+        "code": "193o",
+        "name": "% Peso 120 DEL 6M 3+ Lact",
+        "alias": "pct_peso_120_del_6m_3plus_lact"
+      },
+      {
+        "code": "125b",
+        "name": "Deteccion de Celos 1a Lact (Ult2)",
+        "alias": "deteccion_de_celos_1a_lact_ult2"
+      },
+      {
+        "code": "125c",
+        "name": "Deteccion de Celos 2+ Lact (Ult2)",
+        "alias": "deteccion_de_celos_2plus_lact_ult2"
+      },
+      {
+        "code": "134a",
+        "name": "Taza Prenez 1a Lact (21 Dias)",
+        "alias": "taza_prenez_1a_lact_21_dias"
+      },
+      {
+        "code": "134b",
+        "name": "Taza Prenez 2+ Lact (21 Dias)",
+        "alias": "taza_prenez_2plus_lact_21_dias"
+      },
+      {
+        "code": "200",
+        "name": "Tiempo de espera voluntario 1a Lact",
+        "alias": "tiempo_de_espera_voluntario_1a_lact"
+      },
+      {
+        "code": "200a",
+        "name": "Tiempo de espera voluntario 2+ Lact",
+        "alias": "tiempo_de_espera_voluntario_2plus_lact"
+      },
+      {
+        "code": "117b",
+        "name": "Inseminaciones 1er Servicio",
+        "alias": "inseminaciones_1er_servicio"
+      },
+      {
+        "code": "117c",
+        "name": "Preñeces 1er Servicio",
+        "alias": "preñeces_1er_servicio"
+      },
+      {
+        "code": "117d",
+        "name": "Inseminaciones 2do Servicio",
+        "alias": "inseminaciones_2do_servicio"
+      },
+      {
+        "code": "117e",
+        "name": "Preñeces 2do Servicio",
+        "alias": "preñeces_2do_servicio"
+      },
+      {
+        "code": "126b",
+        "name": "Inseminaciones 1er Serv. 1a Lact",
+        "alias": "inseminaciones_1er_serv_1a_lact"
+      },
+      {
+        "code": "126c",
+        "name": "Preñeces 1er Serv. 1a Lact",
+        "alias": "preñeces_1er_serv_1a_lact"
+      },
+      {
+        "code": "126d",
+        "name": "Inseminaciones 2do Serv. 1a Lact",
+        "alias": "inseminaciones_2do_serv_1a_lact"
+      },
+      {
+        "code": "126e",
+        "name": "Preñeces 2do Serv. 1a Lact",
+        "alias": "preñeces_2do_serv_1a_lact"
+      },
+      {
+        "code": "135b",
+        "name": "Inseminaciones 1er Serv 2+ Lact",
+        "alias": "inseminaciones_1er_serv_2plus_lact"
+      },
+      {
+        "code": "135c",
+        "name": "Preñeces 1er Serv 2+ Lact",
+        "alias": "preñeces_1er_serv_2plus_lact"
+      },
+      {
+        "code": "135d",
+        "name": "Inseminaciones 2do Serv 2+ Lact",
+        "alias": "inseminaciones_2do_serv_2plus_lact"
+      },
+      {
+        "code": "135e",
+        "name": "Preñeces 2do Serv 2+ Lact",
+        "alias": "preñeces_2do_serv_2plus_lact"
+      }
+    ]
+  },
+  "MS": {
+    "section": "MS",
+    "description": "MONITOR DE ENTRADA AL SECADO",
+    "kpis": [
+      {
+        "code": "203a",
+        "name": "Animales Secados 1a Lact",
+        "alias": "animales_secados_1a_lact"
+      },
+      {
+        "code": "203b",
+        "name": "Animales Secados 2a Lact",
+        "alias": "animales_secados_2a_lact"
+      },
+      {
+        "code": "203c",
+        "name": "Animales Secados 3+ Lact",
+        "alias": "animales_secados_3plus_lact"
+      },
+      {
+        "code": "204a",
+        "name": "Produccion al Secado 1a Lact",
+        "alias": "produccion_al_secado_1a_lact"
+      },
+      {
+        "code": "204b",
+        "name": "Produccion al Secado 2a Lact",
+        "alias": "produccion_al_secado_2a_lact"
+      },
+      {
+        "code": "204c",
+        "name": "Produccion al Secado 3+ Lact",
+        "alias": "produccion_al_secado_3plus_lact"
+      },
+      {
+        "code": "205a",
+        "name": "Vacas al Secado < 18 Kg 1a Lact",
+        "alias": "vacas_al_secado_lt_18_kg_1a_lact"
+      },
+      {
+        "code": "205b",
+        "name": "Vacas al Secado < 18 Kg 2a Lact",
+        "alias": "vacas_al_secado_lt_18_kg_2a_lact"
+      },
+      {
+        "code": "205c",
+        "name": "Vacas al Secado < 18 Kg 3+ Lact",
+        "alias": "vacas_al_secado_lt_18_kg_3plus_lact"
+      },
+      {
+        "code": "206a",
+        "name": "Dias Prenez al Secado 1a Lact",
+        "alias": "dias_prenez_al_secado_1a_lact"
+      },
+      {
+        "code": "206b",
+        "name": "Dias Prenez al Secado 2a Lact",
+        "alias": "dias_prenez_al_secado_2a_lact"
+      },
+      {
+        "code": "206c",
+        "name": "Dias Prenez al Secado 3+ Lact",
+        "alias": "dias_prenez_al_secado_3plus_lact"
+      },
+      {
+        "code": "207a",
+        "name": "Prom. DEL al Secado 1a Lact",
+        "alias": "prom_del_al_secado_1a_lact"
+      },
+      {
+        "code": "207b",
+        "name": "Prom. DEL al Secado 2a Lact",
+        "alias": "prom_del_al_secado_2a_lact"
+      },
+      {
+        "code": "207c",
+        "name": "Prom. DEL al Secado 3+ Lact",
+        "alias": "prom_del_al_secado_3plus_lact"
+      },
+      {
+        "code": "208",
+        "name": "Prod. 305 Secado 1a Lact",
+        "alias": "prod_305_secado_1a_lact"
+      },
+      {
+        "code": "209",
+        "name": "Prod. 305 Secado 2a Lact",
+        "alias": "prod_305_secado_2a_lact"
+      },
+      {
+        "code": "210",
+        "name": "Prod. 305 Secado 3+ Lact",
+        "alias": "prod_305_secado_3plus_lact"
+      },
+      {
+        "code": "211",
+        "name": "Pico 1a Lact",
+        "alias": "pico_1a_lact"
+      },
+      {
+        "code": "212",
+        "name": "Pico 2a Lact",
+        "alias": "pico_2a_lact"
+      },
+      {
+        "code": "213",
+        "name": "Pico 3+ Lact",
+        "alias": "pico_3plus_lact"
+      },
+      {
+        "code": "360a",
+        "name": "Edad < 23 Meses",
+        "alias": "edad_lt_23_meses"
+      },
+      {
+        "code": "360b",
+        "name": "Edad 23-25 Meses",
+        "alias": "edad_23_25_meses"
+      },
+      {
+        "code": "360c",
+        "name": "Edad > 25 Meses",
+        "alias": "edad_gt_25_meses"
+      },
+      {
+        "code": "203",
+        "name": "Animales Secados",
+        "alias": "animales_secados"
+      },
+      {
+        "code": "204",
+        "name": "Produccion al Secado",
+        "alias": "produccion_al_secado"
+      },
+      {
+        "code": "205",
+        "name": "Vacas al Secado < 18 Kg",
+        "alias": "vacas_al_secado_lt_18_kg"
+      },
+      {
+        "code": "205d",
+        "name": "% Vacas al Secado < 18 Kg",
+        "alias": "pct_vacas_al_secado_lt_18_kg"
+      },
+      {
+        "code": "205e",
+        "name": "% Vacas al Secado < 18K g 1a Lact",
+        "alias": "pct_vacas_al_secado_lt_18k_g_1a_lact"
+      },
+      {
+        "code": "205f",
+        "name": "% Vacas al Secado < 18 Kg 2a Lact",
+        "alias": "pct_vacas_al_secado_lt_18_kg_2a_lact"
+      },
+      {
+        "code": "205g",
+        "name": "% Vacas al Secado < 18 Kg 3+ Lact",
+        "alias": "pct_vacas_al_secado_lt_18_kg_3plus_lact"
+      },
+      {
+        "code": "206",
+        "name": "Dias Prenez al Secado",
+        "alias": "dias_prenez_al_secado"
+      },
+      {
+        "code": "207",
+        "name": "Promedio DEL al Secado",
+        "alias": "promedio_del_al_secado"
+      },
+      {
+        "code": "211a",
+        "name": "Prom 305 1 Lact",
+        "alias": "prom_305_1_lact"
+      },
+      {
+        "code": "211b",
+        "name": "% Perst 1 Lact",
+        "alias": "pct_perst_1_lact"
+      },
+      {
+        "code": "212a",
+        "name": "Prom 305 2 Lact",
+        "alias": "prom_305_2_lact"
+      },
+      {
+        "code": "212b",
+        "name": "% Perst 2 Lact",
+        "alias": "pct_perst_2_lact"
+      },
+      {
+        "code": "213a",
+        "name": "Prom 305 3+ Lact",
+        "alias": "prom_305_3plus_lact"
+      },
+      {
+        "code": "213b",
+        "name": "% Perst 3+ Lact",
+        "alias": "pct_perst_3plus_lact"
+      },
+      {
+        "code": "360d",
+        "name": "% Animales Secados < 23 Meses",
+        "alias": "pct_animales_secados_lt_23_meses"
+      },
+      {
+        "code": "360e",
+        "name": "% Animales Secados 23-25 Meses",
+        "alias": "pct_animales_secados_23_25_meses"
+      },
+      {
+        "code": "360f",
+        "name": "% Animales Secado >  25  Meses",
+        "alias": "pct_animales_secado_gt_25_meses"
+      }
+    ]
+  },
+  "MP": {
+    "section": "MP",
+    "description": "MONITOR DE PARTOS",
+    "kpis": [
+      {
+        "code": "341",
+        "name": "Partos 1a Lact",
+        "alias": "partos_1a_lact"
+      },
+      {
+        "code": "341a",
+        "name": "Nacimientos 1a Lact",
+        "alias": "nacimientos_1a_lact"
+      },
+      {
+        "code": "342",
+        "name": "Partos 2a Lact",
+        "alias": "partos_2a_lact"
+      },
+      {
+        "code": "342a",
+        "name": "Nacimientos 2a Lact",
+        "alias": "nacimientos_2a_lact"
+      },
+      {
+        "code": "343",
+        "name": "Partos 3+ Lact",
+        "alias": "partos_3plus_lact"
+      },
+      {
+        "code": "343a",
+        "name": "Nacimientos 3+ Lact",
+        "alias": "nacimientos_3plus_lact"
+      },
+      {
+        "code": "214a",
+        "name": "Nacidas Hembras 1a Lact",
+        "alias": "nacidas_hembras_1a_lact"
+      },
+      {
+        "code": "214b",
+        "name": "Nacidas Hembras 2a Lact",
+        "alias": "nacidas_hembras_2a_lact"
+      },
+      {
+        "code": "214c",
+        "name": "Nacidas Hembras 3+ Lact",
+        "alias": "nacidas_hembras_3plus_lact"
+      },
+      {
+        "code": "215a",
+        "name": "Nacidos Machos y No ID 1a Lact",
+        "alias": "nacidos_machos_y_no_id_1a_lact"
+      },
+      {
+        "code": "215b",
+        "name": "Nacidos Machos y No ID 2a Lact",
+        "alias": "nacidos_machos_y_no_id_2a_lact"
+      },
+      {
+        "code": "215c",
+        "name": "Nacidos Machos y No ID 3+ Lact",
+        "alias": "nacidos_machos_y_no_id_3plus_lact"
+      },
+      {
+        "code": "216a",
+        "name": "Nacidos Muertos 1a Lact",
+        "alias": "nacidos_muertos_1a_lact"
+      },
+      {
+        "code": "216b",
+        "name": "Nacidos Muertos 2a Lact",
+        "alias": "nacidos_muertos_2a_lact"
+      },
+      {
+        "code": "216c",
+        "name": "Nacidos Muertos 3+ Lact",
+        "alias": "nacidos_muertos_3plus_lact"
+      },
+      {
+        "code": "217a",
+        "name": "Partos Gemelares 1a Lact",
+        "alias": "partos_gemelares_1a_lact"
+      },
+      {
+        "code": "217b",
+        "name": "Partos Gemelares 2a Lact",
+        "alias": "partos_gemelares_2a_lact"
+      },
+      {
+        "code": "217c",
+        "name": "Partos Gemelares 3+ Lact",
+        "alias": "partos_gemelares_3plus_lact"
+      },
+      {
+        "code": "218a",
+        "name": "Hembras Muertas 1a Lact",
+        "alias": "hembras_muertas_1a_lact"
+      },
+      {
+        "code": "218b",
+        "name": "Hembras Muertas 2a Lact",
+        "alias": "hembras_muertas_2a_lact"
+      },
+      {
+        "code": "218c",
+        "name": "Hembras Muertas 3a Lact",
+        "alias": "hembras_muertas_3a_lact"
+      },
+      {
+        "code": "219",
+        "name": "Partos Normales",
+        "alias": "partos_normales"
+      },
+      {
+        "code": "219a",
+        "name": "Partos Normales 1a Lact",
+        "alias": "partos_normales_1a_lact"
+      },
+      {
+        "code": "219b",
+        "name": "Partos Normales 2a Lact",
+        "alias": "partos_normales_2a_lact"
+      },
+      {
+        "code": "219c",
+        "name": "Partos Normales 3+ Lact",
+        "alias": "partos_normales_3plus_lact"
+      },
+      {
+        "code": "220",
+        "name": "Partos Distocicos",
+        "alias": "partos_distocicos"
+      },
+      {
+        "code": "220a",
+        "name": "Partos Distocicos 1a Lact",
+        "alias": "partos_distocicos_1a_lact"
+      },
+      {
+        "code": "220b",
+        "name": "Partos Distocicos 2a Lact",
+        "alias": "partos_distocicos_2a_lact"
+      },
+      {
+        "code": "220c",
+        "name": "Partos Distocicos 3+ Lact",
+        "alias": "partos_distocicos_3plus_lact"
+      },
+      {
+        "code": "221",
+        "name": "Partos Prematuros",
+        "alias": "partos_prematuros"
+      },
+      {
+        "code": "221a",
+        "name": "Partos Prematuros 1a Lact",
+        "alias": "partos_prematuros_1a_lact"
+      },
+      {
+        "code": "221b",
+        "name": "Partos Prematuros 2a Lact",
+        "alias": "partos_prematuros_2a_lact"
+      },
+      {
+        "code": "221c",
+        "name": "Partos Prematuros 3+ Lact",
+        "alias": "partos_prematuros_3plus_lact"
+      },
+      {
+        "code": "222",
+        "name": "Partos Aborto",
+        "alias": "partos_aborto"
+      },
+      {
+        "code": "222a",
+        "name": "Partos Aborto 1a Lact",
+        "alias": "partos_aborto_1a_lact"
+      },
+      {
+        "code": "222b",
+        "name": "Partos Aborto 2a Lact",
+        "alias": "partos_aborto_2a_lact"
+      },
+      {
+        "code": "222c",
+        "name": "Partos Aborto 3+ Lact",
+        "alias": "partos_aborto_3plus_lact"
+      },
+      {
+        "code": "223",
+        "name": "Partos (Otros tipos)",
+        "alias": "partos_otros_tipos"
+      },
+      {
+        "code": "223a",
+        "name": "Partos (Otros tipos) 1a Lact",
+        "alias": "partos_otros_tipos_1a_lact"
+      },
+      {
+        "code": "223b",
+        "name": "Partos (Otros tipos) 2a Lact",
+        "alias": "partos_otros_tipos_2a_lact"
+      },
+      {
+        "code": "223c",
+        "name": "Partos (Otros tipos) 3+ Lact",
+        "alias": "partos_otros_tipos_3plus_lact"
+      },
+      {
+        "code": "224a",
+        "name": "Fiebre de Leche 1a Lact",
+        "alias": "fiebre_de_leche_1a_lact"
+      },
+      {
+        "code": "224b",
+        "name": "Fiebre de Leche 2a Lact",
+        "alias": "fiebre_de_leche_2a_lact"
+      },
+      {
+        "code": "224c",
+        "name": "Fiebre de Leche 3+ Lact",
+        "alias": "fiebre_de_leche_3plus_lact"
+      },
+      {
+        "code": "225a",
+        "name": "Desplazamientos 1a Lact",
+        "alias": "desplazamientos_1a_lact"
+      },
+      {
+        "code": "225b",
+        "name": "Desplazamientos 2a Lact",
+        "alias": "desplazamientos_2a_lact"
+      },
+      {
+        "code": "225c",
+        "name": "Desplazamientos 3+ Lact",
+        "alias": "desplazamientos_3plus_lact"
+      },
+      {
+        "code": "226a",
+        "name": "Retencion de Placenta 1a Lact",
+        "alias": "retencion_de_placenta_1a_lact"
+      },
+      {
+        "code": "226b",
+        "name": "Retencion de Placenta 2a Lact",
+        "alias": "retencion_de_placenta_2a_lact"
+      },
+      {
+        "code": "226c",
+        "name": "Retencion de Placenta 3+ Lact",
+        "alias": "retencion_de_placenta_3plus_lact"
+      },
+      {
+        "code": "227a",
+        "name": "Metritis primaria 1a Lact",
+        "alias": "metritis_primaria_1a_lact"
+      },
+      {
+        "code": "227b",
+        "name": "Metritis primaria 2a Lact",
+        "alias": "metritis_primaria_2a_lact"
+      },
+      {
+        "code": "227c",
+        "name": "Metritis Primaria 3+ Lact",
+        "alias": "metritis_primaria_3plus_lact"
+      },
+      {
+        "code": "228a",
+        "name": "Cetosis 1a Lact",
+        "alias": "cetosis_1a_lact"
+      },
+      {
+        "code": "228b",
+        "name": "Cetosis 2a Lact",
+        "alias": "cetosis_2a_lact"
+      },
+      {
+        "code": "228c",
+        "name": "Cetosis 3+ Lact",
+        "alias": "cetosis_3plus_lact"
+      },
+      {
+        "code": "229a",
+        "name": "Edema 1a Lact",
+        "alias": "edema_1a_lact"
+      },
+      {
+        "code": "229b",
+        "name": "Edema 2a Lact",
+        "alias": "edema_2a_lact"
+      },
+      {
+        "code": "229c",
+        "name": "Edema 3+ Lact",
+        "alias": "edema_3plus_lact"
+      },
+      {
+        "code": "230a",
+        "name": "Mastitis (< 3 DEL) 1a Lact",
+        "alias": "mastitis_lt_3_del_1a_lact"
+      },
+      {
+        "code": "230b",
+        "name": "Mastitis (< 3 DEL) 2a Lact",
+        "alias": "mastitis_lt_3_del_2a_lact"
+      },
+      {
+        "code": "230c",
+        "name": "Mastitis (< 3 DEL) 3+ Lact",
+        "alias": "mastitis_lt_3_del_3plus_lact"
+      },
+      {
+        "code": "230d",
+        "name": "Mastitis (< 30 DEL) 1a Lact",
+        "alias": "mastitis_lt_30_del_1a_lact"
+      },
+      {
+        "code": "230e",
+        "name": "Mastitis (< 30 DEL) 2a Lact",
+        "alias": "mastitis_lt_30_del_2a_lact"
+      },
+      {
+        "code": "230f",
+        "name": "Mastitis (< 30 DEL) 3+ Lact",
+        "alias": "mastitis_lt_30_del_3plus_lact"
+      },
+      {
+        "code": "231a",
+        "name": "Promedio Dias en Reto 1a Lact",
+        "alias": "promedio_dias_en_reto_1a_lact"
+      },
+      {
+        "code": "231b",
+        "name": "Promedio Dias en Reto 2a Lact",
+        "alias": "promedio_dias_en_reto_2a_lact"
+      },
+      {
+        "code": "231c",
+        "name": "Promedio Dias en Reto 3+ Lact",
+        "alias": "promedio_dias_en_reto_3plus_lact"
+      },
+      {
+        "code": "232b",
+        "name": "Promedio Dias de Secado 2a Lact",
+        "alias": "promedio_dias_de_secado_2a_lact"
+      },
+      {
+        "code": "232c",
+        "name": "Promedio Dias de Secado 3+ Lact",
+        "alias": "promedio_dias_de_secado_3plus_lact"
+      },
+      {
+        "code": "233b",
+        "name": "Secadas Dias <=60  2a Lact",
+        "alias": "secadas_dias_lt=60_2a_lact"
+      },
+      {
+        "code": "233c",
+        "name": "Secadas Dias <=60  3+ Lact",
+        "alias": "secadas_dias_lt=60_3plus_lact"
+      },
+      {
+        "code": "234b",
+        "name": "Secadas Dias >= 70 2a Lact",
+        "alias": "secadas_dias_gt=_70_2a_lact"
+      },
+      {
+        "code": "234c",
+        "name": "Secadas Dias >= 70 3+ Lact",
+        "alias": "secadas_dias_gt=_70_3plus_lact"
+      },
+      {
+        "code": "235a",
+        "name": "Perdida CC >= 0.50 Unidades / Secado vs Parto 2a Lact",
+        "alias": "perdida_cc_gt=_050_unidades_secado_vs_parto_2a_lact"
+      },
+      {
+        "code": "235b",
+        "name": "Perdida CC >= 0.50 Unidades / Secado vs Parto 3+ Lact",
+        "alias": "perdida_cc_gt=_050_unidades_secado_vs_parto_3plus_lact"
+      },
+      {
+        "code": "236a",
+        "name": "Ganancia CC >= 0.25 Unidades Secado vs Parto 2a Lact",
+        "alias": "ganancia_cc_gt=_025_unidades_secado_vs_parto_2a_lact"
+      },
+      {
+        "code": "236b",
+        "name": "Ganancia CC >= 0.25 Unidades Secado vs Parto 3+ Lact",
+        "alias": "ganancia_cc_gt=_025_unidades_secado_vs_parto_3plus_lact"
+      },
+      {
+        "code": "237",
+        "name": "Monitor CC al Secado",
+        "alias": "monitor_cc_al_secado"
+      },
+      {
+        "code": "237a",
+        "name": "Prom. Monitor CC al Secado",
+        "alias": "prom_monitor_cc_al_secado"
+      },
+      {
+        "code": "241a",
+        "name": "Monitor CC < 3.25 al Secado",
+        "alias": "monitor_cc_lt_325_al_secado"
+      },
+      {
+        "code": "241b",
+        "name": "Monitor CC 3.25-3.75 al Secado",
+        "alias": "monitor_cc_325_375_al_secado"
+      },
+      {
+        "code": "241c",
+        "name": "Monitor CC > 3.75 al Secado",
+        "alias": "monitor_cc_gt_375_al_secado"
+      },
+      {
+        "code": "238",
+        "name": "Monitor CC al Parto",
+        "alias": "monitor_cc_al_parto"
+      },
+      {
+        "code": "238a",
+        "name": "Prom. Monitor CC al Parto",
+        "alias": "prom_monitor_cc_al_parto"
+      },
+      {
+        "code": "242a",
+        "name": "Monitor CC < 3.25 al Parto",
+        "alias": "monitor_cc_lt_325_al_parto"
+      },
+      {
+        "code": "242b",
+        "name": "Monitor CC 3.25-3.75 al Parto",
+        "alias": "monitor_cc_325_375_al_parto"
+      },
+      {
+        "code": "242c",
+        "name": "Monitor CC > 3.75 al Parto",
+        "alias": "monitor_cc_gt_375_al_parto"
+      },
+      {
+        "code": "249",
+        "name": "Peso al Parto (1a Lact)",
+        "alias": "peso_al_parto_1a_lact"
+      },
+      {
+        "code": "248",
+        "name": "Altura al Parto (1a Lact)",
+        "alias": "altura_al_parto_1a_lact"
+      },
+      {
+        "code": "243a",
+        "name": "Proximos Partos 1 1a Lact",
+        "alias": "proximos_partos_1_1a_lact"
+      },
+      {
+        "code": "243b",
+        "name": "Proximos Partos 1 2a Lact",
+        "alias": "proximos_partos_1_2a_lact"
+      },
+      {
+        "code": "243c",
+        "name": "Proximos Partos 1 3+ Lact",
+        "alias": "proximos_partos_1_3plus_lact"
+      },
+      {
+        "code": "244a",
+        "name": "Proximos Partos 2 1a Lact",
+        "alias": "proximos_partos_2_1a_lact"
+      },
+      {
+        "code": "244b",
+        "name": "Proximos Partos 2 2a Lact",
+        "alias": "proximos_partos_2_2a_lact"
+      },
+      {
+        "code": "244c",
+        "name": "Proximos Partos 2 3+ Lact",
+        "alias": "proximos_partos_2_3plus_lact"
+      },
+      {
+        "code": "245a",
+        "name": "Proximos Partos 3 1a Lact",
+        "alias": "proximos_partos_3_1a_lact"
+      },
+      {
+        "code": "245b",
+        "name": "Proximos Partos 3 2a Lact",
+        "alias": "proximos_partos_3_2a_lact"
+      },
+      {
+        "code": "245c",
+        "name": "Proximos Partos 3 3+ Lact",
+        "alias": "proximos_partos_3_3plus_lact"
+      },
+      {
+        "code": "246a",
+        "name": "Proximos Partos 4 1a Lact",
+        "alias": "proximos_partos_4_1a_lact"
+      },
+      {
+        "code": "246b",
+        "name": "Proximos Partos 4 2a Lact",
+        "alias": "proximos_partos_4_2a_lact"
+      },
+      {
+        "code": "246c",
+        "name": "Proximos Partos 4 3+ Lact",
+        "alias": "proximos_partos_4_3plus_lact"
+      },
+      {
+        "code": "247a",
+        "name": "Proximos Partos 5 1a Lact",
+        "alias": "proximos_partos_5_1a_lact"
+      },
+      {
+        "code": "247b",
+        "name": "Proximos Partos 5 2a Lact",
+        "alias": "proximos_partos_5_2a_lact"
+      },
+      {
+        "code": "247c",
+        "name": "Proximos Partos 5 3+ Lact",
+        "alias": "proximos_partos_5_3plus_lact"
+      },
+      {
+        "code": "340a",
+        "name": "T. Nacimientos",
+        "alias": "t_nacimientos"
+      },
+      {
+        "code": "340",
+        "name": "T. Partos",
+        "alias": "t_partos"
+      },
+      {
+        "code": "214",
+        "name": "Nacidas Hembras",
+        "alias": "nacidas_hembras"
+      },
+      {
+        "code": "214d",
+        "name": "% Nacidas Hembras",
+        "alias": "pct_nacidas_hembras"
+      },
+      {
+        "code": "214e",
+        "name": "% Nacidas Hembras 1a Lact",
+        "alias": "pct_nacidas_hembras_1a_lact"
+      },
+      {
+        "code": "214f",
+        "name": "% Nacidas Hembras 2a Lact",
+        "alias": "pct_nacidas_hembras_2a_lact"
+      },
+      {
+        "code": "214g",
+        "name": "% Nacidas Hembras 3+ Lact",
+        "alias": "pct_nacidas_hembras_3plus_lact"
+      },
+      {
+        "code": "215",
+        "name": "Nacidos Machos y No ID",
+        "alias": "nacidos_machos_y_no_id"
+      },
+      {
+        "code": "215d",
+        "name": "% Nacidos Machos y No ID",
+        "alias": "pct_nacidos_machos_y_no_id"
+      },
+      {
+        "code": "215e",
+        "name": "% Nacidos Machos y No ID 1a Lact",
+        "alias": "pct_nacidos_machos_y_no_id_1a_lact"
+      },
+      {
+        "code": "215f",
+        "name": "% Nacidos Machos y No ID 2a Lact",
+        "alias": "pct_nacidos_machos_y_no_id_2a_lact"
+      },
+      {
+        "code": "215g",
+        "name": "% Nacidos Machos y No ID 3+ Lact",
+        "alias": "pct_nacidos_machos_y_no_id_3plus_lact"
+      },
+      {
+        "code": "216",
+        "name": "Nacidos Muertos",
+        "alias": "nacidos_muertos"
+      },
+      {
+        "code": "216d",
+        "name": "% Nacidos Muertos",
+        "alias": "pct_nacidos_muertos"
+      },
+      {
+        "code": "216e",
+        "name": "% Nacidos Muertos 1a Lact",
+        "alias": "pct_nacidos_muertos_1a_lact"
+      },
+      {
+        "code": "216f",
+        "name": "% Nacidos Muertos 2a Lact",
+        "alias": "pct_nacidos_muertos_2a_lact"
+      },
+      {
+        "code": "216g",
+        "name": "% Nacidos Muertos 3+ Lact",
+        "alias": "pct_nacidos_muertos_3plus_lact"
+      },
+      {
+        "code": "217",
+        "name": "Partos Gemelares",
+        "alias": "partos_gemelares"
+      },
+      {
+        "code": "217d",
+        "name": "% Partos Gemelares",
+        "alias": "pct_partos_gemelares"
+      },
+      {
+        "code": "217e",
+        "name": "% Partos Gemelares 1a Lact",
+        "alias": "pct_partos_gemelares_1a_lact"
+      },
+      {
+        "code": "217f",
+        "name": "% Partos Gemelares 2a Lact",
+        "alias": "pct_partos_gemelares_2a_lact"
+      },
+      {
+        "code": "217g",
+        "name": "% Partos Gemelares 3+ Lact",
+        "alias": "pct_partos_gemelares_3plus_lact"
+      },
+      {
+        "code": "218",
+        "name": "Hembras Muertas",
+        "alias": "hembras_muertas"
+      },
+      {
+        "code": "218d",
+        "name": "% Hembras Muertas",
+        "alias": "pct_hembras_muertas"
+      },
+      {
+        "code": "218e",
+        "name": "% Hembras Muertas 1a Lact",
+        "alias": "pct_hembras_muertas_1a_lact"
+      },
+      {
+        "code": "218f",
+        "name": "% Hembras Muertas 2a Lact",
+        "alias": "pct_hembras_muertas_2a_lact"
+      },
+      {
+        "code": "218g",
+        "name": "% Hembras Muertas 3+ Lact",
+        "alias": "pct_hembras_muertas_3plus_lact"
+      },
+      {
+        "code": "219d",
+        "name": "% Partos Normales",
+        "alias": "pct_partos_normales"
+      },
+      {
+        "code": "219e",
+        "name": "% Partos Normales 1a Lact",
+        "alias": "pct_partos_normales_1a_lact"
+      },
+      {
+        "code": "219f",
+        "name": "% Partos Normales 2a Lact",
+        "alias": "pct_partos_normales_2a_lact"
+      },
+      {
+        "code": "219g",
+        "name": "% Partos Normales 3+ Lact",
+        "alias": "pct_partos_normales_3plus_lact"
+      },
+      {
+        "code": "220d",
+        "name": "% Partos Distocicos",
+        "alias": "pct_partos_distocicos"
+      },
+      {
+        "code": "220e",
+        "name": "% Partos Distocicos 1a Lact",
+        "alias": "pct_partos_distocicos_1a_lact"
+      },
+      {
+        "code": "220f",
+        "name": "% Partos Distocicos 2a Lact",
+        "alias": "pct_partos_distocicos_2a_lact"
+      },
+      {
+        "code": "220g",
+        "name": "% Partos Distocicos 3+ Lact",
+        "alias": "pct_partos_distocicos_3plus_lact"
+      },
+      {
+        "code": "221d",
+        "name": "% Partos Prematuros",
+        "alias": "pct_partos_prematuros"
+      },
+      {
+        "code": "221e",
+        "name": "% Partos Premaruros 1a Lact",
+        "alias": "pct_partos_premaruros_1a_lact"
+      },
+      {
+        "code": "221f",
+        "name": "% Partos Prematuros 2a Lact",
+        "alias": "pct_partos_prematuros_2a_lact"
+      },
+      {
+        "code": "221g",
+        "name": "% Partos Prematuros 3+ Lact",
+        "alias": "pct_partos_prematuros_3plus_lact"
+      },
+      {
+        "code": "222d",
+        "name": "% Partos Aborto",
+        "alias": "pct_partos_aborto"
+      },
+      {
+        "code": "222e",
+        "name": "% Partos Aborto 1a Lact",
+        "alias": "pct_partos_aborto_1a_lact"
+      },
+      {
+        "code": "222f",
+        "name": "% Partos Aborto 2a Lact",
+        "alias": "pct_partos_aborto_2a_lact"
+      },
+      {
+        "code": "222g",
+        "name": "% Partos Aborto 3+ Lact",
+        "alias": "pct_partos_aborto_3plus_lact"
+      },
+      {
+        "code": "223d",
+        "name": "% Partos (Otros tipos)",
+        "alias": "pct_partos_otros_tipos"
+      },
+      {
+        "code": "223e",
+        "name": "% Partos (Otros tipos) 1a Lact",
+        "alias": "pct_partos_otros_tipos_1a_lact"
+      },
+      {
+        "code": "223f",
+        "name": "% Partos (Otros tipos) 2a Lact",
+        "alias": "pct_partos_otros_tipos_2a_lact"
+      },
+      {
+        "code": "223g",
+        "name": "% Partos (Otros tipos) 3+ Lact",
+        "alias": "pct_partos_otros_tipos_3plus_lact"
+      },
+      {
+        "code": "224",
+        "name": "Fiebre de leche",
+        "alias": "fiebre_de_leche"
+      },
+      {
+        "code": "224d",
+        "name": "% Fiebre de leche",
+        "alias": "pct_fiebre_de_leche"
+      },
+      {
+        "code": "224e",
+        "name": "% Fiebre de leche 1a Lact",
+        "alias": "pct_fiebre_de_leche_1a_lact"
+      },
+      {
+        "code": "224f",
+        "name": "% Fiebre de leche 2a Lact",
+        "alias": "pct_fiebre_de_leche_2a_lact"
+      },
+      {
+        "code": "224g",
+        "name": "% Fiebre de leche 3+ Lact",
+        "alias": "pct_fiebre_de_leche_3plus_lact"
+      },
+      {
+        "code": "225",
+        "name": "Desplazamientos",
+        "alias": "desplazamientos"
+      },
+      {
+        "code": "225d",
+        "name": "% Desplazamientos",
+        "alias": "pct_desplazamientos"
+      },
+      {
+        "code": "225e",
+        "name": "% Desplazamientos 1a Lact",
+        "alias": "pct_desplazamientos_1a_lact"
+      },
+      {
+        "code": "225f",
+        "name": "% Desplazamientos 2a Lact",
+        "alias": "pct_desplazamientos_2a_lact"
+      },
+      {
+        "code": "225g",
+        "name": "% Desplazamientos 3+ Lact",
+        "alias": "pct_desplazamientos_3plus_lact"
+      },
+      {
+        "code": "226",
+        "name": "Retencion de Placenta",
+        "alias": "retencion_de_placenta"
+      },
+      {
+        "code": "226d",
+        "name": "% Retencion de Placenta",
+        "alias": "pct_retencion_de_placenta"
+      },
+      {
+        "code": "226e",
+        "name": "% Retencion de Placenta 1a Lact",
+        "alias": "pct_retencion_de_placenta_1a_lact"
+      },
+      {
+        "code": "226f",
+        "name": "% Retencion de Placenta 2a Lact",
+        "alias": "pct_retencion_de_placenta_2a_lact"
+      },
+      {
+        "code": "226g",
+        "name": "% Retencion de Placenta 3+ Lact",
+        "alias": "pct_retencion_de_placenta_3plus_lact"
+      },
+      {
+        "code": "227",
+        "name": "Metritis Primaria",
+        "alias": "metritis_primaria"
+      },
+      {
+        "code": "227d",
+        "name": "% Metritis Primaria",
+        "alias": "pct_metritis_primaria"
+      },
+      {
+        "code": "227e",
+        "name": "% Metritis Primaria 1a Lact",
+        "alias": "pct_metritis_primaria_1a_lact"
+      },
+      {
+        "code": "227f",
+        "name": "% Metritis Primaria 2a Lact",
+        "alias": "pct_metritis_primaria_2a_lact"
+      },
+      {
+        "code": "227g",
+        "name": "% Metritis Primaria 3+ Lact",
+        "alias": "pct_metritis_primaria_3plus_lact"
+      },
+      {
+        "code": "228",
+        "name": "Cetosis",
+        "alias": "cetosis"
+      },
+      {
+        "code": "228d",
+        "name": "% Cetosis",
+        "alias": "pct_cetosis"
+      },
+      {
+        "code": "228e",
+        "name": "% Cetosis 1a Lact",
+        "alias": "pct_cetosis_1a_lact"
+      },
+      {
+        "code": "228f",
+        "name": "% Cetosis 2a Lact",
+        "alias": "pct_cetosis_2a_lact"
+      },
+      {
+        "code": "228g",
+        "name": "% Cetosis 3+ Lact",
+        "alias": "pct_cetosis_3plus_lact"
+      },
+      {
+        "code": "229",
+        "name": "Edema",
+        "alias": "edema"
+      },
+      {
+        "code": "229d",
+        "name": "% Edema",
+        "alias": "pct_edema"
+      },
+      {
+        "code": "229e",
+        "name": "% Edema 1a Lact",
+        "alias": "pct_edema_1a_lact"
+      },
+      {
+        "code": "229f",
+        "name": "% Edema 2a Lact",
+        "alias": "pct_edema_2a_lact"
+      },
+      {
+        "code": "229g",
+        "name": "% Edema 3+ Lact",
+        "alias": "pct_edema_3plus_lact"
+      },
+      {
+        "code": "230",
+        "name": "Mastitis (< 3 DEL)",
+        "alias": "mastitis_lt_3_del"
+      },
+      {
+        "code": "230o",
+        "name": "% Mastitis (< 3 DEL)",
+        "alias": "pct_mastitis_lt_3_del"
+      },
+      {
+        "code": "230h",
+        "name": "% Mastitis (< 3 DEL) 1a Lact",
+        "alias": "pct_mastitis_lt_3_del_1a_lact"
+      },
+      {
+        "code": "230i",
+        "name": "% Mastitis (< 3 DEL) 2a Lact",
+        "alias": "pct_mastitis_lt_3_del_2a_lact"
+      },
+      {
+        "code": "230j",
+        "name": "% Mastitis (< 3 DEL) 3+ Lact",
+        "alias": "pct_mastitis_lt_3_del_3plus_lact"
+      },
+      {
+        "code": "230g",
+        "name": "Mastitis (< 30 DEL)",
+        "alias": "mastitis_lt_30_del"
+      },
+      {
+        "code": "230k",
+        "name": "% Mastitis (< 30 DEL)",
+        "alias": "pct_mastitis_lt_30_del"
+      },
+      {
+        "code": "230l",
+        "name": "% Mastitis (< 30 DEL) 1a Lact",
+        "alias": "pct_mastitis_lt_30_del_1a_lact"
+      },
+      {
+        "code": "230m",
+        "name": "% Mastitis (< 30 DEL) 2a Lact",
+        "alias": "pct_mastitis_lt_30_del_2a_lact"
+      },
+      {
+        "code": "230n",
+        "name": "% Mastitis (< 30 DEL) 3+ Lact",
+        "alias": "pct_mastitis_lt_30_del_3plus_lact"
+      },
+      {
+        "code": "231",
+        "name": "Promedio Dias en Reto",
+        "alias": "promedio_dias_en_reto"
+      },
+      {
+        "code": "232",
+        "name": "Promedio Dias de Secado",
+        "alias": "promedio_dias_de_secado"
+      },
+      {
+        "code": "241",
+        "name": "% Datos / CC al Secado",
+        "alias": "pct_datos_cc_al_secado"
+      },
+      {
+        "code": "242",
+        "name": "% Datos / CC al Parto",
+        "alias": "pct_datos_cc_al_parto"
+      },
+      {
+        "code": "241d",
+        "name": "% CC < 3.25 al Secado",
+        "alias": "pct_cc_lt_325_al_secado"
+      },
+      {
+        "code": "241e",
+        "name": "% CC 3.25-3.75 al Secado",
+        "alias": "pct_cc_325_375_al_secado"
+      },
+      {
+        "code": "241f",
+        "name": "% CC > 3.75 al Secado",
+        "alias": "pct_cc_gt_375_al_secado"
+      },
+      {
+        "code": "242d",
+        "name": "% CC < 3.25 al Parto",
+        "alias": "pct_cc_lt_325_al_parto"
+      },
+      {
+        "code": "242e",
+        "name": "% CC 3.25-3.75 al Parto",
+        "alias": "pct_cc_325_375_al_parto"
+      },
+      {
+        "code": "242f",
+        "name": "% CC > 3.75 al Parto",
+        "alias": "pct_cc_gt_375_al_parto"
+      },
+      {
+        "code": "243d",
+        "name": "Total de Proximos Partos 1",
+        "alias": "total_de_proximos_partos_1"
+      },
+      {
+        "code": "244d",
+        "name": "Total de Proximos Partos 2",
+        "alias": "total_de_proximos_partos_2"
+      },
+      {
+        "code": "245d",
+        "name": "Total de Proximos Partos 3",
+        "alias": "total_de_proximos_partos_3"
+      },
+      {
+        "code": "246d",
+        "name": "Total de Proximos Partos 4",
+        "alias": "total_de_proximos_partos_4"
+      },
+      {
+        "code": "247d",
+        "name": "Total de Proximos Partos 5",
+        "alias": "total_de_proximos_partos_5"
+      },
+      {
+        "code": "243e",
+        "name": "% Proximos Partos 1",
+        "alias": "pct_proximos_partos_1"
+      },
+      {
+        "code": "244e",
+        "name": "% Proximos Partos 2",
+        "alias": "pct_proximos_partos_2"
+      },
+      {
+        "code": "245e",
+        "name": "% Proximos Partos 3",
+        "alias": "pct_proximos_partos_3"
+      },
+      {
+        "code": "246e",
+        "name": "% Proximos Partos 4",
+        "alias": "pct_proximos_partos_4"
+      },
+      {
+        "code": "247e",
+        "name": "% Proximos Partos 5",
+        "alias": "pct_proximos_partos_5"
+      },
+      {
+        "code": "233d",
+        "name": "% Secadas Dias <=60  2a Lact",
+        "alias": "pct_secadas_dias_lt=60_2a_lact"
+      },
+      {
+        "code": "234d",
+        "name": "% Secadas Dias >= 70 2a Lact",
+        "alias": "pct_secadas_dias_gt=_70_2a_lact"
+      },
+      {
+        "code": "235d",
+        "name": "% Perdida CC >= 0.50 Unidades / Secado vs Parto 2a Lact",
+        "alias": "pct_perdida_cc_gt=_050_unidades_secado_vs_parto_2a_lact"
+      },
+      {
+        "code": "236d",
+        "name": "% Ganancia CC >= 0.25 Unidades Secado vs Parto 2a Lact",
+        "alias": "pct_ganancia_cc_gt=_025_unidades_secado_vs_parto_2a_lact"
+      },
+      {
+        "code": "233e",
+        "name": "% Secadas Dias <=60  3+ Lact",
+        "alias": "pct_secadas_dias_lt=60_3plus_lact"
+      },
+      {
+        "code": "234e",
+        "name": "% Secadas Dias >= 70 3+ Lact",
+        "alias": "pct_secadas_dias_gt=_70_3plus_lact"
+      },
+      {
+        "code": "235e",
+        "name": "% Perdida CC >= 0.50 Unidades / Secado vs Parto 3+ Lact",
+        "alias": "pct_perdida_cc_gt=_050_unidades_secado_vs_parto_3plus_lact"
+      },
+      {
+        "code": "236e",
+        "name": "% Ganancia CC >= 0.25 Unidades Secado vs Parto 3+ Lact",
+        "alias": "pct_ganancia_cc_gt=_025_unidades_secado_vs_parto_3plus_lact"
+      },
+      {
+        "code": "440",
+        "name": "Nacimientos Hembras (Periodo)",
+        "alias": "nacimientos_hembras_periodo"
+      },
+      {
+        "code": "442",
+        "name": "Partos 1a Lact (Periodo)",
+        "alias": "partos_1a_lact_periodo"
+      },
+      {
+        "code": "446",
+        "name": "Edad Ins Efectiva 1ra Lact (-1)",
+        "alias": "edad_ins_efectiva_1ra_lact_1"
+      },
+      {
+        "code": "446a",
+        "name": "Peso Ins Efectiva 1ra Lact (-1)",
+        "alias": "peso_ins_efectiva_1ra_lact_1"
+      },
+      {
+        "code": "446b",
+        "name": "Altura Ins Efectiva 1ra Lact (-1)",
+        "alias": "altura_ins_efectiva_1ra_lact_1"
+      },
+      {
+        "code": "447",
+        "name": "Edad al Parto (1ra Lact)",
+        "alias": "edad_al_parto_1ra_lact"
+      }
+    ]
+  },
+  "MPL": {
+    "section": "MPL",
+    "description": "MONITOR DE PARTOS LOGRADOS",
+    "kpis": [
+      {
+        "code": "255a",
+        "name": "Partos Logrados 1a Lact",
+        "alias": "partos_logrados_1a_lact"
+      },
+      {
+        "code": "255b",
+        "name": "Partos Logrados 2a Lact",
+        "alias": "partos_logrados_2a_lact"
+      },
+      {
+        "code": "255c",
+        "name": "Partos Logrados 3+ Lact",
+        "alias": "partos_logrados_3plus_lact"
+      },
+      {
+        "code": "250a",
+        "name": "PD hace 9M 1a Lact",
+        "alias": "pd_hace_9m_1a_lact"
+      },
+      {
+        "code": "250b",
+        "name": "PD hace 9M 2a Lact",
+        "alias": "pd_hace_9m_2a_lact"
+      },
+      {
+        "code": "250c",
+        "name": "PD hace 9m 3+ Lact",
+        "alias": "pd_hace_9m_3plus_lact"
+      },
+      {
+        "code": "251a",
+        "name": "Abortos",
+        "alias": "abortos"
+      },
+      {
+        "code": "251b",
+        "name": "PD Salidas",
+        "alias": "pd_salidas"
+      },
+      {
+        "code": "252a",
+        "name": "PD Salidas",
+        "alias": "pd_salidas"
+      },
+      {
+        "code": "252b",
+        "name": "PD Desecho",
+        "alias": "pd_desecho"
+      },
+      {
+        "code": "251d",
+        "name": "PD + > 270",
+        "alias": "pd_plus_gt_270"
+      },
+      {
+        "code": "257",
+        "name": "Dias de Gestacion (Promedio)",
+        "alias": "dias_de_gestacion_promedio"
+      },
+      {
+        "code": "257a",
+        "name": "Dias de Gestacion 1a Lact",
+        "alias": "dias_de_gestacion_1a_lact"
+      },
+      {
+        "code": "257b",
+        "name": "Dias de Gestacion 2a Lact",
+        "alias": "dias_de_gestacion_2a_lact"
+      },
+      {
+        "code": "257c",
+        "name": "Dias de Gestacion 3+ Lact",
+        "alias": "dias_de_gestacion_3plus_lact"
+      },
+      {
+        "code": "258",
+        "name": "Intervalo / Partos (M)",
+        "alias": "intervalo_partos_m"
+      },
+      {
+        "code": "258a",
+        "name": "Intervalo / Partos (M) 2a Lact",
+        "alias": "intervalo_partos_m_2a_lact"
+      },
+      {
+        "code": "258b",
+        "name": "Intervalo / Partos (M) 3+ Lact",
+        "alias": "intervalo_partos_m_3plus_lact"
+      },
+      {
+        "code": "250",
+        "name": "V. PD (+) > 9M",
+        "alias": "v_pd_plus_gt_9m"
+      },
+      {
+        "code": "251c",
+        "name": "% Abortos",
+        "alias": "pct_abortos"
+      },
+      {
+        "code": "251f",
+        "name": "% Desecho +",
+        "alias": "pct_desecho_plus"
+      },
+      {
+        "code": "255",
+        "name": "Partos Logrados",
+        "alias": "partos_logrados"
+      },
+      {
+        "code": "255d",
+        "name": "% Partos Logrados",
+        "alias": "pct_partos_logrados"
+      },
+      {
+        "code": "255e",
+        "name": "% Partos Logrados 1a Lact",
+        "alias": "pct_partos_logrados_1a_lact"
+      },
+      {
+        "code": "255f",
+        "name": "% Partos Logrados 2a Lact",
+        "alias": "pct_partos_logrados_2a_lact"
+      },
+      {
+        "code": "255g",
+        "name": "% Partos Logrados 3+ Lact",
+        "alias": "pct_partos_logrados_3plus_lact"
+      },
+      {
+        "code": "251e",
+        "name": "% PD+ > 270",
+        "alias": "pct_pdplus_gt_270"
+      },
+      {
+        "code": "251g",
+        "name": "% PD Salidas",
+        "alias": "pct_pd_salidas"
+      },
+      {
+        "code": "257d",
+        "name": "Dias de Gestacion",
+        "alias": "dias_de_gestacion"
+      },
+      {
+        "code": "257e",
+        "name": "Dias de Gestacion 1a Lact (Sum)",
+        "alias": "dias_de_gestacion_1a_lact_sum"
+      },
+      {
+        "code": "257f",
+        "name": "Dias de Gestacion 2a Lact (Sum)",
+        "alias": "dias_de_gestacion_2a_lact_sum"
+      },
+      {
+        "code": "257g",
+        "name": "Dias de Gestacion 3a Lact (Sum)",
+        "alias": "dias_de_gestacion_3a_lact_sum"
+      },
+      {
+        "code": "252c",
+        "name": "PD Transferidas",
+        "alias": "pd_transferidas"
+      },
+      {
+        "code": "251h",
+        "name": "% PD Transferidas",
+        "alias": "pct_pd_transferidas"
+      }
+    ]
+  },
+  "CD": {
+    "section": "CD",
+    "description": "ANALISIS DE CONFORT Y DESCANSO",
+    "kpis": [
+      {
+        "code": "259",
+        "name": "Daily Rest Time (Min) 1a Lact",
+        "alias": "daily_rest_time_min_1a_lact"
+      },
+      {
+        "code": "266",
+        "name": "Daily Rest Time (Min) 2a Lact",
+        "alias": "daily_rest_time_min_2a_lact"
+      },
+      {
+        "code": "273",
+        "name": "Daily Rest Time (Min) 3+ Lact",
+        "alias": "daily_rest_time_min_3plus_lact"
+      },
+      {
+        "code": "261",
+        "name": "Daily Rest Bout 1a Lact",
+        "alias": "daily_rest_bout_1a_lact"
+      },
+      {
+        "code": "268",
+        "name": "Daily Rest Bout 2a Lact",
+        "alias": "daily_rest_bout_2a_lact"
+      },
+      {
+        "code": "275",
+        "name": "Daily Rest Bout 3+ Lact",
+        "alias": "daily_rest_bout_3plus_lact"
+      },
+      {
+        "code": "262",
+        "name": "Daily Rest Ratio 1a Lact",
+        "alias": "daily_rest_ratio_1a_lact"
+      },
+      {
+        "code": "269",
+        "name": "Daily Rest Ratio 2a Lact",
+        "alias": "daily_rest_ratio_2a_lact"
+      },
+      {
+        "code": "276",
+        "name": "Daily Rest Ratio 3+ Lact",
+        "alias": "daily_rest_ratio_3plus_lact"
+      },
+      {
+        "code": "264",
+        "name": "Restlessness Ratio 1a Lact",
+        "alias": "restlessness_ratio_1a_lact"
+      },
+      {
+        "code": "271",
+        "name": "Restlessness Ratio 2a Lact",
+        "alias": "restlessness_ratio_2a_lact"
+      },
+      {
+        "code": "278",
+        "name": "Restlessness Ratio 3+ Lact",
+        "alias": "restlessness_ratio_3plus_lact"
+      },
+      {
+        "code": "265",
+        "name": "Daily Activity (P/hr) 1a Lact",
+        "alias": "daily_activity_p_hr_1a_lact"
+      },
+      {
+        "code": "272",
+        "name": "Daily Activity (P/hr) 2a Lact",
+        "alias": "daily_activity_p_hr_2a_lact"
+      },
+      {
+        "code": "279",
+        "name": "Daily Activity (P/hr) 3+ Lact",
+        "alias": "daily_activity_p_hr_3plus_lact"
+      },
+      {
+        "code": "280",
+        "name": "ID TAG (+) 1a Lact",
+        "alias": "id_tag_plus_1a_lact"
+      },
+      {
+        "code": "281",
+        "name": "ID TAG (+) 2a Lact",
+        "alias": "id_tag_plus_2a_lact"
+      },
+      {
+        "code": "282",
+        "name": "ID TAG (+) 3+ Lact",
+        "alias": "id_tag_plus_3plus_lact"
+      },
+      {
+        "code": "283e",
+        "name": "Total ID TAG (+)",
+        "alias": "total_id_tag_plus"
+      },
+      {
+        "code": "283a",
+        "name": "% Datos ID TAG (+) 1a Lact",
+        "alias": "pct_datos_id_tag_plus_1a_lact"
+      },
+      {
+        "code": "283b",
+        "name": "% Datos ID TAG (+) 2a Lact",
+        "alias": "pct_datos_id_tag_plus_2a_lact"
+      },
+      {
+        "code": "283c",
+        "name": "% Datos ID TAG (+) 3+ Lact",
+        "alias": "pct_datos_id_tag_plus_3plus_lact"
+      },
+      {
+        "code": "283d",
+        "name": "% Total ID TAG (+)",
+        "alias": "pct_total_id_tag_plus"
+      },
+      {
+        "code": "263a",
+        "name": "Daily Rest Duration 1a Lact",
+        "alias": "daily_rest_duration_1a_lact"
+      },
+      {
+        "code": "263b",
+        "name": "Daily Rest Duration 2a Lact",
+        "alias": "daily_rest_duration_2a_lact"
+      },
+      {
+        "code": "263c",
+        "name": "Daily Rest Duration 3+ Lact",
+        "alias": "daily_rest_duration_3plus_lact"
+      }
+    ]
+  },
+  "SG": {
+    "section": "SG",
+    "description": "SALUD GENERAL",
+    "kpis": [
+      {
+        "code": "287",
+        "name": "Vacas Reincidentes M. Clinica",
+        "alias": "vacas_reincidentes_m_clinica"
+      },
+      {
+        "code": "288a",
+        "name": "Mastitis Clinica 1a Lact",
+        "alias": "mastitis_clinica_1a_lact"
+      },
+      {
+        "code": "288b",
+        "name": "Mastitis Clinica 2a Lact",
+        "alias": "mastitis_clinica_2a_lact"
+      },
+      {
+        "code": "288c",
+        "name": "Mastitis Clinica 3+ Lact",
+        "alias": "mastitis_clinica_3plus_lact"
+      },
+      {
+        "code": "289a",
+        "name": "Mastitis SubClinica 1a Lact",
+        "alias": "mastitis_subclinica_1a_lact"
+      },
+      {
+        "code": "289b",
+        "name": "Mastitis SubClinica 2a Lact",
+        "alias": "mastitis_subclinica_2a_lact"
+      },
+      {
+        "code": "289c",
+        "name": "Mastitis SubClinica 3+ Lact",
+        "alias": "mastitis_subclinica_3plus_lact"
+      },
+      {
+        "code": "290",
+        "name": "Vacas Alambradas",
+        "alias": "vacas_alambradas"
+      },
+      {
+        "code": "291",
+        "name": "Vacas c/Prob. Digestivos",
+        "alias": "vacas_c_prob_digestivos"
+      },
+      {
+        "code": "292",
+        "name": "Vacas c/Prob. Fertilidad",
+        "alias": "vacas_c_prob_fertilidad"
+      },
+      {
+        "code": "293",
+        "name": "Vacas c/Prob. Locomotores",
+        "alias": "vacas_c_prob_locomotores"
+      },
+      {
+        "code": "294",
+        "name": "Vacas c/Prob. Respiratorios",
+        "alias": "vacas_c_prob_respiratorios"
+      },
+      {
+        "code": "295",
+        "name": "Vacas c/Tumores y otros Problemas",
+        "alias": "vacas_c_tumores_y_otros_problemas"
+      },
+      {
+        "code": "296",
+        "name": "Vacas c/Prob. Ubre",
+        "alias": "vacas_c_prob_ubre"
+      },
+      {
+        "code": "290a",
+        "name": "Vacas Alambradas 1a Lact",
+        "alias": "vacas_alambradas_1a_lact"
+      },
+      {
+        "code": "291a",
+        "name": "Vacas c/Prob. Digestivos 1a Lact",
+        "alias": "vacas_c_prob_digestivos_1a_lact"
+      },
+      {
+        "code": "292a",
+        "name": "Vacas c/Prob. Fertilidad 1a Lact",
+        "alias": "vacas_c_prob_fertilidad_1a_lact"
+      },
+      {
+        "code": "293a",
+        "name": "Vacas c/Prob. Locomotores 1a Lact",
+        "alias": "vacas_c_prob_locomotores_1a_lact"
+      },
+      {
+        "code": "294a",
+        "name": "Vacas c/Prob. Respiratorios 1a Lact",
+        "alias": "vacas_c_prob_respiratorios_1a_lact"
+      },
+      {
+        "code": "295a",
+        "name": "Vacas c/Tumores y otros Problemas 1a Lact",
+        "alias": "vacas_c_tumores_y_otros_problemas_1a_lact"
+      },
+      {
+        "code": "296a",
+        "name": "Vacas c/Prob. Ubre 1a Lact",
+        "alias": "vacas_c_prob_ubre_1a_lact"
+      },
+      {
+        "code": "290b",
+        "name": "Vacas Alambradas 2a Lact",
+        "alias": "vacas_alambradas_2a_lact"
+      },
+      {
+        "code": "291b",
+        "name": "Vacas c/Prob. Digestivos 2a Lact",
+        "alias": "vacas_c_prob_digestivos_2a_lact"
+      },
+      {
+        "code": "292b",
+        "name": "Vacas c/Prob. Fertilidad 2a Lact",
+        "alias": "vacas_c_prob_fertilidad_2a_lact"
+      },
+      {
+        "code": "293b",
+        "name": "Vacas c/Prob. Locomotores 2a Lact",
+        "alias": "vacas_c_prob_locomotores_2a_lact"
+      },
+      {
+        "code": "294b",
+        "name": "Vacas c/Prob. Respiratorios 2a Lact",
+        "alias": "vacas_c_prob_respiratorios_2a_lact"
+      },
+      {
+        "code": "295b",
+        "name": "Vacas c/Tumor y otros Problemas",
+        "alias": "vacas_c_tumor_y_otros_problemas"
+      },
+      {
+        "code": "296b",
+        "name": "Vacas c/Prob. Ubre",
+        "alias": "vacas_c_prob_ubre"
+      },
+      {
+        "code": "290c",
+        "name": "Vacas Alambradas 3+ Lact",
+        "alias": "vacas_alambradas_3plus_lact"
+      },
+      {
+        "code": "291c",
+        "name": "Vacas c/Prob. Digestivos 3+ Lact",
+        "alias": "vacas_c_prob_digestivos_3plus_lact"
+      },
+      {
+        "code": "292c",
+        "name": "Vacas c/Prob. Fertilidad 3+ Lact",
+        "alias": "vacas_c_prob_fertilidad_3plus_lact"
+      },
+      {
+        "code": "293c",
+        "name": "Vacas c/Prob. Locomotores 3+ Lact",
+        "alias": "vacas_c_prob_locomotores_3plus_lact"
+      },
+      {
+        "code": "294c",
+        "name": "Vacas c/Prob. Respiratorios 3+ Lact",
+        "alias": "vacas_c_prob_respiratorios_3plus_lact"
+      },
+      {
+        "code": "295c",
+        "name": "Vacas c/Tumores y otros Problemas 3+ Lact",
+        "alias": "vacas_c_tumores_y_otros_problemas_3plus_lact"
+      },
+      {
+        "code": "296c",
+        "name": "Vacas c/ Prob. Ubre",
+        "alias": "vacas_c_prob_ubre"
+      },
+      {
+        "code": "288",
+        "name": "Vacas Mastitis Clinica",
+        "alias": "vacas_mastitis_clinica"
+      },
+      {
+        "code": "289",
+        "name": "Vacas c/Mastitis SubClinica",
+        "alias": "vacas_c_mastitis_subclinica"
+      },
+      {
+        "code": "288g",
+        "name": "% Vacas Mastitis Clinica",
+        "alias": "pct_vacas_mastitis_clinica"
+      },
+      {
+        "code": "289g",
+        "name": "% Vacas Mastitis SubClinica",
+        "alias": "pct_vacas_mastitis_subclinica"
+      },
+      {
+        "code": "287a",
+        "name": "% Vacas Reincidentes M. Clinica",
+        "alias": "pct_vacas_reincidentes_m_clinica"
+      },
+      {
+        "code": "288d",
+        "name": "% Mastitis Clinica 1a Lact",
+        "alias": "pct_mastitis_clinica_1a_lact"
+      },
+      {
+        "code": "288e",
+        "name": "% Mastitis Clinica 2a Lact",
+        "alias": "pct_mastitis_clinica_2a_lact"
+      },
+      {
+        "code": "288f",
+        "name": "% Mastitid Clinica 3+ Lact",
+        "alias": "pct_mastitid_clinica_3plus_lact"
+      },
+      {
+        "code": "289d",
+        "name": "% Mastitis SubClinica 1a Lact",
+        "alias": "pct_mastitis_subclinica_1a_lact"
+      },
+      {
+        "code": "289e",
+        "name": "% Mastitis SubClinica 2a Lact",
+        "alias": "pct_mastitis_subclinica_2a_lact"
+      },
+      {
+        "code": "289f",
+        "name": "% Mastitis SubClinica 3+ Lact",
+        "alias": "pct_mastitis_subclinica_3plus_lact"
+      },
+      {
+        "code": "290d",
+        "name": "% Vacas Alambradas",
+        "alias": "pct_vacas_alambradas"
+      },
+      {
+        "code": "290e",
+        "name": "% Vacas Alambradas 1a Lact",
+        "alias": "pct_vacas_alambradas_1a_lact"
+      },
+      {
+        "code": "290f",
+        "name": "% Vacas Alambradas 2a Lact",
+        "alias": "pct_vacas_alambradas_2a_lact"
+      },
+      {
+        "code": "290g",
+        "name": "% Vacas Alambradas 3+ Lact",
+        "alias": "pct_vacas_alambradas_3plus_lact"
+      },
+      {
+        "code": "291d",
+        "name": "% Vacas c/Prob. Digestivos",
+        "alias": "pct_vacas_c_prob_digestivos"
+      },
+      {
+        "code": "291e",
+        "name": "% Vacas c/Prob. Digestivos 1a Lact",
+        "alias": "pct_vacas_c_prob_digestivos_1a_lact"
+      },
+      {
+        "code": "291f",
+        "name": "% Vacas c/Prob. Digestivos 2a Lact",
+        "alias": "pct_vacas_c_prob_digestivos_2a_lact"
+      },
+      {
+        "code": "291g",
+        "name": "% Vacas c/ Prob. Digestivos 3+ Lact",
+        "alias": "pct_vacas_c_prob_digestivos_3plus_lact"
+      },
+      {
+        "code": "292d",
+        "name": "% Vacas c/Prob. de Fertilidad",
+        "alias": "pct_vacas_c_prob_de_fertilidad"
+      },
+      {
+        "code": "292e",
+        "name": "% Vacas c/Prob. de Fertilidad 1a Lact",
+        "alias": "pct_vacas_c_prob_de_fertilidad_1a_lact"
+      },
+      {
+        "code": "292f",
+        "name": "% Vacas c/ Prob. de Fertilidad 2a Lact",
+        "alias": "pct_vacas_c_prob_de_fertilidad_2a_lact"
+      },
+      {
+        "code": "292g",
+        "name": "% Vacas c/Prob. de Fertilidad 3+ Lact",
+        "alias": "pct_vacas_c_prob_de_fertilidad_3plus_lact"
+      },
+      {
+        "code": "293d",
+        "name": "% Vacas c/Prob. Locomotores",
+        "alias": "pct_vacas_c_prob_locomotores"
+      },
+      {
+        "code": "293e",
+        "name": "% Vacas c/Prob. Locomotores 1a Lact",
+        "alias": "pct_vacas_c_prob_locomotores_1a_lact"
+      },
+      {
+        "code": "293f",
+        "name": "% Vacas c/Prob. Locomotores 2a Lact",
+        "alias": "pct_vacas_c_prob_locomotores_2a_lact"
+      },
+      {
+        "code": "293g",
+        "name": "% Vacas c/Prob. Locomotores 3+ Lact",
+        "alias": "pct_vacas_c_prob_locomotores_3plus_lact"
+      },
+      {
+        "code": "294d",
+        "name": "% Vacas c/Prob. Respiratorios",
+        "alias": "pct_vacas_c_prob_respiratorios"
+      },
+      {
+        "code": "294e",
+        "name": "% Vacas c/Prob. Respiratorios 1a Lact",
+        "alias": "pct_vacas_c_prob_respiratorios_1a_lact"
+      },
+      {
+        "code": "294f",
+        "name": "% Vacas c/Prob. Respiratorios 2a Lact",
+        "alias": "pct_vacas_c_prob_respiratorios_2a_lact"
+      },
+      {
+        "code": "294g",
+        "name": "% Vacas c/Prob. Respiratorios 3+ Lact",
+        "alias": "pct_vacas_c_prob_respiratorios_3plus_lact"
+      },
+      {
+        "code": "295d",
+        "name": "% Vacas c/Tumores y otros Problemas",
+        "alias": "pct_vacas_c_tumores_y_otros_problemas"
+      },
+      {
+        "code": "295e",
+        "name": "% Vacas c/Tumores y otros Problemas 1a Lact",
+        "alias": "pct_vacas_c_tumores_y_otros_problemas_1a_lact"
+      },
+      {
+        "code": "295f",
+        "name": "% Vacas c/Tumores y otros Problemas 2a Lact",
+        "alias": "pct_vacas_c_tumores_y_otros_problemas_2a_lact"
+      },
+      {
+        "code": "295g",
+        "name": "% Vacas c/Tumores y otros Problemas 3+ Lact",
+        "alias": "pct_vacas_c_tumores_y_otros_problemas_3plus_lact"
+      },
+      {
+        "code": "296d",
+        "name": "% Vacas c/Prob. Ubre",
+        "alias": "pct_vacas_c_prob_ubre"
+      },
+      {
+        "code": "296e",
+        "name": "% Vacas c/Prob. Ubre 1a Lact",
+        "alias": "pct_vacas_c_prob_ubre_1a_lact"
+      },
+      {
+        "code": "296f",
+        "name": "% Vacas c/Prob. Ubre 2a Lact",
+        "alias": "pct_vacas_c_prob_ubre_2a_lact"
+      },
+      {
+        "code": "296g",
+        "name": "% Vacas c/Prob. Ubre 3+ Lact",
+        "alias": "pct_vacas_c_prob_ubre_3plus_lact"
+      },
+      {
+        "code": "288h",
+        "name": "Total Vacas Mastitis",
+        "alias": "total_vacas_mastitis"
+      },
+      {
+        "code": "289h",
+        "name": "% Total Mastitis",
+        "alias": "pct_total_mastitis"
+      }
+    ]
+  },
+  "DC": {
+    "section": "DC",
+    "description": "DESECHO EN CRIANZA",
+    "kpis": [
+      {
+        "code": "298",
+        "name": "Becerras Jaulas Muertas < 1 Meses",
+        "alias": "becerras_jaulas_muertas_lt_1_meses"
+      },
+      {
+        "code": "299",
+        "name": "Becerras Jaulas Muertas < 2 Meses",
+        "alias": "becerras_jaulas_muertas_lt_2_meses"
+      },
+      {
+        "code": "300",
+        "name": "Becerras Desechadas < 2 Meses",
+        "alias": "becerras_desechadas_lt_2_meses"
+      },
+      {
+        "code": "300c",
+        "name": "Transferidas a otro rebano",
+        "alias": "transferidas_a_otro_rebano"
+      },
+      {
+        "code": "301",
+        "name": "Becerras Muertas (2-13 Meses)",
+        "alias": "becerras_muertas_2_13_meses"
+      },
+      {
+        "code": "302",
+        "name": "Becerras Desechadas (2-13 Meses)",
+        "alias": "becerras_desechadas_2_13_meses"
+      },
+      {
+        "code": "303",
+        "name": "Becerras > 13 Meses No PD(+) y Brucelosas",
+        "alias": "becerras_gt_13_meses_no_pdplus_y_brucelosas"
+      },
+      {
+        "code": "300d",
+        "name": "Transferidas a otro rebano (2-13 Meses)",
+        "alias": "transferidas_a_otro_rebano_2_13_meses"
+      },
+      {
+        "code": "304",
+        "name": "Vaquillas Muertas > 13 Meses",
+        "alias": "vaquillas_muertas_gt_13_meses"
+      },
+      {
+        "code": "305",
+        "name": "Desecho Vaquillas > 13 Meses",
+        "alias": "desecho_vaquillas_gt_13_meses"
+      },
+      {
+        "code": "306",
+        "name": "Desecho Vaquillas X Brucelosis",
+        "alias": "desecho_vaquillas_x_brucelosis"
+      },
+      {
+        "code": "300f",
+        "name": "Transferidas a otro rebano (Vaq > 13 M)",
+        "alias": "transferidas_a_otro_rebano_vaq_gt_13_m"
+      },
+      {
+        "code": "307",
+        "name": "Total de Machos Desechados",
+        "alias": "total_de_machos_desechados"
+      },
+      {
+        "code": "300g",
+        "name": "Machos transferidos a otro rebano",
+        "alias": "machos_transferidos_a_otro_rebano"
+      },
+      {
+        "code": "300i",
+        "name": "Muestreo en Desecho",
+        "alias": "muestreo_en_desecho"
+      },
+      {
+        "code": "297",
+        "name": "Desecho en Crianza (Jaulas < 2 Meses)",
+        "alias": "desecho_en_crianza_jaulas_lt_2_meses"
+      },
+      {
+        "code": "298a",
+        "name": "% Becerras  Jaulas Muertas < 1 Meses",
+        "alias": "pct_becerras_jaulas_muertas_lt_1_meses"
+      },
+      {
+        "code": "298b",
+        "name": "R al % Becerras Jaulas Muertas < 1 Meses",
+        "alias": "r_al_pct_becerras_jaulas_muertas_lt_1_meses"
+      },
+      {
+        "code": "299a",
+        "name": "% Becerras Jaulas Muertas < 2 Meses",
+        "alias": "pct_becerras_jaulas_muertas_lt_2_meses"
+      },
+      {
+        "code": "299b",
+        "name": "R al % Becerras Jaulas Muertas < 2 Meses",
+        "alias": "r_al_pct_becerras_jaulas_muertas_lt_2_meses"
+      },
+      {
+        "code": "300a",
+        "name": "% Becerras Desechadas < 2 Meses",
+        "alias": "pct_becerras_desechadas_lt_2_meses"
+      },
+      {
+        "code": "300b",
+        "name": "R al % Becerras Desechadas < 2 Meses",
+        "alias": "r_al_pct_becerras_desechadas_lt_2_meses"
+      },
+      {
+        "code": "297a",
+        "name": "% Desecho en Crianza (Jaulas < 2 Meses)",
+        "alias": "pct_desecho_en_crianza_jaulas_lt_2_meses"
+      },
+      {
+        "code": "303c",
+        "name": "Desecho en Crianza (Crecimiento > 2 Meses)",
+        "alias": "desecho_en_crianza_crecimiento_gt_2_meses"
+      },
+      {
+        "code": "301a",
+        "name": "% Becerras Muertas (2-13 Meses)",
+        "alias": "pct_becerras_muertas_2_13_meses"
+      },
+      {
+        "code": "301b",
+        "name": "R al % Becerras Muertas (2-13 Meses)",
+        "alias": "r_al_pct_becerras_muertas_2_13_meses"
+      },
+      {
+        "code": "302a",
+        "name": "% Becerras Desechadas (2-13 Meses)",
+        "alias": "pct_becerras_desechadas_2_13_meses"
+      },
+      {
+        "code": "302b",
+        "name": "R al % Becerras Desechadas (2-13 Meses)",
+        "alias": "r_al_pct_becerras_desechadas_2_13_meses"
+      },
+      {
+        "code": "303a",
+        "name": "% Becerras > 13 Meses No PD(+) y Brucelosas",
+        "alias": "pct_becerras_gt_13_meses_no_pdplus_y_brucelosas"
+      },
+      {
+        "code": "303b",
+        "name": "R al % Becerras > 13 Meses No PD(+) y Brucelosas",
+        "alias": "r_al_pct_becerras_gt_13_meses_no_pdplus_y_brucelosas"
+      },
+      {
+        "code": "303d",
+        "name": "% Desecho en Crianza (Crecimiento > 2 Meses)",
+        "alias": "pct_desecho_en_crianza_crecimiento_gt_2_meses"
+      },
+      {
+        "code": "306c",
+        "name": "Desecho en Vaquillas (Prenadas)",
+        "alias": "desecho_en_vaquillas_prenadas"
+      },
+      {
+        "code": "304a",
+        "name": "% Vaquillas Muertas > 13 Meses",
+        "alias": "pct_vaquillas_muertas_gt_13_meses"
+      },
+      {
+        "code": "304b",
+        "name": "R al % Vaquillas Muertas > 13 Meses",
+        "alias": "r_al_pct_vaquillas_muertas_gt_13_meses"
+      },
+      {
+        "code": "305a",
+        "name": "% Desecho Vaquillas > 13 Meses",
+        "alias": "pct_desecho_vaquillas_gt_13_meses"
+      },
+      {
+        "code": "305b",
+        "name": "R al % Desecho Vaquillas > 13 Meses",
+        "alias": "r_al_pct_desecho_vaquillas_gt_13_meses"
+      },
+      {
+        "code": "306a",
+        "name": "% Desecho Vaquillas X Brucelosis",
+        "alias": "pct_desecho_vaquillas_x_brucelosis"
+      },
+      {
+        "code": "306b",
+        "name": "R al % Desecho Vaquillas X Brucelosis",
+        "alias": "r_al_pct_desecho_vaquillas_x_brucelosis"
+      },
+      {
+        "code": "306d",
+        "name": "% Desecho en Vaquillas (Prenadas)",
+        "alias": "pct_desecho_en_vaquillas_prenadas"
+      },
+      {
+        "code": "440a",
+        "name": "Relación entradas / prom. Hato",
+        "alias": "relación_entradas_prom_hato"
+      },
+      {
+        "code": "441",
+        "name": "Relación Prom. Hato/ Vacas desechadas",
+        "alias": "relación_prom_hato_vacas_desechadas"
+      },
+      {
+        "code": "442a",
+        "name": "Reemplazo de Ordeño",
+        "alias": "reemplazo_de_ordeño"
+      },
+      {
+        "code": "444a",
+        "name": "% Crianza lograda",
+        "alias": "pct_crianza_lograda"
+      },
+      {
+        "code": "445a",
+        "name": "% Crianza desechada",
+        "alias": "pct_crianza_desechada"
+      }
+    ]
+  },
+  "DV": {
+    "section": "DV",
+    "description": "DESECHO EN VACAS",
+    "kpis": [
+      {
+        "code": "309",
+        "name": "Vacas Muertas Frescas < 30 DEL",
+        "alias": "vacas_muertas_frescas_lt_30_del"
+      },
+      {
+        "code": "310",
+        "name": "Desechadas Frescas < 30 DEL",
+        "alias": "desechadas_frescas_lt_30_del"
+      },
+      {
+        "code": "311",
+        "name": "Desecho Vacas < 60 DEL (Periodo)",
+        "alias": "desecho_vacas_lt_60_del_periodo"
+      },
+      {
+        "code": "300h",
+        "name": "Vacas transferidas a otro rebano",
+        "alias": "vacas_transferidas_a_otro_rebano"
+      },
+      {
+        "code": "313",
+        "name": "Desecho Frescas < 30 DEL (Periodo)",
+        "alias": "desecho_frescas_lt_30_del_periodo"
+      },
+      {
+        "code": "314",
+        "name": "Vacas Muertas > 30 DEL",
+        "alias": "vacas_muertas_gt_30_del"
+      },
+      {
+        "code": "315",
+        "name": "Desecho Baja Produccion",
+        "alias": "desecho_baja_produccion"
+      },
+      {
+        "code": "316",
+        "name": "Desecho por Prob. de Fertilidad",
+        "alias": "desecho_por_prob_de_fertilidad"
+      },
+      {
+        "code": "317",
+        "name": "Desecho por Prob. Respiratorios",
+        "alias": "desecho_por_prob_respiratorios"
+      },
+      {
+        "code": "318",
+        "name": "Desecho por Prob. Locomotores",
+        "alias": "desecho_por_prob_locomotores"
+      },
+      {
+        "code": "319",
+        "name": "Desecho por Prob. Digestivos",
+        "alias": "desecho_por_prob_digestivos"
+      },
+      {
+        "code": "320",
+        "name": "Desecho pr Mastitis y P. Ubre",
+        "alias": "desecho_pr_mastitis_y_p_ubre"
+      },
+      {
+        "code": "321",
+        "name": "Desecho por Reproductivos y Abortos",
+        "alias": "desecho_por_reproductivos_y_abortos"
+      },
+      {
+        "code": "322",
+        "name": "Desecho en Vacas Secas",
+        "alias": "desecho_en_vacas_secas"
+      },
+      {
+        "code": "323",
+        "name": "Desecho Otras Causas y/o Genetica",
+        "alias": "desecho_otras_causas_y_o_genetica"
+      },
+      {
+        "code": "324",
+        "name": "Desecho Vacas Brucelosas",
+        "alias": "desecho_vacas_brucelosas"
+      },
+      {
+        "code": "309a",
+        "name": "Partos Ant P-1",
+        "alias": "partos_ant_p_1"
+      },
+      {
+        "code": "309b",
+        "name": "Partos Ant P-2",
+        "alias": "partos_ant_p_2"
+      },
+      {
+        "code": "325",
+        "name": "Dias Utiles",
+        "alias": "dias_utiles"
+      },
+      {
+        "code": "325a",
+        "name": "Leche Vida",
+        "alias": "leche_vida"
+      },
+      {
+        "code": "310c",
+        "name": "Desecho Frescas Periodo",
+        "alias": "desecho_frescas_periodo"
+      },
+      {
+        "code": "309d",
+        "name": "% Vacas Muertas Frescas < 30 DEL",
+        "alias": "pct_vacas_muertas_frescas_lt_30_del"
+      },
+      {
+        "code": "309e",
+        "name": "R al % Vacas Muertas Frescas < 30 DEL",
+        "alias": "r_al_pct_vacas_muertas_frescas_lt_30_del"
+      },
+      {
+        "code": "310a",
+        "name": "% Desechadas Frescas < 30 DEL",
+        "alias": "pct_desechadas_frescas_lt_30_del"
+      },
+      {
+        "code": "310b",
+        "name": "R al % Desechadas Frescas < 30 DEL",
+        "alias": "r_al_pct_desechadas_frescas_lt_30_del"
+      },
+      {
+        "code": "310d",
+        "name": "% Desecho Frescas Periodo",
+        "alias": "pct_desecho_frescas_periodo"
+      },
+      {
+        "code": "311a",
+        "name": "% Desecho Vacas < 60 DEL (Periodo)",
+        "alias": "pct_desecho_vacas_lt_60_del_periodo"
+      },
+      {
+        "code": "324c",
+        "name": "Desecho Vacas + Secas (Periodo)",
+        "alias": "desecho_vacas_plus_secas_periodo"
+      },
+      {
+        "code": "314a",
+        "name": "% Vacas Muertas > 30 DEL",
+        "alias": "pct_vacas_muertas_gt_30_del"
+      },
+      {
+        "code": "314c",
+        "name": "R al % Vacas Muertas > 30 DEL",
+        "alias": "r_al_pct_vacas_muertas_gt_30_del"
+      },
+      {
+        "code": "315a",
+        "name": "% Desecho Baja Produccion",
+        "alias": "pct_desecho_baja_produccion"
+      },
+      {
+        "code": "315b",
+        "name": "R al % Desecho Baja Produccion",
+        "alias": "r_al_pct_desecho_baja_produccion"
+      },
+      {
+        "code": "316a",
+        "name": "% Desecho por Prob. de Fertilidad",
+        "alias": "pct_desecho_por_prob_de_fertilidad"
+      },
+      {
+        "code": "316b",
+        "name": "R al % Desecho por Prob. de Fertilidad",
+        "alias": "r_al_pct_desecho_por_prob_de_fertilidad"
+      },
+      {
+        "code": "317a",
+        "name": "% Desecho por Prob. Respiratorios",
+        "alias": "pct_desecho_por_prob_respiratorios"
+      },
+      {
+        "code": "317b",
+        "name": "R al % Desecho por Prob. Respiratorios",
+        "alias": "r_al_pct_desecho_por_prob_respiratorios"
+      },
+      {
+        "code": "318a",
+        "name": "% Desecho por Prob. Locomotores",
+        "alias": "pct_desecho_por_prob_locomotores"
+      },
+      {
+        "code": "318b",
+        "name": "R al % Desecho por Prob. Locomotores",
+        "alias": "r_al_pct_desecho_por_prob_locomotores"
+      },
+      {
+        "code": "319a",
+        "name": "% Desecho por Prob. Digestivos",
+        "alias": "pct_desecho_por_prob_digestivos"
+      },
+      {
+        "code": "319b",
+        "name": "R al % Desecho por Prob. Digestivos",
+        "alias": "r_al_pct_desecho_por_prob_digestivos"
+      },
+      {
+        "code": "320a",
+        "name": "% Desecho por Mastitis y P. Ubre",
+        "alias": "pct_desecho_por_mastitis_y_p_ubre"
+      },
+      {
+        "code": "320b",
+        "name": "R al % Desecho por Mastitis y P.Ubre",
+        "alias": "r_al_pct_desecho_por_mastitis_y_pubre"
+      },
+      {
+        "code": "321a",
+        "name": "% Desechos por Reproductivos y Abortos",
+        "alias": "pct_desechos_por_reproductivos_y_abortos"
+      },
+      {
+        "code": "321b",
+        "name": "R al % Desechos por Reproductivos y Abortos",
+        "alias": "r_al_pct_desechos_por_reproductivos_y_abortos"
+      },
+      {
+        "code": "322a",
+        "name": "% Desecho en Vacas Secas",
+        "alias": "pct_desecho_en_vacas_secas"
+      },
+      {
+        "code": "322b",
+        "name": "R al % Desecho en Vacas Secas",
+        "alias": "r_al_pct_desecho_en_vacas_secas"
+      },
+      {
+        "code": "3223a",
+        "name": "% Desecho Otras Causas y/o Genetica",
+        "alias": "pct_desecho_otras_causas_y_o_genetica"
+      },
+      {
+        "code": "323b",
+        "name": "R al % Desecho Otras Causas y/o Genetica",
+        "alias": "r_al_pct_desecho_otras_causas_y_o_genetica"
+      },
+      {
+        "code": "324a",
+        "name": "% Desecho Vacas Brucelosas",
+        "alias": "pct_desecho_vacas_brucelosas"
+      },
+      {
+        "code": "324b",
+        "name": "R al % Desecho Vacas Brucelosas",
+        "alias": "r_al_pct_desecho_vacas_brucelosas"
+      },
+      {
+        "code": "324d",
+        "name": "% Desecho Vacas+Secas",
+        "alias": "pct_desecho_vacasplussecas"
+      },
+      {
+        "code": "309k",
+        "name": "Vacas Muertas Frescas < 30 DEL 1a Lact",
+        "alias": "vacas_muertas_frescas_lt_30_del_1a_lact"
+      },
+      {
+        "code": "309l",
+        "name": "Vacas Muertas Frescas < 30 DEL 2a Lact",
+        "alias": "vacas_muertas_frescas_lt_30_del_2a_lact"
+      },
+      {
+        "code": "309m",
+        "name": "Vacas Muertas Frescas < 30 DEL 3a Lact",
+        "alias": "vacas_muertas_frescas_lt_30_del_3a_lact"
+      },
+      {
+        "code": "310k",
+        "name": "Desechadas Frescas < 30 DEL 1a Lact",
+        "alias": "desechadas_frescas_lt_30_del_1a_lact"
+      },
+      {
+        "code": "310l",
+        "name": "Desechadas Frescas < 30 DEL 2a Lact",
+        "alias": "desechadas_frescas_lt_30_del_2a_lact"
+      },
+      {
+        "code": "310m",
+        "name": "Desechadas Frescas < 30 DEL 3a Lact",
+        "alias": "desechadas_frescas_lt_30_del_3a_lact"
+      },
+      {
+        "code": "310n",
+        "name": "Desecho Frescas 1a Lact",
+        "alias": "desecho_frescas_1a_lact"
+      },
+      {
+        "code": "310o",
+        "name": "Desecho Frescas 2a Lact",
+        "alias": "desecho_frescas_2a_lact"
+      },
+      {
+        "code": "310p",
+        "name": "Desecho Frescas 3a Lact",
+        "alias": "desecho_frescas_3a_lact"
+      },
+      {
+        "code": "313k",
+        "name": "Desecho Frescas < 30 DEL (Periodo) 1a Lact",
+        "alias": "desecho_frescas_lt_30_del_periodo_1a_lact"
+      },
+      {
+        "code": "313l",
+        "name": "Desecho Frescas < 30 DEL (Periodo) 2a Lact",
+        "alias": "desecho_frescas_lt_30_del_periodo_2a_lact"
+      },
+      {
+        "code": "313m",
+        "name": "Desecho Frescas < 30 DEL (Periodo) 3a Lact",
+        "alias": "desecho_frescas_lt_30_del_periodo_3a_lact"
+      },
+      {
+        "code": "315k",
+        "name": "Desecho Baja Produccion 1a Lact",
+        "alias": "desecho_baja_produccion_1a_lact"
+      },
+      {
+        "code": "315l",
+        "name": "Desecho Baja Produccion 2da Lact",
+        "alias": "desecho_baja_produccion_2da_lact"
+      },
+      {
+        "code": "315m",
+        "name": "Desecho Baja Produccion 3ra Lact",
+        "alias": "desecho_baja_produccion_3ra_lact"
+      },
+      {
+        "code": "316k",
+        "name": "Desecho por Prob. de Fertilidad 1a Lact",
+        "alias": "desecho_por_prob_de_fertilidad_1a_lact"
+      },
+      {
+        "code": "316l",
+        "name": "Desecho por Prob. de Fertilidad 2da Lact",
+        "alias": "desecho_por_prob_de_fertilidad_2da_lact"
+      },
+      {
+        "code": "316m",
+        "name": "Desecho por Prob. de Fertilidad 3ra Lact",
+        "alias": "desecho_por_prob_de_fertilidad_3ra_lact"
+      },
+      {
+        "code": "317k",
+        "name": "Desecho por Prob. Respiratorios 1a Lact",
+        "alias": "desecho_por_prob_respiratorios_1a_lact"
+      },
+      {
+        "code": "317l",
+        "name": "Desecho por Prob. Respiratorios 2da Lact",
+        "alias": "desecho_por_prob_respiratorios_2da_lact"
+      },
+      {
+        "code": "317m",
+        "name": "Desecho por Prob. Respiratorios 3ra Lact",
+        "alias": "desecho_por_prob_respiratorios_3ra_lact"
+      },
+      {
+        "code": "318k",
+        "name": "Desecho por Prob. Locomotores 1a Lact",
+        "alias": "desecho_por_prob_locomotores_1a_lact"
+      },
+      {
+        "code": "318l",
+        "name": "Desecho por Prob. Locomotores 2da Lact",
+        "alias": "desecho_por_prob_locomotores_2da_lact"
+      },
+      {
+        "code": "318m",
+        "name": "Desecho por Prob. Locomotores 3ra Lact",
+        "alias": "desecho_por_prob_locomotores_3ra_lact"
+      },
+      {
+        "code": "319k",
+        "name": "Desecho por Prob. Digestivos 1a Lact",
+        "alias": "desecho_por_prob_digestivos_1a_lact"
+      },
+      {
+        "code": "319l",
+        "name": "Desecho por Prob. Digestivos 2da Lact",
+        "alias": "desecho_por_prob_digestivos_2da_lact"
+      },
+      {
+        "code": "319m",
+        "name": "Desecho por Prob. Digestivos 3ra Lact",
+        "alias": "desecho_por_prob_digestivos_3ra_lact"
+      },
+      {
+        "code": "320k",
+        "name": "Desecho pr Mastitis y P. Ubre 1a Lact",
+        "alias": "desecho_pr_mastitis_y_p_ubre_1a_lact"
+      },
+      {
+        "code": "320l",
+        "name": "Desecho pr Mastitis y P. Ubre 2da Lact",
+        "alias": "desecho_pr_mastitis_y_p_ubre_2da_lact"
+      },
+      {
+        "code": "320m",
+        "name": "Desecho pr Mastitis y P. Ubre 3ra Lact",
+        "alias": "desecho_pr_mastitis_y_p_ubre_3ra_lact"
+      },
+      {
+        "code": "321k",
+        "name": "Desecho por Reproductivos y Abortos 1a Lact",
+        "alias": "desecho_por_reproductivos_y_abortos_1a_lact"
+      },
+      {
+        "code": "321l",
+        "name": "Desecho por Reproductivos y Abortos 2da Lact",
+        "alias": "desecho_por_reproductivos_y_abortos_2da_lact"
+      },
+      {
+        "code": "321m",
+        "name": "Desecho por Reproductivos y Abortos 3ra Lact",
+        "alias": "desecho_por_reproductivos_y_abortos_3ra_lact"
+      },
+      {
+        "code": "322k",
+        "name": "Desecho Vacas Secas 1ra Lact",
+        "alias": "desecho_vacas_secas_1ra_lact"
+      },
+      {
+        "code": "322l",
+        "name": "Desecho Vacas Secas 2da Lact",
+        "alias": "desecho_vacas_secas_2da_lact"
+      },
+      {
+        "code": "322m",
+        "name": "Desecho Vacas Secas 3ra Lact",
+        "alias": "desecho_vacas_secas_3ra_lact"
+      },
+      {
+        "code": "323k",
+        "name": "Desecho Otras Causas y/o Genetica 1a Lact",
+        "alias": "desecho_otras_causas_y_o_genetica_1a_lact"
+      },
+      {
+        "code": "323l",
+        "name": "Desecho Otras Causas y/o Genetica 2da Lact",
+        "alias": "desecho_otras_causas_y_o_genetica_2da_lact"
+      },
+      {
+        "code": "323m",
+        "name": "Desecho Otras Causas y/o Genetica 3ra Lact",
+        "alias": "desecho_otras_causas_y_o_genetica_3ra_lact"
+      },
+      {
+        "code": "324k",
+        "name": "Desecho Vacas Brucelosas 1a Lact",
+        "alias": "desecho_vacas_brucelosas_1a_lact"
+      },
+      {
+        "code": "324l",
+        "name": "Desecho Vacas Brucelosas 2da Lact",
+        "alias": "desecho_vacas_brucelosas_2da_lact"
+      },
+      {
+        "code": "324m",
+        "name": "Desecho Vacas Brucelosas 3ra Lact",
+        "alias": "desecho_vacas_brucelosas_3ra_lact"
+      },
+      {
+        "code": "311k",
+        "name": "Desecho Vacas < 60 DEL (Periodo) 1a Lact",
+        "alias": "desecho_vacas_lt_60_del_periodo_1a_lact"
+      },
+      {
+        "code": "311l",
+        "name": "Desecho Vacas < 60 DEL (Periodo) 2a Lact",
+        "alias": "desecho_vacas_lt_60_del_periodo_2a_lact"
+      },
+      {
+        "code": "311m",
+        "name": "Desecho Vacas < 60 DEL (Periodo) 3a Lact",
+        "alias": "desecho_vacas_lt_60_del_periodo_3a_lact"
+      },
+      {
+        "code": "314k",
+        "name": "Vacas Muertas > 30 DEL 1a Lact",
+        "alias": "vacas_muertas_gt_30_del_1a_lact"
+      },
+      {
+        "code": "314l",
+        "name": "Vacas Muertas > 30 DEL 2a Lact",
+        "alias": "vacas_muertas_gt_30_del_2a_lact"
+      },
+      {
+        "code": "314m",
+        "name": "Vacas Muertas > 30 DEL 3a Lact",
+        "alias": "vacas_muertas_gt_30_del_3a_lact"
+      }
+    ]
+  },
+  "AB": {
+    "section": "AB",
+    "description": "ABORTOS",
+    "kpis": [
+      {
+        "code": "334a",
+        "name": "Abortos PD",
+        "alias": "abortos_pd"
+      },
+      {
+        "code": "334b",
+        "name": "Abortos PD",
+        "alias": "abortos_pd"
+      },
+      {
+        "code": "326",
+        "name": "Aborto Vaquillas 1 Trimestre",
+        "alias": "aborto_vaquillas_1_trimestre"
+      },
+      {
+        "code": "327",
+        "name": "Aborto Vaquillas 2 Trimestre",
+        "alias": "aborto_vaquillas_2_trimestre"
+      },
+      {
+        "code": "328",
+        "name": "Aborto Vaquillas 3 Trimestre",
+        "alias": "aborto_vaquillas_3_trimestre"
+      },
+      {
+        "code": "330a",
+        "name": "Aborto Vacas 1 Trimestre 1a Lact",
+        "alias": "aborto_vacas_1_trimestre_1a_lact"
+      },
+      {
+        "code": "330b",
+        "name": "Aborto Vacas 1 Trimestre 2a Lact",
+        "alias": "aborto_vacas_1_trimestre_2a_lact"
+      },
+      {
+        "code": "330c",
+        "name": "Aborto Vacas 1 Trimestre 3+ Lact",
+        "alias": "aborto_vacas_1_trimestre_3plus_lact"
+      },
+      {
+        "code": "331a",
+        "name": "Aborto Vacas 2 Trimesrtre 1a Lact",
+        "alias": "aborto_vacas_2_trimesrtre_1a_lact"
+      },
+      {
+        "code": "331b",
+        "name": "Aborto Vacas 2 Trimestre 2a Lact",
+        "alias": "aborto_vacas_2_trimestre_2a_lact"
+      },
+      {
+        "code": "331c",
+        "name": "Aborto Vacas 2 Trimestre 3+ Lact",
+        "alias": "aborto_vacas_2_trimestre_3plus_lact"
+      },
+      {
+        "code": "332a",
+        "name": "Aborto Vacas 3 Trimestre 1a Lact",
+        "alias": "aborto_vacas_3_trimestre_1a_lact"
+      },
+      {
+        "code": "332b",
+        "name": "Aborto Vacas 3 Trimestre 2a Lact",
+        "alias": "aborto_vacas_3_trimestre_2a_lact"
+      },
+      {
+        "code": "332c",
+        "name": "Aborto Vacas 3 Trimestre 3+ Lact",
+        "alias": "aborto_vacas_3_trimestre_3plus_lact"
+      },
+      {
+        "code": "326d",
+        "name": "Abortos Parto Vaquillas 1 Trimestre",
+        "alias": "abortos_parto_vaquillas_1_trimestre"
+      },
+      {
+        "code": "327d",
+        "name": "Abortos Parto Vaquillas 2 Trimestre",
+        "alias": "abortos_parto_vaquillas_2_trimestre"
+      },
+      {
+        "code": "328d",
+        "name": "Abortos Parto Vaquillas 3 Trimestre",
+        "alias": "abortos_parto_vaquillas_3_trimestre"
+      },
+      {
+        "code": "330d",
+        "name": "Abortos Parto Vacas 1 Trimestre",
+        "alias": "abortos_parto_vacas_1_trimestre"
+      },
+      {
+        "code": "331d",
+        "name": "Abortos Parto Vacas 2 Trimestre",
+        "alias": "abortos_parto_vacas_2_trimestre"
+      },
+      {
+        "code": "332d",
+        "name": "Abortos Parto Vacas 3 Trimestre",
+        "alias": "abortos_parto_vacas_3_trimestre"
+      },
+      {
+        "code": "328f",
+        "name": "Total de Vaquillas Abortadas",
+        "alias": "total_de_vaquillas_abortadas"
+      },
+      {
+        "code": "328g",
+        "name": "Total de Vaquillas Abortadas Partos",
+        "alias": "total_de_vaquillas_abortadas_partos"
+      },
+      {
+        "code": "329",
+        "name": "Vacas Abortadas 0-90 Dias",
+        "alias": "vacas_abortadas_0_90_dias"
+      },
+      {
+        "code": "329d",
+        "name": "Vacas Abortadas 91-180 Dias",
+        "alias": "vacas_abortadas_91_180_dias"
+      },
+      {
+        "code": "329g",
+        "name": "Vacas Abortadas > 181 Dias",
+        "alias": "vacas_abortadas_gt_181_dias"
+      },
+      {
+        "code": "329j",
+        "name": "Total Vacas Abortadas",
+        "alias": "total_vacas_abortadas"
+      },
+      {
+        "code": "329k",
+        "name": "Total de Vacas Abortadas Partos",
+        "alias": "total_de_vacas_abortadas_partos"
+      },
+      {
+        "code": "326e",
+        "name": "% Vaquillas Abortadas 0-90 Dias",
+        "alias": "pct_vaquillas_abortadas_0_90_dias"
+      },
+      {
+        "code": "326f",
+        "name": "% Vaquillas Abortadas Partos 0-90 Dias",
+        "alias": "pct_vaquillas_abortadas_partos_0_90_dias"
+      },
+      {
+        "code": "327e",
+        "name": "% Vaquillas Abortadas 91-180 Dias",
+        "alias": "pct_vaquillas_abortadas_91_180_dias"
+      },
+      {
+        "code": "327f",
+        "name": "% Vaquillas Abortadas Partos 91-180 Dias",
+        "alias": "pct_vaquillas_abortadas_partos_91_180_dias"
+      },
+      {
+        "code": "328e",
+        "name": "% Vaquillas Abortadas > 181 Dias",
+        "alias": "pct_vaquillas_abortadas_gt_181_dias"
+      },
+      {
+        "code": "328i",
+        "name": "% Vaquillas Abortadas Partos > 181 Dias",
+        "alias": "pct_vaquillas_abortadas_partos_gt_181_dias"
+      },
+      {
+        "code": "328h",
+        "name": "% Total Abortos Vaquillas (M)",
+        "alias": "pct_total_abortos_vaquillas_m"
+      },
+      {
+        "code": "329c",
+        "name": "% Vacas Abortadas 0-90 Dias",
+        "alias": "pct_vacas_abortadas_0_90_dias"
+      },
+      {
+        "code": "330e",
+        "name": "% Vacas Abortadas Partos 0-90 Dias",
+        "alias": "pct_vacas_abortadas_partos_0_90_dias"
+      },
+      {
+        "code": "329f",
+        "name": "% Vacas Abortadas 91-180 Dias",
+        "alias": "pct_vacas_abortadas_91_180_dias"
+      },
+      {
+        "code": "331e",
+        "name": "% Vacas Abortadas Partos 91-180 Dias",
+        "alias": "pct_vacas_abortadas_partos_91_180_dias"
+      },
+      {
+        "code": "329i",
+        "name": "% Vacas Abortadas > 181 Dias",
+        "alias": "pct_vacas_abortadas_gt_181_dias"
+      },
+      {
+        "code": "332e",
+        "name": "% Vacas Abortadas Partos > 181 Dias",
+        "alias": "pct_vacas_abortadas_partos_gt_181_dias"
+      },
+      {
+        "code": "329l",
+        "name": "% Total Abortos Vacas (M)",
+        "alias": "pct_total_abortos_vacas_m"
+      },
+      {
+        "code": "333a",
+        "name": "Total Abortos 1a Lact",
+        "alias": "total_abortos_1a_lact"
+      },
+      {
+        "code": "333b",
+        "name": "Total Abortos 2a Lact",
+        "alias": "total_abortos_2a_lact"
+      },
+      {
+        "code": "333c",
+        "name": "Total Abortos 3+ Lact",
+        "alias": "total_abortos_3plus_lact"
+      },
+      {
+        "code": "333d",
+        "name": "Total Abortos",
+        "alias": "total_abortos"
+      },
+      {
+        "code": "333e",
+        "name": "% Abortos 1a Lact",
+        "alias": "pct_abortos_1a_lact"
+      },
+      {
+        "code": "333f",
+        "name": "% Abortos 2a Lact",
+        "alias": "pct_abortos_2a_lact"
+      },
+      {
+        "code": "333g",
+        "name": "% Abortos 3+ Lact",
+        "alias": "pct_abortos_3plus_lact"
+      },
+      {
+        "code": "333h",
+        "name": "% Abortos Vaquillas",
+        "alias": "pct_abortos_vaquillas"
+      },
+      {
+        "code": "326m",
+        "name": "% Vaquillas Abortadas 0-90 Dias",
+        "alias": "pct_vaquillas_abortadas_0_90_dias"
+      },
+      {
+        "code": "326n",
+        "name": "% Vacas Abortadas Partos 0-90 Dias",
+        "alias": "pct_vacas_abortadas_partos_0_90_dias"
+      },
+      {
+        "code": "327m",
+        "name": "% Vaquillas Abortadas 91-180 Dias",
+        "alias": "pct_vaquillas_abortadas_91_180_dias"
+      },
+      {
+        "code": "327n",
+        "name": "% Vacas Abortadas 91-180 Dias",
+        "alias": "pct_vacas_abortadas_91_180_dias"
+      },
+      {
+        "code": "328m",
+        "name": "% Vaquillas Abortadas > 181 Dias",
+        "alias": "pct_vaquillas_abortadas_gt_181_dias"
+      },
+      {
+        "code": "328n",
+        "name": "% Vacas Abortadas > 181 Dias",
+        "alias": "pct_vacas_abortadas_gt_181_dias"
+      },
+      {
+        "code": "326o",
+        "name": "% Vaquillas Abortadas 0-90 Dias / Vaquillas Abortadas",
+        "alias": "pct_vaquillas_abortadas_0_90_dias_vaquillas_abortadas"
+      },
+      {
+        "code": "327o",
+        "name": "% Vaquillas Abortadas 91-180 Dias / Vaquillas Abortadas",
+        "alias": "pct_vaquillas_abortadas_91_180_dias_vaquillas_abortadas"
+      },
+      {
+        "code": "328o",
+        "name": "% Vaquillas Abortadas > 181 Dias / Vaquillas Abortadas",
+        "alias": "pct_vaquillas_abortadas_gt_181_dias_vaquillas_abortadas"
+      },
+      {
+        "code": "326p",
+        "name": "% Vacas Abortadas 0-90 Dias / Vaquillas Abortadas",
+        "alias": "pct_vacas_abortadas_0_90_dias_vaquillas_abortadas"
+      },
+      {
+        "code": "327p",
+        "name": "% Vacas Abortadas 91-180 Dias / Vaquillas Abortadas",
+        "alias": "pct_vacas_abortadas_91_180_dias_vaquillas_abortadas"
+      },
+      {
+        "code": "328p",
+        "name": "% Vacas Abortadas > 181 Dias / Vaquillas Abortadas",
+        "alias": "pct_vacas_abortadas_gt_181_dias_vaquillas_abortadas"
+      },
+      {
+        "code": "326r",
+        "name": "% Vaquillas Abortadas 1er Trimestre",
+        "alias": "pct_vaquillas_abortadas_1er_trimestre"
+      },
+      {
+        "code": "327r",
+        "name": "% Vaquillas Abortadas 2do Trimestre",
+        "alias": "pct_vaquillas_abortadas_2do_trimestre"
+      },
+      {
+        "code": "328r",
+        "name": "% Vaquillas Abortadas 3er Trimestre",
+        "alias": "pct_vaquillas_abortadas_3er_trimestre"
+      },
+      {
+        "code": "329r",
+        "name": "% Vacas Abortadas 1er Trimestre",
+        "alias": "pct_vacas_abortadas_1er_trimestre"
+      },
+      {
+        "code": "329s",
+        "name": "% Vacas Abortadas 2do Trimestre",
+        "alias": "pct_vacas_abortadas_2do_trimestre"
+      },
+      {
+        "code": "329t",
+        "name": "% Vacas Abortadas 3er Trimestre",
+        "alias": "pct_vacas_abortadas_3er_trimestre"
+      },
+      {
+        "code": "326s",
+        "name": "% Aborto tipo Parto Vaquillas 1er Trimestre",
+        "alias": "pct_aborto_tipo_parto_vaquillas_1er_trimestre"
+      },
+      {
+        "code": "327s",
+        "name": "% Aborto tipo Parto Vaquillas 2do Trimestre",
+        "alias": "pct_aborto_tipo_parto_vaquillas_2do_trimestre"
+      },
+      {
+        "code": "328s",
+        "name": "% Aborto tipo Parto Vaquillas 3er Trimestre",
+        "alias": "pct_aborto_tipo_parto_vaquillas_3er_trimestre"
+      },
+      {
+        "code": "330r",
+        "name": "% Aborto tipo Parto Vacas 1er Trimestre",
+        "alias": "pct_aborto_tipo_parto_vacas_1er_trimestre"
+      },
+      {
+        "code": "330s",
+        "name": "% Aborto tipo Parto Vacas 2do Trimestre",
+        "alias": "pct_aborto_tipo_parto_vacas_2do_trimestre"
+      },
+      {
+        "code": "330t",
+        "name": "% Aborto tipo Parto Vacas 3er Trimestre",
+        "alias": "pct_aborto_tipo_parto_vacas_3er_trimestre"
+      },
+      {
+        "code": "335a",
+        "name": "Partos Prematuros Vaquillas 3 Trimestre",
+        "alias": "partos_prematuros_vaquillas_3_trimestre"
+      },
+      {
+        "code": "335b",
+        "name": "Partos Prematuros Vacas 3 Trimestre",
+        "alias": "partos_prematuros_vacas_3_trimestre"
+      },
+      {
+        "code": "336e",
+        "name": "Total Abortos (Parto + Prematuros) Vaquillas",
+        "alias": "total_abortos_parto_plus_prematuros_vaquillas"
+      },
+      {
+        "code": "336f",
+        "name": "Total Abortos (Parto + Prematuros) Vacas",
+        "alias": "total_abortos_parto_plus_prematuros_vacas"
+      },
+      {
+        "code": "336a",
+        "name": "Abortos (Parto + Prematuros) Vaquillas 3 Trimestre",
+        "alias": "abortos_parto_plus_prematuros_vaquillas_3_trimestre"
+      },
+      {
+        "code": "336b",
+        "name": "Abortos (Parto + Prematuros) Vacas 3 Trimestre",
+        "alias": "abortos_parto_plus_prematuros_vacas_3_trimestre"
+      },
+      {
+        "code": "337c",
+        "name": "% Abortos Vaquillas > 181 Dias",
+        "alias": "pct_abortos_vaquillas_gt_181_dias"
+      },
+      {
+        "code": "337d",
+        "name": "% Total Abortos Vaquillas Partos",
+        "alias": "pct_total_abortos_vaquillas_partos"
+      },
+      {
+        "code": "337g",
+        "name": "% Abortos Vacas > 181 Dias",
+        "alias": "pct_abortos_vacas_gt_181_dias"
+      },
+      {
+        "code": "337h",
+        "name": "% Total Abortos Vacas",
+        "alias": "pct_total_abortos_vacas"
+      },
+      {
+        "code": "331t",
+        "name": "% Aborto tipo Parto + Prematuros Vaquillas 3er Trimestre",
+        "alias": "pct_aborto_tipo_parto_plus_prematuros_vaquillas_3er_trimestre"
+      },
+      {
+        "code": "332t",
+        "name": "% Aborto tipo Parto + Prematuros Vacas 3er Trimestre",
+        "alias": "pct_aborto_tipo_parto_plus_prematuros_vacas_3er_trimestre"
+      },
+      {
+        "code": "329o",
+        "name": "% Total Vaquillas Abortadas/Vaquillas Abortadas",
+        "alias": "pct_total_vaquillas_abortadas_vaquillas_abortadas"
+      },
+      {
+        "code": "329p",
+        "name": "% Total Vacas Abortadas/Vacas Abortadas",
+        "alias": "pct_total_vacas_abortadas_vacas_abortadas"
+      },
+      {
+        "code": "326q",
+        "name": "% Vaquillas Abortadas Partos 0-90 Dias / Vaquillas Abortadas",
+        "alias": "pct_vaquillas_abortadas_partos_0_90_dias_vaquillas_abortadas"
+      },
+      {
+        "code": "327q",
+        "name": "% Vaquillas Abortadas Partos 91-180 Dias / Vaquillas Abortadas",
+        "alias": "pct_vaquillas_abortadas_partos_91_180_dias_vaquillas_abortadas"
+      },
+      {
+        "code": "328q",
+        "name": "% Vaquillas Abortadas Partos > 181 Dias / Vaquillas Abortadas",
+        "alias": "pct_vaquillas_abortadas_partos_gt_181_dias_vaquillas_abortadas"
+      },
+      {
+        "code": "329q",
+        "name": "% Total Vaquillas Abortadas Partos/Vaquillas Abortadas",
+        "alias": "pct_total_vaquillas_abortadas_partos_vaquillas_abortadas"
+      },
+      {
+        "code": "326t",
+        "name": "% Vacas Abortadas Partos 0-90 Dias / Vacas Abortadas",
+        "alias": "pct_vacas_abortadas_partos_0_90_dias_vacas_abortadas"
+      },
+      {
+        "code": "327t",
+        "name": "% Vacas Abortadas Partos 91-180 Dias / Vacas Abortadas",
+        "alias": "pct_vacas_abortadas_partos_91_180_dias_vacas_abortadas"
+      },
+      {
+        "code": "328t",
+        "name": "% Vacas Abortadas Partos > 181 Dias / Vacas Abortadas",
+        "alias": "pct_vacas_abortadas_partos_gt_181_dias_vacas_abortadas"
+      },
+      {
+        "code": "325t",
+        "name": "% Total Vacas Abortadas Partos/Vacas Abortadas",
+        "alias": "pct_total_vacas_abortadas_partos_vacas_abortadas"
+      },
+      {
+        "code": "326u",
+        "name": "% Real Vaquillas Abortadas 0-90 Dias",
+        "alias": "pct_real_vaquillas_abortadas_0_90_dias"
+      },
+      {
+        "code": "327u",
+        "name": "% Real Vaquillas Abortadas 91-180 Dias",
+        "alias": "pct_real_vaquillas_abortadas_91_180_dias"
+      },
+      {
+        "code": "328u",
+        "name": "% Real Vaquillas Abortadas > 181 Dias",
+        "alias": "pct_real_vaquillas_abortadas_gt_181_dias"
+      },
+      {
+        "code": "326v",
+        "name": "% Real Vacas Abortadas 0-90 Dias",
+        "alias": "pct_real_vacas_abortadas_0_90_dias"
+      },
+      {
+        "code": "327v",
+        "name": "% Real Vacas Abortadas 91-180 Dias",
+        "alias": "pct_real_vacas_abortadas_91_180_dias"
+      },
+      {
+        "code": "328v",
+        "name": "% Real Vacas Abortadas > 181 Dias",
+        "alias": "pct_real_vacas_abortadas_gt_181_dias"
+      },
+      {
+        "code": "326x",
+        "name": "% Vaquillas Abortadas 0-90 Dias / Vaquillas (Abortadas+Prematuros)",
+        "alias": "pct_vaquillas_abortadas_0_90_dias_vaquillas_abortadasplusprematuros"
+      },
+      {
+        "code": "327x",
+        "name": "% Vaquillas Abortadas 91-180 Dias / Vaquillas (Abortadas+Prematuros)",
+        "alias": "pct_vaquillas_abortadas_91_180_dias_vaquillas_abortadasplusprematuros"
+      },
+      {
+        "code": "328x",
+        "name": "% Vaquillas Abortadas > 181 Dias / Vaquillas (Abortadas+Prematuros)",
+        "alias": "pct_vaquillas_abortadas_gt_181_dias_vaquillas_abortadasplusprematuros"
+      },
+      {
+        "code": "329x",
+        "name": "% Vaquillas Abortadas / Vaquillas (Abortadas+Prematuros)",
+        "alias": "pct_vaquillas_abortadas_vaquillas_abortadasplusprematuros"
+      },
+      {
+        "code": "326y",
+        "name": "% Vaquillas Abortadas Partos 0-90 Dias / Vaquillas (Abortadas+Prematuros)",
+        "alias": "pct_vaquillas_abortadas_partos_0_90_dias_vaquillas_abortadasplusprematuros"
+      },
+      {
+        "code": "327y",
+        "name": "% Vaquillas Abortadas Partos 91-180 Dias / Vaquillas (Abortadas+Prematuros)",
+        "alias": "pct_vaquillas_abortadas_partos_91_180_dias_vaquillas_abortadasplusprematuros"
+      },
+      {
+        "code": "328y",
+        "name": "% Vaquillas Abortadas Partos > 181 Dias / Vaquillas (Abortadas+Prematuros)",
+        "alias": "pct_vaquillas_abortadas_partos_gt_181_dias_vaquillas_abortadasplusprematuros"
+      },
+      {
+        "code": "329y",
+        "name": "% Vaquillas Abortadas Partos / Vaquillas (Abortadas+Prematuros)",
+        "alias": "pct_vaquillas_abortadas_partos_vaquillas_abortadasplusprematuros"
+      },
+      {
+        "code": "326z",
+        "name": "% Real Vaquillas Abortadas + Prematuros 0-90 Dias",
+        "alias": "pct_real_vaquillas_abortadas_plus_prematuros_0_90_dias"
+      },
+      {
+        "code": "327z",
+        "name": "% Real Vaquillas Abortadas + Prematuros 91-180 Dias",
+        "alias": "pct_real_vaquillas_abortadas_plus_prematuros_91_180_dias"
+      },
+      {
+        "code": "328z",
+        "name": "% Real Vaquillas Abortadas + Prematuros > 181 Dias",
+        "alias": "pct_real_vaquillas_abortadas_plus_prematuros_gt_181_dias"
+      },
+      {
+        "code": "330g",
+        "name": "% Vacas Abortadas 0-90 Dias / Vacas (Abortadas+Prematuros)",
+        "alias": "pct_vacas_abortadas_0_90_dias_vacas_abortadasplusprematuros"
+      },
+      {
+        "code": "331g",
+        "name": "% Vacas Abortadas 91-180 Dias / Vacas (Abortadas+Prematuros)",
+        "alias": "pct_vacas_abortadas_91_180_dias_vacas_abortadasplusprematuros"
+      },
+      {
+        "code": "332g",
+        "name": "% Vacas Abortadas > 181 Dias / Vacas (Abortadas+Prematuros)",
+        "alias": "pct_vacas_abortadas_gt_181_dias_vacas_abortadasplusprematuros"
+      },
+      {
+        "code": "330h",
+        "name": "% Vacas Abortadas Partos 0-90 Dias / Vacas (Abortadas+Prematuros)",
+        "alias": "pct_vacas_abortadas_partos_0_90_dias_vacas_abortadasplusprematuros"
+      },
+      {
+        "code": "331h",
+        "name": "% Vacas Abortadas Partos 91-180 Dias / Vacas (Abortadas+Prematuros)",
+        "alias": "pct_vacas_abortadas_partos_91_180_dias_vacas_abortadasplusprematuros"
+      },
+      {
+        "code": "332h",
+        "name": "% Vacas Abortadas Partos > 181 Dias / Vacas (Abortadas+Prematuros)",
+        "alias": "pct_vacas_abortadas_partos_gt_181_dias_vacas_abortadasplusprematuros"
+      },
+      {
+        "code": "330i",
+        "name": "% Real Vacas Abortadas + Prematuros 0-90 Dias",
+        "alias": "pct_real_vacas_abortadas_plus_prematuros_0_90_dias"
+      },
+      {
+        "code": "331i",
+        "name": "% Real Vacas Abortadas + Prematuros 91-180 Dias",
+        "alias": "pct_real_vacas_abortadas_plus_prematuros_91_180_dias"
+      },
+      {
+        "code": "332i",
+        "name": "% Real Vacas Abortadas + Prematuros > 181 Dias",
+        "alias": "pct_real_vacas_abortadas_plus_prematuros_gt_181_dias"
+      },
+      {
+        "code": "335g",
+        "name": "% Vacas Abortadas / Vacas (Abortadas+Prematuros)",
+        "alias": "pct_vacas_abortadas_vacas_abortadasplusprematuros"
+      },
+      {
+        "code": "335h",
+        "name": "% Vacas Abortadas Partos / Vacas (Abortadas+Prematuros)",
+        "alias": "pct_vacas_abortadas_partos_vacas_abortadasplusprematuros"
+      },
+      {
+        "code": "331s",
+        "name": "% Aborto tipo Parto + Prematuros Vaquillas 1er Trimestre",
+        "alias": "pct_aborto_tipo_parto_plus_prematuros_vaquillas_1er_trimestre"
+      },
+      {
+        "code": "332s",
+        "name": "% Aborto tipo Parto + Prematuros Vaquillas 2do Trimestre",
+        "alias": "pct_aborto_tipo_parto_plus_prematuros_vaquillas_2do_trimestre"
+      },
+      {
+        "code": "333s",
+        "name": "% Aborto tipo Parto + Prematuros Vaquillas 3er Trimestre",
+        "alias": "pct_aborto_tipo_parto_plus_prematuros_vaquillas_3er_trimestre"
+      },
+      {
+        "code": "334s",
+        "name": "% Aborto tipo Parto + Prematuros Vacas 1er Trimestre",
+        "alias": "pct_aborto_tipo_parto_plus_prematuros_vacas_1er_trimestre"
+      },
+      {
+        "code": "335s",
+        "name": "% Aborto tipo Parto + Prematuros Vacas 2do Trimestre",
+        "alias": "pct_aborto_tipo_parto_plus_prematuros_vacas_2do_trimestre"
+      },
+      {
+        "code": "336s",
+        "name": "% Aborto tipo Parto + Prematuros Vacas 3er Trimestre",
+        "alias": "pct_aborto_tipo_parto_plus_prematuros_vacas_3er_trimestre"
+      },
+      {
+        "code": "407a",
+        "name": "Abortos(Detecciones y Partos) Vaquillas 1er Trimestre",
+        "alias": "abortosdetecciones_y_partos_vaquillas_1er_trimestre"
+      },
+      {
+        "code": "407b",
+        "name": "Abortos(Detecciones y Partos) Vaquillas 2do Trimestre",
+        "alias": "abortosdetecciones_y_partos_vaquillas_2do_trimestre"
+      },
+      {
+        "code": "407c",
+        "name": "Abortos(Detecciones y Partos) Vaquillas 3er Trimestre",
+        "alias": "abortosdetecciones_y_partos_vaquillas_3er_trimestre"
+      },
+      {
+        "code": "408a",
+        "name": "Vaquillas Preñadas 1er Trimestre",
+        "alias": "vaquillas_preñadas_1er_trimestre"
+      },
+      {
+        "code": "408b",
+        "name": "Vaquillas Preñadas 2do Trimestre",
+        "alias": "vaquillas_preñadas_2do_trimestre"
+      },
+      {
+        "code": "408c",
+        "name": "Vaquillas Preñadas 3er Trimestre",
+        "alias": "vaquillas_preñadas_3er_trimestre"
+      },
+      {
+        "code": "409a",
+        "name": "Vaquillas sin abortar 1er Trimestre",
+        "alias": "vaquillas_sin_abortar_1er_trimestre"
+      },
+      {
+        "code": "409b",
+        "name": "Vaquillas sin abortar 2do Trimestre",
+        "alias": "vaquillas_sin_abortar_2do_trimestre"
+      },
+      {
+        "code": "409c",
+        "name": "Vaquillas sin abortar 3er Trimestre",
+        "alias": "vaquillas_sin_abortar_3er_trimestre"
+      },
+      {
+        "code": "410a",
+        "name": "Dias de Riesgo Vaquillas 1er Trimestre",
+        "alias": "dias_de_riesgo_vaquillas_1er_trimestre"
+      },
+      {
+        "code": "410b",
+        "name": "Dias de Riesgo Vaquillas 2do Trimestre",
+        "alias": "dias_de_riesgo_vaquillas_2do_trimestre"
+      },
+      {
+        "code": "410c",
+        "name": "Dias de Riesgo Vaquillas 3er Trimestre",
+        "alias": "dias_de_riesgo_vaquillas_3er_trimestre"
+      },
+      {
+        "code": "411a",
+        "name": "Odd Ratio Vaquillas 1er Trimestre",
+        "alias": "odd_ratio_vaquillas_1er_trimestre"
+      },
+      {
+        "code": "411b",
+        "name": "Odd Ratio Vaquillas 2do Trimestre",
+        "alias": "odd_ratio_vaquillas_2do_trimestre"
+      },
+      {
+        "code": "411c",
+        "name": "Odd Ratio Vaquillas 3er Trimestre",
+        "alias": "odd_ratio_vaquillas_3er_trimestre"
+      },
+      {
+        "code": "412a",
+        "name": "Tasa de Aborto de Vaquillas por 10000 Dias en Riesgo 1er Trimestre",
+        "alias": "tasa_de_aborto_de_vaquillas_por_10000_dias_en_riesgo_1er_trimestre"
+      },
+      {
+        "code": "412b",
+        "name": "Tasa de Aborto de Vaquillas por 10000 Dias en Riesgo 2do Trimestre",
+        "alias": "tasa_de_aborto_de_vaquillas_por_10000_dias_en_riesgo_2do_trimestre"
+      },
+      {
+        "code": "412c",
+        "name": "Tasa de Aborto de Vaquillas por 10000 Dias en Riesgo 3er Trimestre",
+        "alias": "tasa_de_aborto_de_vaquillas_por_10000_dias_en_riesgo_3er_trimestre"
+      },
+      {
+        "code": "413a",
+        "name": "% Aborto Vaquillas 1er Trimestre",
+        "alias": "pct_aborto_vaquillas_1er_trimestre"
+      },
+      {
+        "code": "413b",
+        "name": "% Aborto Vaquillas 2do Trimestre",
+        "alias": "pct_aborto_vaquillas_2do_trimestre"
+      },
+      {
+        "code": "413c",
+        "name": "% Aborto Vaquillas 3er Trimestre",
+        "alias": "pct_aborto_vaquillas_3er_trimestre"
+      },
+      {
+        "code": "414a",
+        "name": "Abortos(Detecciones y Partos) Vacas 1er Trimestre",
+        "alias": "abortosdetecciones_y_partos_vacas_1er_trimestre"
+      },
+      {
+        "code": "414b",
+        "name": "Abortos(Detecciones y Partos) Vacas 2do Trimestre",
+        "alias": "abortosdetecciones_y_partos_vacas_2do_trimestre"
+      },
+      {
+        "code": "414c",
+        "name": "Abortos(Detecciones y Partos) Vacas 3er Trimestre",
+        "alias": "abortosdetecciones_y_partos_vacas_3er_trimestre"
+      },
+      {
+        "code": "415a",
+        "name": "Vacas Preñadas 1er Trimestre",
+        "alias": "vacas_preñadas_1er_trimestre"
+      },
+      {
+        "code": "415b",
+        "name": "Vacas Preñadas 2do Trimestre",
+        "alias": "vacas_preñadas_2do_trimestre"
+      },
+      {
+        "code": "415c",
+        "name": "Vacas Preñadas 3er Trimestre",
+        "alias": "vacas_preñadas_3er_trimestre"
+      },
+      {
+        "code": "416a",
+        "name": "Vacas sin abortar 1er Trimestre",
+        "alias": "vacas_sin_abortar_1er_trimestre"
+      },
+      {
+        "code": "416b",
+        "name": "Vacas sin abortar 2do Trimestre",
+        "alias": "vacas_sin_abortar_2do_trimestre"
+      },
+      {
+        "code": "416c",
+        "name": "Vacas sin abortar 3er Trimestre",
+        "alias": "vacas_sin_abortar_3er_trimestre"
+      },
+      {
+        "code": "417a",
+        "name": "Dias de Riesgo Vacas 1er Trimestre",
+        "alias": "dias_de_riesgo_vacas_1er_trimestre"
+      },
+      {
+        "code": "417b",
+        "name": "Dias de Riesgo Vacas 2do Trimestre",
+        "alias": "dias_de_riesgo_vacas_2do_trimestre"
+      },
+      {
+        "code": "417c",
+        "name": "Dias de Riesgo Vacas 3er Trimestre",
+        "alias": "dias_de_riesgo_vacas_3er_trimestre"
+      },
+      {
+        "code": "418a",
+        "name": "Odd Ratio Vacas 1er Trimestre",
+        "alias": "odd_ratio_vacas_1er_trimestre"
+      },
+      {
+        "code": "418b",
+        "name": "Odd Ratio Vacas 2do Trimestre",
+        "alias": "odd_ratio_vacas_2do_trimestre"
+      },
+      {
+        "code": "418c",
+        "name": "Odd Ratio Vacas 3er Trimestre",
+        "alias": "odd_ratio_vacas_3er_trimestre"
+      },
+      {
+        "code": "419a",
+        "name": "Tasa de Aborto de Vacas por 10000 Dias en Riesgo 1er Trimestre",
+        "alias": "tasa_de_aborto_de_vacas_por_10000_dias_en_riesgo_1er_trimestre"
+      },
+      {
+        "code": "419b",
+        "name": "Tasa de Aborto de Vacas por 10000 Dias en Riesgo 2do Trimestre",
+        "alias": "tasa_de_aborto_de_vacas_por_10000_dias_en_riesgo_2do_trimestre"
+      },
+      {
+        "code": "419c",
+        "name": "Tasa de Aborto de Vacas por 10000 Dias en Riesgo 3er Trimestre",
+        "alias": "tasa_de_aborto_de_vacas_por_10000_dias_en_riesgo_3er_trimestre"
+      },
+      {
+        "code": "420a",
+        "name": "% Aborto Vacas 1er Trimestre",
+        "alias": "pct_aborto_vacas_1er_trimestre"
+      },
+      {
+        "code": "420b",
+        "name": "% Aborto Vacas 2do Trimestre",
+        "alias": "pct_aborto_vacas_2do_trimestre"
+      },
+      {
+        "code": "420c",
+        "name": "% Aborto Vacas 3er Trimestre",
+        "alias": "pct_aborto_vacas_3er_trimestre"
+      },
+      {
+        "code": "407f",
+        "name": "Abortos(Detecciones, Partos y Prematuros) Vaquillas 3er Trimestre",
+        "alias": "abortosdetecciones_partos_y_prematuros_vaquillas_3er_trimestre"
+      },
+      {
+        "code": "409f",
+        "name": "Vaquillas sin abortar (+Prematuros) 3er Trimestre",
+        "alias": "vaquillas_sin_abortar_plusprematuros_3er_trimestre"
+      },
+      {
+        "code": "411d",
+        "name": "Odd Ratio Vaquillas (+Prematuros) 1er Trimestre",
+        "alias": "odd_ratio_vaquillas_plusprematuros_1er_trimestre"
+      },
+      {
+        "code": "411e",
+        "name": "Odd Ratio Vaquillas (+Prematuros) 2do Trimestre",
+        "alias": "odd_ratio_vaquillas_plusprematuros_2do_trimestre"
+      },
+      {
+        "code": "411f",
+        "name": "Odd Ratio Vaquillas (+Prematuros) 3er Trimestre",
+        "alias": "odd_ratio_vaquillas_plusprematuros_3er_trimestre"
+      },
+      {
+        "code": "412f",
+        "name": "Tasa de Aborto (+Prematuros) de Vaquillas por 10000 Dias en Riesgo 3er Trimestre",
+        "alias": "tasa_de_aborto_plusprematuros_de_vaquillas_por_10000_dias_en_riesgo_3er_trimestre"
+      },
+      {
+        "code": "413f",
+        "name": "% Aborto (+Prematuros) Vaquillas 3er Trimestre",
+        "alias": "pct_aborto_plusprematuros_vaquillas_3er_trimestre"
+      },
+      {
+        "code": "414f",
+        "name": "Abortos(Detecciones, Partos y Prematuros) Vacas 3er Trimestre",
+        "alias": "abortosdetecciones_partos_y_prematuros_vacas_3er_trimestre"
+      },
+      {
+        "code": "416f",
+        "name": "Vacas sin abortar (+Prematuros) 3er Trimestre",
+        "alias": "vacas_sin_abortar_plusprematuros_3er_trimestre"
+      },
+      {
+        "code": "418d",
+        "name": "Odd Ratio Vacas (+Prematuros) 1er Trimestre",
+        "alias": "odd_ratio_vacas_plusprematuros_1er_trimestre"
+      },
+      {
+        "code": "418e",
+        "name": "Odd Ratio Vacas (+Prematuros) 2do Trimestre",
+        "alias": "odd_ratio_vacas_plusprematuros_2do_trimestre"
+      },
+      {
+        "code": "418f",
+        "name": "Odd Ratio Vacas (+Prematuros) 3er Trimestre",
+        "alias": "odd_ratio_vacas_plusprematuros_3er_trimestre"
+      },
+      {
+        "code": "419f",
+        "name": "Tasa de Aborto (+Prematuros) de Vacas por 10000 Dias en Riesgo 3er Trimestre",
+        "alias": "tasa_de_aborto_plusprematuros_de_vacas_por_10000_dias_en_riesgo_3er_trimestre"
+      },
+      {
+        "code": "420f",
+        "name": "% Aborto (+Prematuros) Vacas 3er Trimestre",
+        "alias": "pct_aborto_plusprematuros_vacas_3er_trimestre"
+      },
+      {
+        "code": "413g",
+        "name": "% Total Abortos Vaquillas (NIR)",
+        "alias": "pct_total_abortos_vaquillas_nir"
+      },
+      {
+        "code": "413h",
+        "name": "% Total Abortos Vaquillas + Prematuros (NIR)",
+        "alias": "pct_total_abortos_vaquillas_plus_prematuros_nir"
+      },
+      {
+        "code": "420g",
+        "name": "% Total Abortos Vacas (NIR)",
+        "alias": "pct_total_abortos_vacas_nir"
+      },
+      {
+        "code": "420h",
+        "name": "% Total Abortos Vacas + Prematuros (NIR)",
+        "alias": "pct_total_abortos_vacas_plus_prematuros_nir"
+      },
+      {
+        "code": "413d",
+        "name": "% Total Abortos Vaquillas (B)",
+        "alias": "pct_total_abortos_vaquillas_b"
+      },
+      {
+        "code": "420d",
+        "name": "% Total Abortos Vacas (B)",
+        "alias": "pct_total_abortos_vacas_b"
+      }
+    ]
+  },
+  "AL": {
+    "section": "AL",
+    "description": "ALIMENTACION",
+    "kpis": [
+      {
+        "code": "421",
+        "name": "KG Ingesta de Materia Seca",
+        "alias": "kg_ingesta_de_materia_seca"
+      },
+      {
+        "code": "421a",
+        "name": "KG Ingesta de Materia Seca por vaca",
+        "alias": "kg_ingesta_de_materia_seca_por_vaca"
+      },
+      {
+        "code": "423",
+        "name": "KG Ingesta de Materia Seca Estimada",
+        "alias": "kg_ingesta_de_materia_seca_estimada"
+      },
+      {
+        "code": "424",
+        "name": "Eficiencia Alimenticia",
+        "alias": "eficiencia_alimenticia"
+      },
+      {
+        "code": "424a",
+        "name": "Eficiencia Alimenticia Estimada",
+        "alias": "eficiencia_alimenticia_estimada"
+      },
+      {
+        "code": "430",
+        "name": "IOFC",
+        "alias": "iofc"
+      },
+      {
+        "code": "431",
+        "name": "Sobrante / Vaca",
+        "alias": "sobrante_vaca"
+      }
+    ]
+  }
+}

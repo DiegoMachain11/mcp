@@ -3,6 +3,7 @@ import json
 import logging
 import math
 import unicodedata
+from pathlib import Path
 from typing import Callable, List, Optional, Sequence, Tuple
 
 from openai import OpenAI
@@ -12,42 +13,6 @@ import os
 OPENAI_MODEL = "gpt-4o-mini"
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 BRIDGE_URL = "http://localhost:8090"
-
-CORE_TRIAGE_KPIS: List[dict] = [
-    {"alias": "pct_partos_logrados", "code": "255d"},
-    {"alias": "pct_fiebre_de_leche", "code": "224d"},
-    {"alias": "pct_retencion_de_placenta", "code": "226d"},
-    {"alias": "pct_metritis_primaria", "code": "227d"},
-    {"alias": "pct_cetosis", "code": "228d"},
-    {"alias": "pct_vacas_muertas_frescas_lt_30_del", "code": "309d"},
-    {"alias": "pct_desecho_vacas_lt_60_del_periodo", "code": "311a"},
-    {"alias": "pct_desecho_plus", "code": "251f"},
-    {"alias": "pico_de_prod_1a_lact", "code": "79"},
-    {"alias": "pico_de_prod_2a_lact", "code": "79a"},
-    {"alias": "pico_de_prod_3plus_lact", "code": "79b"},
-    {"alias": "ganancia_peso_diaria_nac_vs_destete", "code": "43"},
-    {"alias": "eficiencia_de_ganancia_de_peso", "code": "44"},
-    {"alias": "pct_becerras_jaulas_muertas_lt_1_meses", "code": "298a"},
-    {"alias": "pct_becerras_jaulas_muertas_lt_2_meses", "code": "299a"},
-    {"alias": "pct_becerras_muertas_2_13_meses", "code": "301a"},
-    {"alias": "pct_fertilidad_en_vaquillas", "code": "45b"},
-    {"alias": "edad_1er_servicio_lt_13", "code": "53"},
-    {"alias": "edad_1er_servicio_13_lt_14", "code": "54"},
-    {"alias": "edad_1er_servicio_gt_15", "code": "56"},
-    {"alias": "prod_a_305_del_1a_lact", "code": "78"},
-    {"alias": "prod_a_305_del_2a_lact", "code": "78a"},
-    {"alias": "prod_a_305_del_3plus_lact", "code": "78b"},
-    {"alias": "pct_total_abortos_vaquillas_m", "code": "328h"},
-    {"alias": "daily_rest_time_min_1a_lact", "code": "259"},
-    {"alias": "daily_rest_time_min_2a_lact", "code": "266"},
-    {"alias": "daily_rest_time_min_3plus_lact", "code": "273"},
-    {"alias": "pct_vacas_c_prob_digestivos", "code": "291d"},
-    {"alias": "pct_vacas_c_prob_locomotores", "code": "293d"},
-    {"alias": "pct_total_abortos_vacas_m", "code": "329l"},
-    {"alias": "deteccion_de_celos_ult2", "code": "125"},
-    {"alias": "taza_prenez_21_dias", "code": "134"},
-    {"alias": "dias_abiertos_mx", "code": "24a"},
-]
 
 
 def _slugify(value: str) -> str:
@@ -70,6 +35,58 @@ def _slugify(value: str) -> str:
     while "__" in alias:
         alias = alias.replace("__", "_")
     return alias.strip("_")
+
+
+def _load_triage_kpis() -> List[dict]:
+    """Load KPI list from the expanded catalog. Falls back to legacy 32 if missing."""
+    catalog_path = Path(__file__).resolve().parents[1] / "data" / "expanded_kpi_catalog.json"
+    if catalog_path.exists():
+        with catalog_path.open("r", encoding="utf-8") as fh:
+            data = json.load(fh)
+        entries = []
+        for i in range(len(data["Code"])):
+            alias = _slugify(data["Description"][i])
+            entries.append({"alias": alias, "code": data["Code"][i]})
+        return entries
+    # Fallback: original 32
+    return [
+        {"alias": "pct_partos_logrados", "code": "255d"},
+        {"alias": "pct_fiebre_de_leche", "code": "224d"},
+        {"alias": "pct_retencion_de_placenta", "code": "226d"},
+        {"alias": "pct_metritis_primaria", "code": "227d"},
+        {"alias": "pct_cetosis", "code": "228d"},
+        {"alias": "pct_vacas_muertas_frescas_lt_30_del", "code": "309d"},
+        {"alias": "pct_desecho_vacas_lt_60_del_periodo", "code": "311a"},
+        {"alias": "pct_desecho_plus", "code": "251f"},
+        {"alias": "pico_de_prod_1a_lact", "code": "79"},
+        {"alias": "pico_de_prod_2a_lact", "code": "79a"},
+        {"alias": "pico_de_prod_3plus_lact", "code": "79b"},
+        {"alias": "ganancia_peso_diaria_nac_vs_destete", "code": "43"},
+        {"alias": "eficiencia_de_ganancia_de_peso", "code": "44"},
+        {"alias": "pct_becerras_jaulas_muertas_lt_1_meses", "code": "298a"},
+        {"alias": "pct_becerras_jaulas_muertas_lt_2_meses", "code": "299a"},
+        {"alias": "pct_becerras_muertas_2_13_meses", "code": "301a"},
+        {"alias": "pct_fertilidad_en_vaquillas", "code": "45b"},
+        {"alias": "edad_1er_servicio_lt_13", "code": "53"},
+        {"alias": "edad_1er_servicio_13_lt_14", "code": "54"},
+        {"alias": "edad_1er_servicio_gt_15", "code": "56"},
+        {"alias": "prod_a_305_del_1a_lact", "code": "78"},
+        {"alias": "prod_a_305_del_2a_lact", "code": "78a"},
+        {"alias": "prod_a_305_del_3plus_lact", "code": "78b"},
+        {"alias": "pct_total_abortos_vaquillas_m", "code": "328h"},
+        {"alias": "daily_rest_time_min_1a_lact", "code": "259"},
+        {"alias": "daily_rest_time_min_2a_lact", "code": "266"},
+        {"alias": "daily_rest_time_min_3plus_lact", "code": "273"},
+        {"alias": "pct_vacas_c_prob_digestivos", "code": "291d"},
+        {"alias": "pct_vacas_c_prob_locomotores", "code": "293d"},
+        {"alias": "pct_total_abortos_vacas_m", "code": "329l"},
+        {"alias": "deteccion_de_celos_ult2", "code": "125"},
+        {"alias": "taza_prenez_21_dias", "code": "134"},
+        {"alias": "dias_abiertos_mx", "code": "24a"},
+    ]
+
+
+CORE_TRIAGE_KPIS: List[dict] = _load_triage_kpis()
 
 
 def _resolve_kpi_selection(

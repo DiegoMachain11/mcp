@@ -22,22 +22,51 @@ kpi_client = DairyKPIClient(api_base_url="https://rgiomadero.com:9091/IREGIOServ
 mcp = FastMCP("Dairy KPIs")
 
 
+def _resolve_to_aliases(selected_kpis: List[str]) -> List[str]:
+    """
+    Resolve a list of KPI codes, aliases, or descriptions to alias column names.
+    Accepts codes like '255d', aliases like 'pct_partos_logrados', or mixed.
+    """
+    catalog = kpi_client._get_kpi_list()
+    code_to_alias = dict(zip(catalog["Code"].astype(str), catalog["alias"]))
+    known_aliases = set(catalog["alias"])
+
+    resolved = []
+    for kpi in selected_kpis:
+        kpi = str(kpi).strip()
+        if kpi in known_aliases:
+            resolved.append(kpi)
+        elif kpi in code_to_alias:
+            resolved.append(code_to_alias[kpi])
+        else:
+            slug = kpi_client._make_alias(kpi)
+            if slug in known_aliases:
+                resolved.append(slug)
+            else:
+                resolved.append(kpi)
+    return resolved
+
+
+CACHE_MAX_MONTHS = 24  # Always fetch the max window so any subsequent request is served from cache
+
+
 def _fetch_with_cache(farm_code: str, language: str, months: int) -> pd.DataFrame:
     """
     Return full KPI DataFrame for a farm, using the monthly cache.
-    On cache miss: fetches ALL KPIs from IREGIO and caches the result.
+    On cache miss: fetches ALL KPIs for the max window (24 months) and caches.
     On cache hit: returns the cached DataFrame instantly.
+    The caller is responsible for filtering by the requested time window.
     """
     cached = cache_get(farm_code)
     if cached is not None:
         logging.info(f"Cache hit for farm {farm_code}")
         return cached
 
-    logging.info(f"Cache miss for farm {farm_code} — fetching from IREGIO")
+    logging.info(f"Cache miss for farm {farm_code} — fetching {CACHE_MAX_MONTHS} months from IREGIO")
     df = kpi_client.fetch_farm_kpis(
         farm_code=farm_code,
         language=language,
-        months=months,
+        months=CACHE_MAX_MONTHS,
     )
     cache_put(farm_code, df)
     return df
@@ -71,7 +100,8 @@ def get_farm_kpis(
     df = _fetch_with_cache(farm_code, language, months)
 
     if selected_kpis:
-        cols = ["Date"] + [c for c in selected_kpis if c in df.columns]
+        aliases = _resolve_to_aliases(selected_kpis)
+        cols = ["Date"] + [c for c in aliases if c in df.columns]
         df = df[cols]
 
     now = pd.Timestamp.now(tz="UTC").tz_localize(None)
@@ -127,7 +157,8 @@ def summarize_kpis(
     recent = df[df["Date"] > (now - pd.Timedelta(days=days))].copy()
 
     if selected_kpis:
-        keep = ["Date"] + [c for c in selected_kpis if c in recent.columns]
+        aliases = _resolve_to_aliases(selected_kpis)
+        keep = ["Date"] + [c for c in aliases if c in recent.columns]
         recent = recent[keep]
 
     logging.info(df)
