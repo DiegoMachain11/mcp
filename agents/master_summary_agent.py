@@ -29,6 +29,7 @@ from agents.helpers import (
     alias_name_maps,
     _slugify,
 )
+from agents.weather_context import build_seasonal_weather_context, build_master_seasonal_context
 
 try:
     from pdf_reporter import generate_master_summary_pdf
@@ -217,6 +218,12 @@ async def run_master_summary(
 
     # --- Step 2: Run agents concurrently based on what PreAnalyzer found ---
     print("⚙️ Step 2: Launching domain-specific agents...")
+
+    # Build seasonal + weather context for each domain (fetches weather once, cached)
+    domain_seasonal = {}
+    for domain_name in domains_to_investigate:
+        domain_seasonal[domain_name] = build_seasonal_weather_context(farm_code, domain_name)
+
     tasks = []
 
     if "Fertility" in domains_to_investigate:
@@ -230,6 +237,7 @@ async def run_master_summary(
                 fertility_kpis,
                 language,
                 months,
+                domain_seasonal.get("Fertility", ""),
             )
         )
 
@@ -244,6 +252,7 @@ async def run_master_summary(
                 production_kpis,
                 language,
                 months,
+                domain_seasonal.get("Production", ""),
             )
         )
 
@@ -258,6 +267,7 @@ async def run_master_summary(
                 health_kpis,
                 language,
                 months,
+                domain_seasonal.get("Health", ""),
             )
         )
 
@@ -272,6 +282,7 @@ async def run_master_summary(
                 calf_kpis,
                 language,
                 months,
+                domain_seasonal.get("Calf Raising", ""),
             )
         )
 
@@ -286,6 +297,7 @@ async def run_master_summary(
                 culling_kpis,
                 language,
                 months,
+                domain_seasonal.get("Culling", ""),
             )
         )
 
@@ -314,10 +326,15 @@ async def run_master_summary(
         if history_text else ""
     )
 
+    master_seasonal = build_master_seasonal_context(farm_code)
+    seasonal_section = f"\n{master_seasonal}\n" if master_seasonal else ""
+
     prompt = (
         "You are a senior dairy management consultant and expert in causal farm performance analysis.\n\n"
         "Your task is to synthesize all domain-level analyses and the causal chain predictions "
-        "into a single, coherent, highly actionable farm-level report.\n\n"
+        "into a single, coherent, highly actionable farm-level report.\n"
+        "Use the seasonal and weather context to calibrate urgency — distinguish expected seasonal "
+        "patterns from true management problems.\n\n"
         "You MUST return JSON strictly as:\n"
         "{\n"
         '  "executive_summary": "2-3 sentence overview of the farm current state and most critical risks",\n'
@@ -343,6 +360,7 @@ async def run_master_summary(
         "- If historical context is provided, reference it: note if a problem persists across runs "
         "or if a previously recommended action appears to have improved a KPI.\n\n"
         f"{history_section}"
+        f"{seasonal_section}"
         "=== Domain Analyses (current performance) ===\n"
         f"{domain_summaries}\n\n"
         "=== Causal Risk Chains (pre-computed from farm causal graph) ===\n"

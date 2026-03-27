@@ -17,7 +17,8 @@ openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 def run_production_agent(
-    farm_code: str, kpis: list[str], language: str = "es", months: int = 3
+    farm_code: str, kpis: list[str], language: str = "es", months: int = 3,
+    seasonal_context: str = "",
 ):
     """Deep-dive analysis for production KPIs."""
 
@@ -82,12 +83,14 @@ def run_production_agent(
     If a KPI shows `data_quality: poor` or `sparse`, note the limited data but still report the last known value.
     Do NOT invent values or say "not provided" — only report what the signal analysis shows.
     Ground your recommendations in the scientific context when available.
+    Use seasonal/weather context to distinguish expected seasonal variation from true problems.
 
     Before writing your JSON, reason in this order:
     1. Which KPIs violate their benchmark? (compare last_value to reference ranges)
     2. For each violation: is the trend worsening, stable, or improving?
-    3. Are any flagged KPIs causally linked to each other?
-    4. What is the single most urgent action?
+    3. Is this violation expected given the current season/weather, or is it abnormal?
+    4. Are any flagged KPIs causally linked to each other?
+    5. What is the single most urgent action?
 
     Return JSON strictly as:
     {{
@@ -103,6 +106,7 @@ def run_production_agent(
         "kpis_to_plot": [ "list of the key KPI column names" ]
     }}
 
+{seasonal_context}
 === BENCHMARK REFERENCE RANGES ===
   pico_de_prod_1a_lact       : target 25–35 kg/day (concern <20)
   pico_de_prod_2a_lact       : target 30–40 kg/day (concern <25)

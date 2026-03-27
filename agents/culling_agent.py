@@ -13,7 +13,7 @@ OPENAI_MODEL = "gpt-4o-mini"
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
-def run_culling_agent(farm_code, kpis, language="es", months=3):
+def run_culling_agent(farm_code, kpis, language="es", months=3, seasonal_context=""):
     normalized_kpis = normalize_kpi_list(kpis)
     kpi_names = build_domain_kpi_list("Culling", normalized_kpis)
 
@@ -66,12 +66,14 @@ def run_culling_agent(farm_code, kpis, language="es", months=3):
     If a KPI shows `data_quality: poor` or `sparse`, note the limited data but still report the last known value.
     Do NOT invent values or say "not provided" — only report what the signal analysis shows.
     Ground your recommendations in the scientific context when available.
+    Use seasonal/weather context to distinguish expected seasonal variation from true problems.
 
     Before writing your JSON, reason in this order:
     1. Which KPIs violate their benchmark? (compare last_value to reference ranges)
     2. For each violation: is the trend worsening, stable, or improving?
-    3. Are any flagged KPIs causally linked to each other?
-    4. What is the single most urgent action?
+    3. Is this violation expected given the current season/weather, or is it abnormal?
+    4. Are any flagged KPIs causally linked to each other?
+    5. What is the single most urgent action?
 
     Return JSON:
     {{
@@ -88,6 +90,7 @@ def run_culling_agent(farm_code, kpis, language="es", months=3):
   vacas_muertas_frescas_lt_30_del      : target <2% fresh cow deaths (concern >4%)
   pct_vacas_muertas_frescas_lt_30_del  : target <2% fresh cow deaths (concern >4%)
 
+{seasonal_context}
 === KPI SIGNAL ANALYSIS (trend, anomaly, benchmark status) ===
 {signals_text}
 {rag_section}

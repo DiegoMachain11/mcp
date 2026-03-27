@@ -14,6 +14,14 @@ if str(ROOT_DIR) not in sys.path:
 
 from agents.master_summary_agent import run_master_summary
 from agents.farm_history import save_run, load_recent_runs
+from agents.weather_context import (
+    _load_farm_location,
+    save_farm_location,
+    get_weather_summary,
+    format_weather_for_prompt,
+    FARM_LOCATIONS_PATH,
+)
+import json
 
 # ================= CONFIG ====================
 BRIDGE_URL = "http://localhost:8090"
@@ -31,6 +39,37 @@ Your data, your insights — powered by Dairy Farm Intelligence Unit.
 farm_code = st.text_input("Farm Code", "GM")
 language = "es"
 months = st.slider("Months to analyze", 3, 24, 3)
+
+# --- Farm Location ---
+existing_location = _load_farm_location(farm_code)
+
+with st.expander("Farm Location (for weather context)", expanded=existing_location is None):
+    loc_col1, loc_col2 = st.columns(2)
+    with loc_col1:
+        farm_name = st.text_input("Farm Name", value=existing_location.get("name", "") if existing_location else "")
+        municipality = st.text_input("Municipality", value=existing_location.get("municipality", "") if existing_location else "")
+        state = st.text_input("State", value=existing_location.get("state", "") if existing_location else "")
+    with loc_col2:
+        latitude = st.number_input("Latitude", value=existing_location.get("latitude", 25.0) if existing_location else 25.0, format="%.4f", min_value=-90.0, max_value=90.0)
+        longitude = st.number_input("Longitude", value=existing_location.get("longitude", -103.0) if existing_location else -103.0, format="%.4f", min_value=-180.0, max_value=180.0)
+
+    if st.button("Save Location"):
+        save_farm_location(farm_code, farm_name, municipality, state, latitude, longitude)
+        st.success(f"Location saved for {farm_code}: {municipality}, {state} ({latitude}, {longitude})")
+        st.rerun()
+
+    if existing_location:
+        weather = get_weather_summary(farm_code)
+        if weather:
+            thi = weather.get("avg_thi", "?")
+            thi_class = weather.get("thi_classification", "?")
+            stress_days = weather.get("heat_stress_days", 0)
+            st.info(
+                f"Current weather: {weather.get('avg_temp_c')}C avg | "
+                f"THI {thi} ({thi_class}) | "
+                f"{stress_days} heat stress days | "
+                f"{weather.get('total_precip_mm')}mm rain"
+            )
 
 analyze_button = st.button("🔍 Analyze Farm Performance")
 
