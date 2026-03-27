@@ -222,7 +222,7 @@ async def run_master_summary(
     # Build seasonal + weather context for each domain (fetches weather once, cached)
     domain_seasonal = {}
     for domain_name in domains_to_investigate:
-        domain_seasonal[domain_name] = build_seasonal_weather_context(farm_code, domain_name)
+        domain_seasonal[domain_name] = build_seasonal_weather_context(farm_code, domain_name, months)
 
     tasks = []
 
@@ -326,7 +326,7 @@ async def run_master_summary(
         if history_text else ""
     )
 
-    master_seasonal = build_master_seasonal_context(farm_code)
+    master_seasonal = build_master_seasonal_context(farm_code, months)
     seasonal_section = f"\n{master_seasonal}\n" if master_seasonal else ""
 
     prompt = (
